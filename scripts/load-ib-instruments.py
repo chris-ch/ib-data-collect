@@ -11,33 +11,6 @@ from bs4 import BeautifulSoup
 
 from urlcaching import set_cache_path, open_url, invalidate_key
 
-_EXCHANGES = (
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=chx", "Chicago Stock Exchange (CHX)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=bex", "NASDAQ OMX BX (BEX)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=arca", "NYSE Arca (ARCA)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=amex", "NYSE MKT (NYSE AMEX)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=chix_ca", "Chi-X Canada"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=omega", "Omega ATS (OMEGA)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=pure", "Pure Trading (PURE)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=tse", "Toronto Stock Exchange (TSE)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=mexi", "Mexican Stock Exchange (MEXI)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=asx", "Australian Stock Exchange (ASX)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=sehk", "Hong Kong Stock Exchange (SEHK)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=nse", "National Stock Exchange of India (NSE)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=sbf", "Euronext France (SBF)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=chixde", "CHI-X Europe Ltd Clearstream (CHIXDE)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=fwb", "Frankfurt Stock Exchange (FWB)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=swb", "Stuttgart Stock Exchange (SWB)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=ibis", "XETRA (IBIS)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=chixen", "CHI-X Europe Ltd Clearnet (CHIXEN)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=aeb", "Euronext NL Stocks (AEB)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=bm", "Bolsa de Madrid (BM)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=sfb", "Swedish Stock Exchange (SFB)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=ebs", "SIX Swiss Exchange (EBS)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=chixuk", "CHI-X Europe Ltd Crest (CHIXUK)"),
-    ("https://www.interactivebrokers.com/en/index.php?f=567&exch=lse", "London Stock Exchange (LSE)"),
-)
-
 _PRODUCT_TYPES = {
     'Stock': 'stk',
     'Option': 'opt',
