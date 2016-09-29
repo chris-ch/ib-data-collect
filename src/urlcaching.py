@@ -15,6 +15,7 @@ Subsequent calls for the same URL returns the cached data:
     >>> first_call_response == second_call_response
     True
 
+TODO: validity period for cache content
 
 """
 import logging
@@ -24,6 +25,8 @@ import itertools
 import threading
 
 from datetime import datetime
+from time import sleep
+
 import requests
 import hashlib
 
@@ -276,7 +279,7 @@ def delete_cache():
 _requests_session = None
 
 
-def open_url(url, rejection_marker=None):
+def open_url(url, rejection_marker=None, throttle=None):
     global _requests_session
 
     if _requests_session is None:
@@ -284,6 +287,9 @@ def open_url(url, rejection_marker=None):
 
     def inner_open_url(request_url):
         logging.debug('session cookies: %s', _requests_session.cookies)
+        if throttle:
+            sleep(throttle)
+
         response = _requests_session.get(request_url, headers=_HEADERS_CHROME).text
         if rejection_marker is not None and rejection_marker in response:
             raise RuntimeError('rejected, failed to load url %s', request_url)
