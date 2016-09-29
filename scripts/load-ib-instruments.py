@@ -2,6 +2,7 @@ import argparse
 import logging
 import os
 import re
+from operator import itemgetter
 from pprint import pprint
 from time import sleep
 from urllib.parse import urlparse
@@ -132,9 +133,9 @@ def main(args):
         product_type_codes = [args.product_type]
 
     instruments = list()
-    for product_type_code in product_type_codes:
+    for product_type_code in sorted(product_type_codes):
         exchanges = load_exchanges_for_product_type(product_type_code)
-        for exchange_name, exchange_code, exchange_url in exchanges:
+        for exchange_name, exchange_code, exchange_url in sorted(exchanges, key=itemgetter(0)):
             logging.info('processing exchange data %s, %s, %s', exchange_name, exchange_code, exchange_url)
             instruments += load_for_exchange(exchange_name, exchange_url)
 
