@@ -148,7 +148,7 @@ def main(args):
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
     logging.getLogger('requests').setLevel(logging.WARNING)
     file_handler = logging.FileHandler('ib-instruments.log', mode='w')
     formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
@@ -168,3 +168,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     set_cache_path(os.path.sep.join([args.output_dir, 'ib-instr-urlcaching']))
     main(args)
+
