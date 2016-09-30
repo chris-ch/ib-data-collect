@@ -53,8 +53,8 @@ def load_exchanges_for_product_type(product_type_code):
         exchanges_region = list()
         for link_tag in html_exchanges.find_all('a'):
             if link_tag.get('href') and link_tag.get('href').startswith('index.php?f='):
-                exchange_name = ' '.join(link_tag.string.split()[:-1])
-                exchange_code = link_tag.string.split()[-1]
+                exchange_name = ' '.join(link_tag.string.split()[:-1]).encode('ascii', 'ignore')
+                exchange_code = link_tag.string.split()[-1].encode('ascii', 'ignore')
                 exchange_url = _BASE_URL + '/en/' + link_tag['href']
                 if exchange_name == '':
                     exchange_name = exchange_code
@@ -154,6 +154,15 @@ if __name__ == '__main__':
     formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
     file_handler.setFormatter(formatter)
     logging.getLogger().addHandler(file_handler)
+
+    exchanges = load_exchanges_for_product_type('stk')
+    for exch0, exch1, exch2 in exchanges:
+        if exch1 == 'Canada':
+            print(exch0)
+            logging.info('%s', exch0)
+
+    import sys
+    sys.exit(0)
 
     parser = argparse.ArgumentParser(description='Loading instruments data from IBrokers',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter
