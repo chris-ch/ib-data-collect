@@ -3,8 +3,6 @@ import logging
 import os
 import re
 from operator import itemgetter
-from pprint import pprint
-from time import sleep
 from urllib.parse import urlparse
 from urllib.parse import parse_qs
 import pandas
@@ -34,7 +32,7 @@ _BASE_URL = 'https://www.interactivebrokers.com'
 def load_exchanges_for_product_type(product_type_code):
     url_template = _BASE_URL + '/en/index.php?f=products&p={product_type_code}'
     url = url_template.format(product_type_code=product_type_code)
-    html_text = open_url(url, rejection_marker='To continue please enter', throttle=1)
+    html_text = open_url(url, rejection_marker='To continue please enter', throttle=3)
     html = BeautifulSoup(html_text, 'html.parser')
     region_list_tag = html.find('div', {'id': product_type_code})
     if region_list_tag is None:
@@ -48,7 +46,7 @@ def load_exchanges_for_product_type(product_type_code):
     exchanges = list()
     for region_name in region_urls:
         region_url = region_urls[region_name]
-        html_exchanges_text = open_url(region_url, rejection_marker='To continue please enter', throttle=1)
+        html_exchanges_text = open_url(region_url, rejection_marker='To continue please enter', throttle=3)
         html_exchanges = BeautifulSoup(html_exchanges_text, 'html.parser')
         exchanges_region = list()
         for link_tag in html_exchanges.find_all('a'):
@@ -68,7 +66,7 @@ def load_exchanges_for_product_type(product_type_code):
 
 def load_for_exchange_partial(exchange_full_name, exchange_url):
     instruments = list()
-    html_text = open_url(exchange_url, rejection_marker='To continue please enter', throttle=1)
+    html_text = open_url(exchange_url, rejection_marker='To continue please enter', throttle=3)
 
     def find_stock_details_link(tag):
         is_link = tag.name == 'a'
@@ -135,18 +133,14 @@ def main(args):
     instruments = list()
     for product_type_code in sorted(product_type_codes):
         exchanges = load_exchanges_for_product_type(product_type_code)
-        for exchange_name, exchange_code, exchange_url in sorted(exchanges[:20], key=itemgetter(0)):
+        logging.info('%d available exchanges for product type "%s"', len(exchanges), product_type_code)
+        for exchange_name, exchange_code, exchange_url in sorted(exchanges[:3], key=itemgetter(0)):
             logging.info('processing exchange data %s, %s, %s', exchange_name, exchange_code, exchange_url)
             instruments += load_for_exchange(exchange_name, exchange_url)
 
     output_file = os.sep.join([args.output_dir, args.output_name + '.xlsx'])
     logging.info('saving to file %s', os.path.abspath(output_file))
     logging.info('saving %d instruments', len(instruments))
-    writer = pandas.ExcelWriter(output_file)
-    instruments_df = pandas.DataFrame(instruments).sort_values(by='label')
-    instruments_df.to_excel(writer, 'instruments', index=False)
-    writer.save()
-
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
@@ -164,11 +158,15 @@ if __name__ == '__main__':
 
     parser.add_argument('--output-dir', type=str, help='location of output directory', default='.')
     parser.add_argument('--output-name', type=str, help='name of the output file', default='ib-instr')
-    parser.add_argument('--list-product-types', dest='list_product_types', action='store_true',
+    parser.add_argument('--list-product-types', action='store_true',
                         help='only displays available product types')
+    parser.add_argument('--use-cache', action='store_false',
+                        help='caches web requests (for dev only)')
     parser.add_argument('product_type', type=str, choices=_PRODUCT_TYPES.values(), nargs='?',
                         help='limits download to specified product type')
     args = parser.parse_args()
-    set_cache_path(os.path.sep.join([args.output_dir, 'ib-instr-urlcaching']))
+    if args.use_cache:
+        set_cache_path(os.path.sep.join([args.output_dir, 'ib-instr-urlcaching']))
+
     main(args)
 
