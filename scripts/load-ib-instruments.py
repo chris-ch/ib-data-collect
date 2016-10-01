@@ -134,7 +134,7 @@ def main(args):
     for product_type_code in sorted(product_type_codes):
         exchanges = load_exchanges_for_product_type(product_type_code)
         logging.info('%d available exchanges for product type "%s"', len(exchanges), product_type_code)
-        for exchange_name, exchange_code, exchange_url in sorted(exchanges[:3], key=itemgetter(0)):
+        for exchange_name, exchange_code, exchange_url in sorted(exchanges, key=itemgetter(0)):
             logging.info('processing exchange data %s, %s, %s', exchange_name, exchange_code, exchange_url)
             instruments += load_for_exchange(exchange_name, exchange_url)
 
@@ -150,18 +150,14 @@ if __name__ == '__main__':
     file_handler.setFormatter(formatter)
     logging.getLogger().addHandler(file_handler)
 
-    exchanges = load_exchanges_for_product_type('stk')
-
     parser = argparse.ArgumentParser(description='Loading instruments data from IBrokers',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter
                                      )
 
     parser.add_argument('--output-dir', type=str, help='location of output directory', default='.')
     parser.add_argument('--output-name', type=str, help='name of the output file', default='ib-instr')
-    parser.add_argument('--list-product-types', action='store_true',
-                        help='only displays available product types')
-    parser.add_argument('--use-cache', action='store_false',
-                        help='caches web requests (for dev only)')
+    parser.add_argument('--list-product-types', action='store_true', help='only displays available product types')
+    parser.add_argument('--use-cache', action='store_true', help='caches web requests (for dev only)')
     parser.add_argument('product_type', type=str, choices=_PRODUCT_TYPES.values(), nargs='?',
                         help='limits download to specified product type')
     args = parser.parse_args()
