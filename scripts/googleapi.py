@@ -1,7 +1,6 @@
 import argparse
 import json
 import os
-from pprint import pprint
 import logging
 
 import httplib2
@@ -12,16 +11,18 @@ from oauth2client import client
 from oauth2client import tools
 
 _IBROKERS_DB_FOLDER_ID = '0B4QNJgt5Fd0fQ1M0ckVBWVpJdkk'
+_IBROKERS_DB_FILENAME = 'IBrokers Instruments DB'
 _DEFAULT_CONFIG_FILE = os.sep.join(('.', 'config.json'))
 
 
 def files(service, query):
     page_token = None
+    file_fields = 'id', 'name', 'mimeType', 'modifiedTime', 'createdTime', 'webViewLink', 'parents'
     while True:
         response = service.files().list(q=query,
                                         corpus='domain',
                                         spaces='drive',
-                                        fields='nextPageToken, files(id, modifiedTime, createdTime, webViewLink, parents)',
+                                        fields='nextPageToken, files({})'.format(', '.join(file_fields)),
                                         pageSize=100,
                                         pageToken=page_token
                                         ).execute()
@@ -33,13 +34,15 @@ def files(service, query):
             break
 
 
-def children_files_by_id(service, folder_id):
+def children_by_id(service, folder_id):
     query = """
-    mimeType != 'application/vnd.google-apps.folder'
+    mimeType {comparator} 'application/vnd.google-apps.folder'
     and trashed = False
-    and '{}' in parents
-    """.format(folder_id)
-    return files(service, query)
+    and '{folder_id}' in parents
+    """
+    all_folders = files(service, query.format(folder_id=folder_id, comparator='='))
+    all_files = files(service, query.format(folder_id=folder_id, comparator='!='))
+    return all_folders, all_files
 
 
 def file_by_id(service, file_id):
@@ -78,9 +81,40 @@ def main():
 
     api_key = config_json['api_key']
     authorized_http = credentials.authorize(httplib2.Http())
-    service = discovery.build('drive', 'v3', http=authorized_http, developerKey=api_key)
-    print(file_by_id(service, _IBROKERS_DB_FOLDER_ID))
-    print(list(children_files_by_id(service, _IBROKERS_DB_FOLDER_ID)))
+
+    drive = discovery.build('drive', 'v3', http=authorized_http, developerKey=api_key)
+    sheets = discovery.build('sheets', 'v4', http=authorized_http, developerKey=api_key)
+    folders, files = children_by_id(drive, _IBROKERS_DB_FOLDER_ID)
+    ibrokers_file_candidates = [item for item in files if item['name'] == _IBROKERS_DB_FILENAME]
+
+    if len(ibrokers_file_candidates) == 0:
+        logging.info('creating spreadsheet')
+        create_body = {
+            'properties': {
+                'title': _IBROKERS_DB_FILENAME,
+            },
+            'sheets': [
+                {
+                    'properties': {
+                        'title': 'Instruments'
+                    }
+                }
+            ],
+        }
+        spreadsheet_id = sheets.spreadsheets().create(body=create_body).execute()['spreadsheetId']
+        drive.files().update(fileId=spreadsheet_id,
+                             addParents=_IBROKERS_DB_FOLDER_ID,
+                             removeParents='root',
+                             fields='id, parents').execute()
+        logging.info('created spreadsheet %s', spreadsheet_id)
+
+    else:
+        spreadsheet_id = ibrokers_file_candidates[0]['id']
+        sheets.spreadsheets().get(spreadsheetId=spreadsheet_id).execute()
+        logging.info('using existing spreadsheet %s', spreadsheet_id)
+
+    # ready to edit spreadsheet <spreadsheet_id>
+    print(sheets.spreadsheets().get(spreadsheetId=spreadsheet_id).execute())
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
