@@ -53,8 +53,8 @@ def load_exchanges_for_product_type(product_type_code):
         exchanges_region = list()
         for link_tag in html_exchanges.find_all('a'):
             if link_tag.get('href') and link_tag.get('href').startswith('index.php?f='):
-                exchange_name = ' '.join(link_tag.string.split()[:-1]).encode('ascii', 'ignore')
-                exchange_code = link_tag.string.split()[-1].encode('ascii', 'ignore')
+                exchange_name = ' '.join(link_tag.string.split()[:-1]).encode('ascii', 'ignore').decode()
+                exchange_code = link_tag.string.split()[-1].encode('ascii', 'ignore').decode()
                 exchange_url = _BASE_URL + '/en/' + link_tag['href']
                 if exchange_name == '':
                     exchange_name = exchange_code
@@ -135,12 +135,13 @@ def main(args):
     instruments = list()
     for product_type_code in sorted(product_type_codes):
         exchanges = load_exchanges_for_product_type(product_type_code)
-        for exchange_name, exchange_code, exchange_url in sorted(exchanges, key=itemgetter(0)):
+        for exchange_name, exchange_code, exchange_url in sorted(exchanges[:20], key=itemgetter(0)):
             logging.info('processing exchange data %s, %s, %s', exchange_name, exchange_code, exchange_url)
             instruments += load_for_exchange(exchange_name, exchange_url)
 
     output_file = os.sep.join([args.output_dir, args.output_name + '.xlsx'])
     logging.info('saving to file %s', os.path.abspath(output_file))
+    logging.info('saving %d instruments', len(instruments))
     writer = pandas.ExcelWriter(output_file)
     instruments_df = pandas.DataFrame(instruments).sort_values(by='label')
     instruments_df.to_excel(writer, 'instruments', index=False)
@@ -156,13 +157,6 @@ if __name__ == '__main__':
     logging.getLogger().addHandler(file_handler)
 
     exchanges = load_exchanges_for_product_type('stk')
-    for exch0, exch1, exch2 in exchanges:
-        if exch1 == 'Canada':
-            print(exch0)
-            logging.info('%s', exch0)
-
-    import sys
-    sys.exit(0)
 
     parser = argparse.ArgumentParser(description='Loading instruments data from IBrokers',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter
