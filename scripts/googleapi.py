@@ -50,6 +50,55 @@ def file_by_id(service, file_id):
     return response.execute()
 
 
+def prepare_sheet(drive, sheets, folder_id, folder_name):
+    folders, files = children_by_id(drive, folder_id)
+    ibrokers_file_candidates = [item for item in files if item['name'] == folder_name]
+
+    if len(ibrokers_file_candidates) == 0:
+        logging.info('creating spreadsheet')
+        create_body = {
+            'properties': {
+                'title': folder_name,
+            },
+            'sheets': [
+                {
+                    'properties': {
+                        'title': 'Instruments'
+                    }
+                }
+            ],
+        }
+        spreadsheet_id = sheets.spreadsheets().create(body=create_body).execute()['spreadsheetId']
+        drive.files().update(fileId=spreadsheet_id,
+                             addParents=folder_id,
+                             removeParents='root',
+                             fields='id, parents').execute()
+        logging.info('created spreadsheet %s', spreadsheet_id)
+
+    else:
+        spreadsheet_id = ibrokers_file_candidates[0]['id']
+        sheets.spreadsheets().get(spreadsheetId=spreadsheet_id).execute()
+        logging.info('using existing spreadsheet %s', spreadsheet_id)
+
+    return spreadsheet_id
+
+
+def setup_services(client_secret_filename, api_key, args):
+    store = file.Storage(os.sep.join(('output', 'token.json')))
+    credentials = store.get()
+    if not credentials or credentials.invalid:
+        logging.info('renewing credentials')
+        scopes = ('https://www.googleapis.com/auth/drive',)
+        flow = client.flow_from_clientsecrets(client_secret_filename, scope=scopes)
+        credentials = tools.run_flow(flow, store, args)
+
+    authorized_http = credentials.authorize(httplib2.Http())
+
+    drive = discovery.build('drive', 'v3', http=authorized_http, developerKey=api_key)
+    sheets = discovery.build('sheets', 'v4', http=authorized_http, developerKey=api_key)
+    return drive, sheets
+
+
 def main():
     parser = argparse.ArgumentParser(description='Loading instruments data from IBrokers',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter,
@@ -69,52 +118,10 @@ def main():
         raise RuntimeError('unable to load config file: {}'.format(full_config_path))
 
     config_json = json.load(open(args.config, 'rt'))
-
-    store = file.Storage(os.sep.join(('output', 'token.json')))
-    credentials = store.get()
-    if not credentials or credentials.invalid:
-        logging.info('renewing credentials')
-        scopes = ('https://www.googleapis.com/auth/drive',)
-        client_secret_filename = config_json['google_api_client_secret']
-        flow = client.flow_from_clientsecrets(client_secret_filename, scope=scopes)
-        credentials = tools.run_flow(flow, store, args)
-
+    client_secret_filename = config_json['google_api_client_secret']
     api_key = config_json['api_key']
-    authorized_http = credentials.authorize(httplib2.Http())
-
-    drive = discovery.build('drive', 'v3', http=authorized_http, developerKey=api_key)
-    sheets = discovery.build('sheets', 'v4', http=authorized_http, developerKey=api_key)
-    folders, files = children_by_id(drive, _IBROKERS_DB_FOLDER_ID)
-    ibrokers_file_candidates = [item for item in files if item['name'] == _IBROKERS_DB_FILENAME]
-
-    if len(ibrokers_file_candidates) == 0:
-        logging.info('creating spreadsheet')
-        create_body = {
-            'properties': {
-                'title': _IBROKERS_DB_FILENAME,
-            },
-            'sheets': [
-                {
-                    'properties': {
-                        'title': 'Instruments'
-                    }
-                }
-            ],
-        }
-        spreadsheet_id = sheets.spreadsheets().create(body=create_body).execute()['spreadsheetId']
-        drive.files().update(fileId=spreadsheet_id,
-                             addParents=_IBROKERS_DB_FOLDER_ID,
-                             removeParents='root',
-                             fields='id, parents').execute()
-        logging.info('created spreadsheet %s', spreadsheet_id)
-
-    else:
-        spreadsheet_id = ibrokers_file_candidates[0]['id']
-        sheets.spreadsheets().get(spreadsheetId=spreadsheet_id).execute()
-        logging.info('using existing spreadsheet %s', spreadsheet_id)
-
-    # ready to edit spreadsheet <spreadsheet_id>
-    print(sheets.spreadsheets().get(spreadsheetId=spreadsheet_id).execute())
+    drive, sheets = setup_services(client_secret_filename, api_key, args)
+    print(prepare_sheet(drive, sheets, _IBROKERS_DB_FOLDER_ID, _IBROKERS_DB_FILENAME))
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
@@ -124,5 +131,4 @@ if __name__ == '__main__':
     formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
     file_handler.setFormatter(formatter)
     logging.getLogger().addHandler(file_handler)
-
     main()
