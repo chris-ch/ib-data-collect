@@ -8,6 +8,7 @@ from urllib.parse import urlparse
 from urllib.parse import parse_qs
 import pandas
 from bs4 import BeautifulSoup
+import pandas
 
 from urlcaching import set_cache_path, open_url, invalidate_key
 
@@ -146,7 +147,14 @@ def main(args):
         writer.writeheader()
         for row in load_instruments(product_type_codes):
             writer.writerow(row)
+    
+    ib_df = pandas.read_csv(output_file)
+    ib_df.drop('exchange',axis=1, inplace=True)
 
+    def merge_exchanges(instruments):
+        return ','.join(instruments.values.tolist())
+
+    ib_df.groupby(['conid', 'label']).agg(merge_exchanges).to_csv('temp.csv')
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
