@@ -53,20 +53,16 @@ def load_exchanges_for_product_type(product_type_code):
         exchanges_region = list()
         for link_tag in html_exchanges.find_all('a'):
             if link_tag.get('href') and link_tag.get('href').startswith('index.php?f='):
-                exchange_name = ' '.join(link_tag.string.split()[:-1]).encode('ascii', 'ignore').decode().strip()
-                exchange_code = link_tag.string.split()[-1].encode('ascii', 'ignore').decode().strip()
+                exchange_name = link_tag.string.encode('ascii', 'ignore').decode().strip()
                 exchange_url = _BASE_URL + '/en/' + link_tag['href']
-                if exchange_name == '':
-                    exchange_name = exchange_code
-
-                exchanges_region.append((exchange_name, exchange_code, exchange_url))
+                exchanges_region.append((exchange_name, exchange_url))
 
         exchanges += exchanges_region
 
     return exchanges
 
 
-def load_for_exchange_partial(exchange_name, exchange_code, exchange_url):
+def load_for_exchange_partial(exchange_name, exchange_url):
     instruments = list()
     html_text = open_url(exchange_url, rejection_marker='To continue please enter', throttle=3)
 
@@ -93,8 +89,12 @@ def load_for_exchange_partial(exchange_name, exchange_code, exchange_url):
             url = re.search(r"javascript:NewWindow\('(.*?)',", tag['href']).group(1)
             query = parse_qs(urlparse(url).query)
             if 'conid' in query.keys():
-                instrument_data = dict(conid=query['conid'][0], label=tag.string, exchange=exchange_name,
-                                       exchange_code=exchange_code)
+                instrument_data = dict(conid=query['conid'][0], label=tag.string, exchange=exchange_name)
+                tag_row = tag.parent.parent
+                ib_symbol, url_text, symbol, currency = [tag.string for tag in tag_row.find_all('td')]
+                instrument_data['ib_symbol'] = ib_symbol
+                instrument_data['symbol'] = symbol
+                instrument_data['currency'] = currency
                 instruments.append(instrument_data)
 
     except Exception:
@@ -105,11 +105,11 @@ def load_for_exchange_partial(exchange_name, exchange_code, exchange_url):
     return instruments, next_page_url
 
 
-def load_for_exchange(exchange_name, exchange_code, exchange_url):
+def load_for_exchange(exchange_name, exchange_url):
     instruments = list()
     next_page_link = exchange_url
     while True:
-        new_instruments, next_page_link = load_for_exchange_partial(exchange_name, exchange_code, next_page_link)
+        new_instruments, next_page_link = load_for_exchange_partial(exchange_name, next_page_link)
         instruments += new_instruments
         if next_page_link is None:
             break
@@ -121,9 +121,9 @@ def load_instruments(product_type_codes):
     for product_type_code in sorted(product_type_codes):
         exchanges = load_exchanges_for_product_type(product_type_code)
         logging.info('%d available exchanges for product type "%s"', len(exchanges), product_type_code)
-        for exchange_name, exchange_code, exchange_url in sorted(exchanges, key=itemgetter(0)):
-            logging.info('processing exchange data %s, %s, %s', exchange_name, exchange_code, exchange_url)
-            exchange_instruments = load_for_exchange(exchange_name, exchange_code, exchange_url)
+        for exchange_name, exchange_url in sorted(exchanges[:3], key=itemgetter(0)):
+            logging.info('processing exchange data %s, %s', exchange_name, exchange_url)
+            exchange_instruments = load_for_exchange(exchange_name, exchange_url)
             for instrument in exchange_instruments:
                 yield instrument
 
@@ -143,7 +143,7 @@ def main(args):
     output_file = os.sep.join([args.output_dir, args.output_name + '.csv'])
     logging.info('saving to file %s', os.path.abspath(output_file))
     with open(os.path.abspath(output_file), 'w') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=('conid', 'label', 'exchange', 'exchange_code'))
+        writer = csv.DictWriter(csvfile, fieldnames=('conid', 'label', 'exchange', 'symbol', 'ib_symbol', 'currency'))
         writer.writeheader()
         for row in load_instruments(product_type_codes):
             writer.writerow(row)
