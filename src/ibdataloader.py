@@ -118,6 +118,12 @@ def load_for_exchange_partial(exchange_name, exchange_url):
 
 
 def load_for_exchange(exchange_name, exchange_url):
+    """
+
+    :param exchange_name:
+    :param exchange_url:
+    :return: list of dict
+    """
     instruments = list()
     next_page_link = exchange_url
     while True:
@@ -129,6 +135,7 @@ def load_for_exchange(exchange_name, exchange_url):
     return instruments
 
 
+# noinspection PyTypeChecker
 def list_instruments(product_type_codes):
     for product_type_code in sorted(product_type_codes):
         exchanges = load_exchanges_for_product_type(product_type_code)
@@ -137,6 +144,7 @@ def list_instruments(product_type_codes):
             logging.info('processing exchange data %s, %s', exchange_name, exchange_url)
             exchange_instruments = load_for_exchange(exchange_name, exchange_url)
             for instrument in exchange_instruments:
+                instrument['product_type_code'] = product_type_code
                 yield instrument
 
 
@@ -144,7 +152,7 @@ def process_instruments(product_type_codes, results_processor, limit=None):
     """
 
     :param product_type_codes:
-    :param results_processor: function taking (currency, instruments dataframe) as input
+    :param results_processor: function taking (product_type_code, currency, instruments dataframe) as input
     :param limit: limits the number of instruments to process (dev only)
     :return:
     """
@@ -155,9 +163,10 @@ def process_instruments(product_type_codes, results_processor, limit=None):
             break
 
     df = pandas.DataFrame(rows)
-    compact_df = df.groupby(['currency', 'conid', 'symbol', 'ib_symbol', 'label']).count().reset_index()
+    compact_df = df.groupby(['product_type_code', 'currency', 'conid', 'symbol', 'ib_symbol', 'label']).count().reset_index()
     compact_df.drop('exchange', axis=1, inplace=True)
-    by_currency = compact_df.groupby('currency')
-    for currency, instruments_df in by_currency:
-        currency_instruments = instruments_df.drop('currency', axis=1).set_index('conid')
-        results_processor(currency, currency_instruments)
+    by_currency = compact_df.groupby(['product_type_code', 'currency'])
+    for key, instruments_df in by_currency:
+        product_type_code, currency = key
+        currency_instruments = instruments_df.drop('currency', axis=1).drop('product_type_code', axis=1)
+        results_processor(product_type_code, currency, currency_instruments)

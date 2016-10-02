@@ -45,6 +45,15 @@ def file_by_id(drive, file_id):
 
 
 def prepare_sheet(drive, sheets, folder_id, folder_name):
+    """
+    Finds the sheet id for the specified name and creates the sheet if needed.
+
+    :param drive:
+    :param sheets:
+    :param folder_id:
+    :param folder_name:
+    :return:
+    """
     folders, files = children_by_id(drive, folder_id)
     ibrokers_file_candidates = [item for item in files if item['name'] == folder_name]
 
@@ -57,7 +66,7 @@ def prepare_sheet(drive, sheets, folder_id, folder_name):
             'sheets': [
                 {
                     'properties': {
-                        'title': 'Instruments'
+                        'title': 'IB Instruments'
                     }
                 }
             ],

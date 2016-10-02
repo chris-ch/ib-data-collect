@@ -7,7 +7,7 @@ from gservices import setup_services, prepare_sheet
 from oauth2client import tools
 
 _IBROKERS_DB_FOLDER_ID = '0B4QNJgt5Fd0fQ1M0ckVBWVpJdkk'
-_IBROKERS_DB_FILENAME = 'IBrokers Instruments DB'
+_IBROKERS_DB_FILENAME = 'IBrokers DB'
 _DEFAULT_CONFIG_FILE = os.sep.join(('.', 'config.json'))
 
 
@@ -25,7 +25,7 @@ def main():
 
     args = parser.parse_args()
     full_config_path = os.path.abspath(args.config)
-    logging.info('reading from default config "%s"', full_config_path)
+    logging.info('reading from config "%s"', full_config_path)
     if not os.path.isfile(full_config_path):
         raise RuntimeError('unable to load config file: {}'.format(full_config_path))
 
