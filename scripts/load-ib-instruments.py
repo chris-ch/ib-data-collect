@@ -121,7 +121,7 @@ def load_instruments(product_type_codes):
     for product_type_code in sorted(product_type_codes):
         exchanges = load_exchanges_for_product_type(product_type_code)
         logging.info('%d available exchanges for product type "%s"', len(exchanges), product_type_code)
-        for exchange_name, exchange_url in sorted(exchanges[:3], key=itemgetter(0)):
+        for exchange_name, exchange_url in sorted(exchanges, key=itemgetter(0)):
             logging.info('processing exchange data %s, %s', exchange_name, exchange_url)
             exchange_instruments = load_for_exchange(exchange_name, exchange_url)
             for instrument in exchange_instruments:
