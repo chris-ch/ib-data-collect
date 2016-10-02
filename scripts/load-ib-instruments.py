@@ -1,160 +1,28 @@
 import argparse
-import csv
 import logging
 import os
-import re
-from operator import itemgetter
-from urllib.parse import urlparse
-from urllib.parse import parse_qs
-import pandas
-from bs4 import BeautifulSoup
-import pandas
 
-from urlcaching import set_cache_path, open_url, invalidate_key
-
-_PRODUCT_TYPES = {
-    'Stock': 'stk',
-    'Option': 'opt',
-    'Future': 'fut',
-    'Futures Option': 'fop',
-    'ETF': 'etf',
-    'Warrant': 'war',
-    'Structured Product': 'iop',
-    'Single Stock Future': 'ssf',
-    'Forex': 'fx',
-    'Metals': 'cmdty',
-    'Index': 'ind',
-    'Fund': 'mf',
-    'CFD': 'cfd',
-}
-
-_BASE_URL = 'https://www.interactivebrokers.com'
-
-
-def load_exchanges_for_product_type(product_type_code):
-    url_template = _BASE_URL + '/en/index.php?f=products&p={product_type_code}'
-    url = url_template.format(product_type_code=product_type_code)
-    html_text = open_url(url, rejection_marker='To continue please enter', throttle=3)
-    html = BeautifulSoup(html_text, 'html.parser')
-    region_list_tag = html.find('div', {'id': product_type_code})
-    if region_list_tag is None:
-        region_urls = {'unknown': url}
-
-    else:
-        region_urls = {region_link_tag.string: _BASE_URL + region_link_tag['href']
-                       for region_link_tag in region_list_tag.find_all('a')
-                       }
-
-    exchanges = list()
-    for region_name in region_urls:
-        region_url = region_urls[region_name]
-        html_exchanges_text = open_url(region_url, rejection_marker='To continue please enter', throttle=3)
-        html_exchanges = BeautifulSoup(html_exchanges_text, 'html.parser')
-        exchanges_region = list()
-        for link_tag in html_exchanges.find_all('a'):
-            if link_tag.get('href') and link_tag.get('href').startswith('index.php?f='):
-                exchange_name = link_tag.string.encode('ascii', 'ignore').decode().strip()
-                exchange_url = _BASE_URL + '/en/' + link_tag['href']
-                exchanges_region.append((exchange_name, exchange_url))
-
-        exchanges += exchanges_region
-
-    return exchanges
-
-
-def load_for_exchange_partial(exchange_name, exchange_url):
-    instruments = list()
-    html_text = open_url(exchange_url, rejection_marker='To continue please enter', throttle=3)
-
-    def find_stock_details_link(tag):
-        is_link = tag.name == 'a'
-        if is_link and 'href' in tag.attrs:
-            return tag['href'].startswith("javascript:NewWindow('https://misc.interactivebrokers.com/cstools")
-
-        return False
-
-    next_page_url = None
-    try:
-        html = BeautifulSoup(html_text, 'html.parser')
-        pagination_tag = html.find('ul', {'class': 'pagination'})
-        if pagination_tag is not None:
-            current_page_tag = pagination_tag.find('li', {'class': 'active'})
-            if current_page_tag is not None:
-                next_page_tag = current_page_tag.find_next_sibling()
-                if next_page_tag:
-                    next_page_url = _BASE_URL + next_page_tag.find('a').get('href')
-
-        stock_link_tags = html.find_all(find_stock_details_link)
-        for tag in stock_link_tags:
-            url = re.search(r"javascript:NewWindow\('(.*?)',", tag['href']).group(1)
-            query = parse_qs(urlparse(url).query)
-            if 'conid' in query.keys():
-                instrument_data = dict(conid=query['conid'][0], label=tag.string, exchange=exchange_name)
-                tag_row = tag.parent.parent
-                ib_symbol, url_text, symbol, currency = [tag.string for tag in tag_row.find_all('td')]
-                instrument_data['ib_symbol'] = ib_symbol
-                instrument_data['symbol'] = symbol
-                instrument_data['currency'] = currency
-                instruments.append(instrument_data)
-
-    except Exception:
-        logging.error('failed to load exchange "%s"', exchange_name, exc_info=True)
-        invalidate_key(exchange_url)
-        raise
-
-    return instruments, next_page_url
-
-
-def load_for_exchange(exchange_name, exchange_url):
-    instruments = list()
-    next_page_link = exchange_url
-    while True:
-        new_instruments, next_page_link = load_for_exchange_partial(exchange_name, next_page_link)
-        instruments += new_instruments
-        if next_page_link is None:
-            break
-
-    return instruments
-
-
-def load_instruments(product_type_codes):
-    for product_type_code in sorted(product_type_codes):
-        exchanges = load_exchanges_for_product_type(product_type_code)
-        logging.info('%d available exchanges for product type "%s"', len(exchanges), product_type_code)
-        for exchange_name, exchange_url in sorted(exchanges, key=itemgetter(0)):
-            logging.info('processing exchange data %s, %s', exchange_name, exchange_url)
-            exchange_instruments = load_for_exchange(exchange_name, exchange_url)
-            for instrument in exchange_instruments:
-                yield instrument
+import ibdataloader
+from urlcaching import set_cache_path
 
 
 def main(args):
     if args.list_product_types:
         print('Available product types:')
-        for product in _PRODUCT_TYPES:
-            print(' - {} ({})'.format(_PRODUCT_TYPES[product], product))
+        for product in ibdataloader.get_product_type_names():
+            print(' - {} ({})'.format(ibdataloader.get_product_type_code(product), product))
 
         return
 
-    product_type_codes = _PRODUCT_TYPES.values()
+    product_type_codes = ibdataloader.get_product_type_codes()
     if args.product_type:
         product_type_codes = [args.product_type]
 
-    output_file = os.sep.join([args.output_dir, args.output_name + '.csv'])
-    logging.info('saving to file %s', os.path.abspath(output_file))
-    with open(os.path.abspath(output_file), 'w') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=('conid', 'label', 'exchange', 'symbol', 'ib_symbol', 'currency'))
-        writer.writeheader()
-        for row in load_instruments(product_type_codes):
-            writer.writerow(row)
-    
-    ib_df = pandas.read_csv(output_file)
-    ib_df.drop('exchange',axis=1, inplace=True)
+    def results_printer(currency, instruments_df):
+        print(currency)
+        print(instruments_df)
 
-    def merge_exchanges(instruments):
-        return ','.join(instruments.values.tolist())
-
-    ib_df.groupby(['conid', 'label']).agg(merge_exchanges).to_csv('temp.csv')
+    ibdataloader.process_instruments(product_type_codes, results_printer, limit=30)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
@@ -172,7 +40,7 @@ if __name__ == '__main__':
     parser.add_argument('--output-name', type=str, help='name of the output file', default='ib-instr')
     parser.add_argument('--list-product-types', action='store_true', help='only displays available product types')
     parser.add_argument('--use-cache', action='store_true', help='caches web requests (for dev only)')
-    parser.add_argument('product_type', type=str, choices=_PRODUCT_TYPES.values(), nargs='?',
+    parser.add_argument('product_type', type=str, choices=ibdataloader.get_product_type_codes(), nargs='?',
                         help='limits download to specified product type')
     args = parser.parse_args()
     if args.use_cache:
