@@ -95,8 +95,8 @@ def main():
                                               valueInputOption='RAW'
                                               ).execute()
 
-    ibdataloader.process_instruments(product_type_codes, results_writer)
-
+    #ibdataloader.process_instruments(product_type_codes, results_writer)
+    ibdataloader.to_csv(product_type_codes)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')

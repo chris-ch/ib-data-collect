@@ -1,3 +1,4 @@
+import csv
 import logging
 import re
 from operator import itemgetter
@@ -170,3 +171,17 @@ def process_instruments(product_type_codes, results_processor, limit=None):
         product_type_code, currency = key
         currency_instruments = instruments_df.drop('currency', axis=1).drop('product_type_code', axis=1)
         results_processor(product_type_code, currency, currency_instruments)
+
+
+def to_csv(product_type_codes, limit=None):
+    with open('out.csv') as csv_file:
+        writer = csv.DictWriter(csv_file)
+        for count, row in enumerate(list_instruments(product_type_codes)):
+            if count == 0:
+                writer.fieldnames = row.keys()
+                writer.writeheader()
+
+            writer.writerow(row)
+
+            if count == limit:
+                break
