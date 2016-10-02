@@ -27,7 +27,7 @@ _BASE_URL = 'https://www.interactivebrokers.com'
 
 
 def get_product_type_codes():
-    return _PRODUCT_TYPES.values()
+    return set(_PRODUCT_TYPES.values())
 
 
 def get_product_type_code(product_type_name):
@@ -82,7 +82,7 @@ def load_for_exchange_partial(exchange_name, exchange_url):
 
     next_page_url = None
     try:
-        html = BeautifulSoup(html_text, 'html.parser')
+        html = BeautifulSoup(html_text, 'lxml')
         pagination_tag = html.find('ul', {'class': 'pagination'})
         if pagination_tag is not None:
             current_page_tag = pagination_tag.find('li', {'class': 'active'})
@@ -98,7 +98,12 @@ def load_for_exchange_partial(exchange_name, exchange_url):
             if 'conid' in query.keys():
                 instrument_data = dict(conid=query['conid'][0], label=tag.string, exchange=exchange_name)
                 tag_row = tag.parent.parent
-                ib_symbol, url_text, symbol, currency = [tag.string for tag in tag_row.find_all('td')]
+                instrument_tags = [tag.string for tag in tag_row.find_all('td')]
+                if len(instrument_tags) != 4:
+                    raise RuntimeError('Unexpected instrument tags found: %s', instrument_tags)
+
+                ib_symbol, url_text, symbol, currency = instrument_tags
+
                 instrument_data['ib_symbol'] = ib_symbol
                 instrument_data['symbol'] = symbol
                 instrument_data['currency'] = currency
