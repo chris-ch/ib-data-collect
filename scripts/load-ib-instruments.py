@@ -72,7 +72,7 @@ def main():
     drive, sheets = setup_services(client_secret_filename, api_key, token_filename, args)
 
     # noinspection PyTypeChecker
-    def results_writer(product_type_code, currency, instruments_by_con_id):
+    def results_writer(product_type_code, currency, instruments):
         # saving to local drive
         output_filename = args.output_prefix + '-' + currency.lower() + '-' + product_type_code.lower() + '.csv'
         output_path = os.sep.join((args.output_dir, output_filename))
@@ -80,9 +80,8 @@ def main():
         with open(output_path, 'w') as csv_file:
             writer = csv.DictWriter(csv_file, fieldnames=header)
             writer.writeheader()
-            for con_id in instruments_by_con_id:
-                row = instruments_by_con_id[con_id]
-                writer.writerow(row)
+            for instrument in instruments:
+                writer.writerow(instrument)
 
         logging.info('saved file: %s', output_path)
 
@@ -90,8 +89,8 @@ def main():
         sheet_name = '{} {}-{}'.format(config_json['db_file_prefix'], product_type_code.upper(), currency.upper())
         spreadsheet_id = prepare_sheet(drive, sheets, config_json['target_folder_id'], sheet_name)
         logging.info('prepared Google sheet %s: %s', sheet_name, spreadsheet_id)
-        rows = [instruments_by_con_id[con_id] for con_id in instruments_by_con_id]
-        logging.info('saving %d instruments', len(rows) - 1)
+        rows = instruments
+        logging.info('saving %d instruments', len(rows))
         spreadsheet_data = sheets.spreadsheets().get(spreadsheetId=spreadsheet_id).execute()
         first_sheet_id = spreadsheet_data['sheets'][0]['properties']['sheetId']
         clear_sheet_body = {
@@ -121,7 +120,7 @@ def main():
 
         logging.info('saved sheet %s', sheet_name)
 
-    ibdataloader.process_instruments(product_type_codes, results_writer)
+    ibdataloader.process_instruments(args.output_dir, product_type_codes, results_writer, limit=30)
 
 
 if __name__ == '__main__':

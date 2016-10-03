@@ -3,10 +3,12 @@ import logging
 import os
 import re
 import shelve
+import tempfile
 from collections import defaultdict
 from operator import itemgetter
 from urllib.parse import parse_qs, urlparse
 
+import pickle
 from bs4 import BeautifulSoup
 
 from urlcaching import open_url, invalidate_key
@@ -157,15 +159,17 @@ def list_instruments(product_type_codes):
 
 
 # noinspection PyTypeChecker
-def process_instruments(product_type_codes, results_processor, limit=None):
+def process_instruments(output_dir, product_type_codes, results_processor, limit=None):
     """
 
+    :param output_dir: temp file directory
     :param product_type_codes:
-    :param results_processor: function taking (product_type_code, currency, instruments_by_conid dict) as input
+    :param results_processor: function taking (product_type_code, currency, instruments list) as input
     :param limit: limits the number of instruments to process (dev only)
     :return:
     """
-    instruments_db = defaultdict(dict)
+    instruments_db_files = dict()
+    con_id_set = set()
     for count, row in enumerate(list_instruments(product_type_codes)):
         product_type_code = row['product_type_code']
         currency = row['currency']
@@ -174,15 +178,25 @@ def process_instruments(product_type_codes, results_processor, limit=None):
         ib_symbol = row['ib_symbol']
         label = row['label']
         shelve_key = (product_type_code, currency)
-        if con_id not in instruments_db[shelve_key]:
-            instrument_data = {'conid': con_id, 'symbol': symbol, 'ib_symbol': ib_symbol, 'label': label}
-            instruments_db[shelve_key][con_id] = instrument_data
+        if shelve_key not in instruments_db_files:
+            instruments_db_files[shelve_key] = tempfile.TemporaryFile(mode='w+b')
+
+        if con_id not in con_id_set:
+            instrument_data = {'conid': str(con_id), 'symbol': str(symbol), 'ib_symbol': str(ib_symbol), 'label': str(label)}
+            line = pickle.dumps(instrument_data)
+            instruments_db_files[shelve_key].write(line + b'\n')
+            con_id_set.add(con_id)
 
         if count == limit:
             break
 
-    for key in instruments_db:
-        currency_instruments = instruments_db[key]
+    for key in instruments_db_files:
+        instruments_db_files[key].seek(0)
+        currency_instruments = list()
+        for line in instruments_db_files[key]:
+            currency_instruments.append(pickle.loads(line))
+
+        instruments_db_files[key].close()
         logging.info('processing %d instruments for %s', len(currency_instruments), key)
         product_type_code, currency = key
-        results_processor(product_type_code, currency, sorted(currency_instruments, key=lambda k: k['label']))
+        results_processor(product_type_code, currency, sorted(currency_instruments, key=lambda k: k['label'].upper()))
