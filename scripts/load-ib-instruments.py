@@ -120,7 +120,7 @@ def main():
 
         logging.info('saved sheet %s', sheet_name)
 
-    ibdataloader.process_instruments(args.output_dir, product_type_codes, results_writer, limit=30)
+    ibdataloader.process_instruments(args.output_dir, product_type_codes, results_writer)
 
 
 if __name__ == '__main__':
