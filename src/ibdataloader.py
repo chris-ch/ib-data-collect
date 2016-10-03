@@ -1,10 +1,6 @@
-import csv
 import logging
-import os
 import re
-import shelve
 import tempfile
-from collections import defaultdict
 from operator import itemgetter
 from urllib.parse import parse_qs, urlparse
 
