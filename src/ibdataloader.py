@@ -1,10 +1,12 @@
 import csv
 import logging
+import os
 import re
+import shelve
+from collections import defaultdict
 from operator import itemgetter
 from urllib.parse import parse_qs, urlparse
 
-import pandas
 from bs4 import BeautifulSoup
 
 from urlcaching import open_url, invalidate_key
@@ -138,6 +140,11 @@ def load_for_exchange(exchange_name, exchange_url):
 
 # noinspection PyTypeChecker
 def list_instruments(product_type_codes):
+    """
+
+    :param product_type_codes:
+    :return: dict() representing the instrument row
+    """
     for product_type_code in sorted(product_type_codes):
         exchanges = load_exchanges_for_product_type(product_type_code)
         logging.info('%d available exchanges for product type "%s"', len(exchanges), product_type_code)
@@ -149,39 +156,33 @@ def list_instruments(product_type_codes):
                 yield instrument
 
 
+# noinspection PyTypeChecker
 def process_instruments(product_type_codes, results_processor, limit=None):
     """
 
     :param product_type_codes:
-    :param results_processor: function taking (product_type_code, currency, instruments dataframe) as input
+    :param results_processor: function taking (product_type_code, currency, instruments_by_conid dict) as input
     :param limit: limits the number of instruments to process (dev only)
     :return:
     """
-    rows = list()
+    instruments_db = defaultdict(dict)
     for count, row in enumerate(list_instruments(product_type_codes)):
-        rows.append(row)
+        product_type_code = row['product_type_code']
+        currency = row['currency']
+        con_id = row['conid']
+        symbol = row['symbol']
+        ib_symbol = row['ib_symbol']
+        label = row['label']
+        shelve_key = (product_type_code, currency)
+        if con_id not in instruments_db[shelve_key]:
+            instrument_data = {'conid': con_id, 'symbol': symbol, 'ib_symbol': ib_symbol, 'label': label}
+            instruments_db[shelve_key][con_id] = instrument_data
+
         if count == limit:
             break
 
-    df = pandas.DataFrame(rows)
-    compact_df = df.groupby(['product_type_code', 'currency', 'conid', 'symbol', 'ib_symbol', 'label']).count().reset_index()
-    compact_df.drop('exchange', axis=1, inplace=True)
-    by_currency = compact_df.groupby(['product_type_code', 'currency'])
-    for key, instruments_df in by_currency:
+    for key in instruments_db:
+        currency_instruments = instruments_db[key]
+        logging.info('processing %d instruments for %s', len(currency_instruments), key)
         product_type_code, currency = key
-        currency_instruments = instruments_df.drop('currency', axis=1).drop('product_type_code', axis=1)
-        results_processor(product_type_code, currency, currency_instruments)
-
-
-def to_csv(product_type_codes, limit=None):
-    with open('out.csv') as csv_file:
-        writer = csv.DictWriter(csv_file)
-        for count, row in enumerate(list_instruments(product_type_codes)):
-            if count == 0:
-                writer.fieldnames = row.keys()
-                writer.writeheader()
-
-            writer.writerow(row)
-
-            if count == limit:
-                break
+        results_processor(product_type_code, currency, sorted(currency_instruments, key=lambda k: k['label']))
