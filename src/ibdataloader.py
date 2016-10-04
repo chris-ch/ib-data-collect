@@ -4,6 +4,7 @@ import os
 import re
 import shelve
 import tempfile
+import base64
 from collections import defaultdict
 from operator import itemgetter
 from urllib.parse import parse_qs, urlparse
@@ -183,7 +184,7 @@ def process_instruments(output_dir, product_type_codes, results_processor, limit
 
         if con_id not in con_id_set:
             instrument_data = {'conid': str(con_id), 'symbol': str(symbol), 'ib_symbol': str(ib_symbol), 'label': str(label)}
-            line = pickle.dumps(instrument_data)
+            line = base64.b64encode(pickle.dumps(instrument_data))
             instruments_db_files[shelve_key].write(line + b'\n')
             con_id_set.add(con_id)
 
@@ -194,7 +195,10 @@ def process_instruments(output_dir, product_type_codes, results_processor, limit
         instruments_db_files[key].seek(0)
         currency_instruments = list()
         for line in instruments_db_files[key]:
-            currency_instruments.append(pickle.loads(line))
+            if len(line) > 0:
+                logging.debug('unpickling "%s"', line)
+                pickled = pickle.loads(base64.b64decode(line))
+                currency_instruments.append(pickled)
 
         instruments_db_files[key].close()
         logging.info('processing %d instruments for %s', len(currency_instruments), key)
