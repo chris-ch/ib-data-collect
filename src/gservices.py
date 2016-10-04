@@ -113,6 +113,7 @@ def update_sheet(sheets, spreadsheet_id, header, rows):
     """
     spreadsheet_data = sheets.spreadsheets().get(spreadsheetId=spreadsheet_id).execute()
     first_sheet_id = spreadsheet_data['sheets'][0]['properties']['sheetId']
+    first_sheet_title = spreadsheet_data['sheets'][0]['properties']['title']
     clear_sheet_body = {
         'updateCells': {
             'range': {
@@ -125,11 +126,12 @@ def update_sheet(sheets, spreadsheet_id, header, rows):
         'updateSheetProperties': {
             'properties': {
                 'sheetId': first_sheet_id,
+                'title': first_sheet_title,
+                'index': 0,
                 'gridProperties': {
                     'rowCount': len(rows) + 1,
-                    'columnCount': 5,
+                    'columnCount': 10,
                     'frozenRowCount': 1,
-                    'frozenColumnCount': 5,
                     'hideGridlines': False,
                 },
             },
