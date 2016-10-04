@@ -3,7 +3,12 @@ import json
 import logging
 import os
 
-import tweepy
+from twitter import OAuth
+from twitter import OAuth2
+from twitter import Twitter
+from twitter import oauth2_dance
+from twitter import oauth_dance
+from twitter import read_token_file
 
 _DEFAULT_CONFIG_FILE = os.sep.join(('.', 'config.json'))
 
@@ -39,10 +44,23 @@ def main():
         if config_key not in config_json.keys():
             raise RuntimeError('Key {} is missing from config file'.format(config_key))
 
+    consumer_token = config_json['twitter_consumer_token']
+    consumer_secret = config_json['twitter_consumer_secret']
+    twitter_token_filename = config_json['twitter_token_filename']
 
-    consumer_token = args.consumer_token
-    consumer_secret = args.consumer_secret
-    auth = tweepy.OAuthHandler(consumer_token, consumer_secret)
+    if not os.path.isfile(twitter_token_filename):
+        oauth_token, oauth_token_secret = '', ''
+
+    else:
+        oauth_token, oauth_token_secret = read_token_file(twitter_token_filename)
+
+    twitter = Twitter(auth=OAuth(oauth_token, oauth_token_secret, consumer_token, consumer_secret))
+    timeline = twitter.statuses.home_timeline()[0]
+    logging.info('{}: {}'.format(timeline['user'], timeline['text']))
+
+    message = """#InteractiveBrokers mapping conId vs instruments available for stocks and ETFS
+    https://drive.google.com/open?id={}""".format(config_json['target_folder_id'])
+    twitter.statuses.update(status=message)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
