@@ -63,15 +63,23 @@ def set_cache_path(cache_file_path, max_node_files=None, rebalancing_limit=None,
         os.makedirs(_CACHE_FILE_PATH)
 
     logging.debug('setting cache path: %s', cache_file_path_full)
-    _invalidate_expired_entries()
+    invalidate_expired_entries()
 
 
-def _invalidate_expired_entries():
+def invalidate_expired_entries(as_of_date=None):
+    """
+
+    :param as_of_date: fake current date (for dev only)
+    :return:
+    """
     index_name = _index_name()
     if not os.path.exists(index_name):
         return
 
-    expiry_date = datetime.today() - timedelta(days=_EXPIRY_DAYS)
+    if as_of_date is None:
+        as_of_date = datetime.today()
+
+    expiry_date = as_of_date - timedelta(days=_EXPIRY_DAYS)
     with open(index_name, 'r') as index_file:
         expired_keys = list()
         lines = index_file.readlines()
@@ -79,11 +87,12 @@ def _invalidate_expired_entries():
             if len(line.strip()) == 0:
                 continue
 
-            yyyymmdd, key_md5, url = line.strip().split(' ')
+            yyyymmdd, key_md5, key_commas = line.strip().split(' ')
+            key = key_commas[1:-1]
             key_date = datetime.strptime(yyyymmdd, '%Y%m%d')
             if expiry_date > key_date:
-                logging.debug('expired entry for key "%s" (%s)', key_md5[:-1], url)
-                expired_keys.append(url)
+                logging.debug('expired entry for key "%s" (%s)', key_md5[:-1], key)
+                expired_keys.append(key)
 
     _remove_from_cache_multiple(expired_keys)
 
@@ -218,9 +227,15 @@ def _add_to_cache(key, value):
         with open(filename, 'w', encoding='utf-8') as cache_content:
             cache_content.write(value)
 
-        with open(index_name, 'a') as index_file:
-            filename_digest = filename.split(os.path.sep)[-1]
-            index_file.write('%s %s: "%s"\n' % (today, filename_digest, key))
+        if not os.path.exists(index_name):
+            with open(index_name, 'w') as index_file:
+                filename_digest = filename.split(os.path.sep)[-1]
+                index_file.write('%s %s: "%s"\n' % (today, filename_digest, key))
+
+        else:
+            with open(index_name, 'a') as index_file:
+                filename_digest = filename.split(os.path.sep)[-1]
+                index_file.write('%s %s: "%s"\n' % (today, filename_digest, key))
 
     finally:
         _rebalancing.notify_all()
@@ -311,7 +326,11 @@ def empty_cache():
     if is_cache_used():
         for node in os.listdir(_CACHE_FILE_PATH):
             node_path = os.path.sep.join([_CACHE_FILE_PATH, node])
-            rmtree(node_path, ignore_errors=True)
+            if os.path.isfile(node_path):
+                os.remove(node_path)
+
+            else:
+                rmtree(node_path, ignore_errors=True)
 
         if os.path.exists(_index_name()):
             os.remove(_index_name())
@@ -336,8 +355,3 @@ def open_url(url, rejection_marker=None, throttle=None):
 
     content = read_cached(inner_open_url, url)
     return content
-
-if __name__ == '__main__':
-    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
-    set_cache_path('../output/ib-instr-urlcaching', expiry_days=2)
-    _invalidate_expired_entries()
