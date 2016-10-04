@@ -1,4 +1,3 @@
-import os
 import logging
 
 import httplib2
@@ -48,8 +47,8 @@ def prepare_sheet(drive, sheets, folder_id, folder_name):
     """
     Finds the sheet id for the specified name and creates the sheet if needed.
 
-    :param drive:
-    :param sheets:
+    :param drive: Google Drive service
+    :param sheets: Google sheets service
     :param folder_id:
     :param folder_name:
     :return:
@@ -101,3 +100,55 @@ def setup_services(client_secret_filename, api_key, token_filename, args):
     sheets = discovery.build('sheets', 'v4', http=authorized_http, developerKey=api_key)
     return drive, sheets
 
+
+def update_sheet(sheets, spreadsheet_id, header, rows):
+    """
+    Updates the first available sheet from spreadsheet_id with the specified rows and header.
+
+    :param sheets: Google Sheets service
+    :param spreadsheet_id:
+    :param header:
+    :param rows:
+    :return:
+    """
+    spreadsheet_data = sheets.spreadsheets().get(spreadsheetId=spreadsheet_id).execute()
+    first_sheet_id = spreadsheet_data['sheets'][0]['properties']['sheetId']
+    clear_sheet_body = {
+        'updateCells': {
+            'range': {
+                'sheetId': first_sheet_id
+            },
+            'fields': '*',
+        }
+    }
+    set_sheet_properties_body = {
+        'updateSheetProperties': {
+            'properties': {
+                'sheetId': first_sheet_id,
+                'gridProperties': {
+                    'rowCount': len(rows) + 1,
+                    'columnCount': 5,
+                    'frozenRowCount': 1,
+                    'frozenColumnCount': 5,
+                    'hideGridlines': False,
+                },
+            },
+            'fields': '*',
+        }
+    }
+    cell_update_body = {
+        'updateCells': {
+            'range': {'sheetId': first_sheet_id,
+                      'startRowIndex': 0, 'endRowIndex': len(rows) + 1,
+                      'startColumnIndex': 0, 'endColumnIndex': 4},
+            'fields': '*',
+            'rows': [{'values': [
+                {'userEnteredValue': {'stringValue': header_field}} for header_field in header]}] + [
+                        {'values': [{'userEnteredValue': {'stringValue': row[field]}} for field in header]}
+                        for row in rows]
+        }
+    }
+    batch_update_body = {
+        'requests': [clear_sheet_body, set_sheet_properties_body, cell_update_body]
+    }
+    sheets.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=batch_update_body).execute()

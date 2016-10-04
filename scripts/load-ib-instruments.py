@@ -5,10 +5,10 @@ import logging
 import os
 import sys
 
-import ibdataloader
 import oauth2client.tools
 
-from gservices import setup_services, prepare_sheet
+import ibdataloader
+from gservices import setup_services, prepare_sheet, update_sheet
 from urlcaching import set_cache_path
 
 _DEFAULT_CONFIG_FILE = os.sep.join(('.', 'config.json'))
@@ -91,33 +91,7 @@ def main():
         logging.info('prepared Google sheet %s: %s', sheet_name, spreadsheet_id)
         rows = instruments
         logging.info('saving %d instruments', len(rows))
-        spreadsheet_data = sheets.spreadsheets().get(spreadsheetId=spreadsheet_id).execute()
-        first_sheet_id = spreadsheet_data['sheets'][0]['properties']['sheetId']
-        clear_sheet_body = {
-            'updateCells': {
-                'range': {
-                    'sheetId': first_sheet_id
-                },
-                'fields': '*',
-            }
-        }
-        cell_update_body = {
-            'updateCells': {
-                'range': {'sheetId': first_sheet_id,
-                          'startRowIndex': 0, 'endRowIndex': len(rows) + 1,
-                          'startColumnIndex': 0, 'endColumnIndex': 4},
-                'fields': '*',
-                'rows': [{'values': [
-                    {'userEnteredValue': {'stringValue': header_field}} for header_field in header]}] + [
-                            {'values': [{'userEnteredValue': {'stringValue': row[field]}} for field in header]}
-                            for row in rows]
-            }
-        }
-        batch_update_body = {
-            'requests': [clear_sheet_body, cell_update_body]
-        }
-        sheets.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=batch_update_body).execute()
-
+        update_sheet(sheets, spreadsheet_id, header, rows)
         logging.info('saved sheet %s', sheet_name)
 
     ibdataloader.process_instruments(args.output_dir, product_type_codes, results_writer)
