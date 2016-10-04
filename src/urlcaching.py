@@ -24,7 +24,7 @@ import os
 import itertools
 import threading
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from time import sleep
 
 import requests
@@ -33,18 +33,23 @@ import hashlib
 from shutil import rmtree
 
 _CACHE_FILE_PATH = None
+_EXPIRY_DAYS = None
 _MAX_NODE_FILES = 0x100
 _REBALANCING_LIMIT = 0x200
 _HEADERS_CHROME = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 
 
 _rebalancing = threading.Condition()
+_requests_session = None
 
 
 def set_cache_path(cache_file_path, max_node_files=None, rebalancing_limit=None, expiry_days=10):
     global _CACHE_FILE_PATH
     global _MAX_NODE_FILES
     global _REBALANCING_LIMIT
+    global _EXPIRY_DAYS
+
+    _EXPIRY_DAYS = expiry_days
 
     if max_node_files is not None:
         _MAX_NODE_FILES = max_node_files
@@ -58,8 +63,29 @@ def set_cache_path(cache_file_path, max_node_files=None, rebalancing_limit=None,
         os.makedirs(_CACHE_FILE_PATH)
 
     logging.debug('setting cache path: %s', cache_file_path_full)
+    _invalidate_expired_entries()
 
-    # scans index file and invalidates old files at this point
+
+def _invalidate_expired_entries():
+    index_name = _index_name()
+    if not os.path.exists(index_name):
+        return
+
+    expiry_date = datetime.today() - timedelta(days=_EXPIRY_DAYS)
+    with open(index_name, 'r') as index_file:
+        expired_keys = list()
+        lines = index_file.readlines()
+        for line in lines:
+            if len(line.strip()) == 0:
+                continue
+
+            yyyymmdd, key_md5, url = line.strip().split(' ')
+            key_date = datetime.strptime(yyyymmdd, '%Y%m%d')
+            if expiry_date > key_date:
+                logging.debug('expired entry for key "%s" (%s)', key_md5[:-1], url)
+                expired_keys.append(url)
+
+    _remove_from_cache_multiple(expired_keys)
 
 
 def is_cache_used():
@@ -219,28 +245,34 @@ def _get_from_cache(key):
     return content
 
 
-def _remove_from_cache(key):
+def _remove_from_cache_multiple(keys):
     _rebalancing.acquire()
     try:
-        logging.debug('removing from cache: %s', key)
-        filename = get_cache_filename(key)
         index_name = _index_name()
-        os.remove(filename)
-        filename_digest = filename.split(os.path.sep)[-1]
-
         with open(index_name, 'r') as index_file:
             lines = index_file.readlines()
+            for key in keys:
+                filename = get_cache_filename(key)
+                filename_digest = filename.split(os.path.sep)[-1]
+                logging.info('removing key %s from cache' % key)
+                try:
+                    os.remove(filename)
 
-        lines = [line for line in lines if line.split(' ')[1] != filename_digest + ':']
+                except FileNotFoundError:
+                    logging.warning('corrupted cache index: broken reference to file %s', filename)
+
+                lines = [line for line in lines if line.split(' ')[1] != filename_digest + ':']
 
         with open(index_name, 'w') as index_file:
             index_file.writelines(lines)
 
-        logging.info('removed key %s from cache' % filename_digest)
-
     finally:
         _rebalancing.notify_all()
         _rebalancing.release()
+
+
+def _remove_from_cache(key):
+    _remove_from_cache_multiple([key])
 
 
 def read_cached(read_func, key):
@@ -275,7 +307,7 @@ def rebalance_cache():
         rebalance_cache_tree(_CACHE_FILE_PATH)
 
 
-def delete_cache():
+def empty_cache():
     if is_cache_used():
         for node in os.listdir(_CACHE_FILE_PATH):
             node_path = os.path.sep.join([_CACHE_FILE_PATH, node])
@@ -283,8 +315,6 @@ def delete_cache():
 
         if os.path.exists(_index_name()):
             os.remove(_index_name())
-
-_requests_session = None
 
 
 def open_url(url, rejection_marker=None, throttle=None):
@@ -306,3 +336,8 @@ def open_url(url, rejection_marker=None, throttle=None):
 
     content = read_cached(inner_open_url, url)
     return content
+
+if __name__ == '__main__':
+    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
+    set_cache_path('../output/ib-instr-urlcaching', expiry_days=2)
+    _invalidate_expired_entries()
