@@ -5,7 +5,7 @@ Locally caches downloaded pages.
 As opposed to requests_cache it should be able to handle multithreading.
 
 The line below enables caching and sets the cached files path:
-    >>> set_cache_path('example-cache')
+    >>> set_cache_path('./example-cache')
     >>> first_call_response = open_url('https://www.google.ch/search?q=what+time+is+it')
 
 Subsequent calls for the same URL returns the cached data:
@@ -33,15 +33,15 @@ import hashlib
 from shutil import rmtree
 
 _CACHE_FILE_PATH = None
-_MAX_NODE_FILES = 0x400
-_REBALANCING_LIMIT = 0x1000
+_MAX_NODE_FILES = 0x100
+_REBALANCING_LIMIT = 0x200
 _HEADERS_CHROME = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 
 
 _rebalancing = threading.Condition()
 
 
-def set_cache_path(cache_file_path, max_node_files=None, rebalancing_limit=None):
+def set_cache_path(cache_file_path, max_node_files=None, rebalancing_limit=None, expiry_days=10):
     global _CACHE_FILE_PATH
     global _MAX_NODE_FILES
     global _REBALANCING_LIMIT
@@ -58,6 +58,8 @@ def set_cache_path(cache_file_path, max_node_files=None, rebalancing_limit=None)
         os.makedirs(_CACHE_FILE_PATH)
 
     logging.debug('setting cache path: %s', cache_file_path_full)
+
+    # scans index file and invalidates old files at this point
 
 
 def is_cache_used():
@@ -242,6 +244,12 @@ def _remove_from_cache(key):
 
 
 def read_cached(read_func, key):
+    """
+
+    :param read_func: function getting the data that will be cached
+    :param key: key associated to the cache entry
+    :return:
+    """
     logging.debug('reading for key: %s', key)
     if is_cache_used():
         if not is_cached(key):
