@@ -105,4 +105,8 @@ if __name__ == '__main__':
     formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
     file_handler.setFormatter(formatter)
     logging.getLogger().addHandler(file_handler)
-    main()
+    try:
+        main()
+
+    except:
+        logging.exception('error occured')
