@@ -9,7 +9,7 @@ import oauth2client.tools
 
 import ibdataloader
 from gservices import setup_services, prepare_sheet, update_sheet
-from urlcaching import set_cache_path
+from webscrapetools.urlcaching import set_cache_path
 
 _DEFAULT_CONFIG_FILE = os.sep.join(('.', 'config.json'))
 

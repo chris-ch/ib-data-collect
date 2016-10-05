@@ -8,7 +8,7 @@ from urllib.parse import parse_qs, urlparse
 import pickle
 from bs4 import BeautifulSoup
 
-from urlcaching import open_url, invalidate_key
+from webscrapetools.urlcaching import open_url, invalidate_key
 
 _PRODUCT_TYPES = {
     'Stock': 'stk',
