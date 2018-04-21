@@ -4,8 +4,8 @@ import unittest
 from datetime import datetime
 from datetime import timedelta
 
-from taskpool import TaskPool
-from urlcaching import set_cache_path, read_cached, empty_cache, invalidate_expired_entries, is_cached
+from webscrapetools.taskpool import TaskPool
+from webscrapetools.urlcaching import set_cache_path, empty_cache, read_cached, invalidate_expired_entries, is_cached
 
 
 class TestStringMethods(unittest.TestCase):

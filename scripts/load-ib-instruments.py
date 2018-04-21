@@ -5,34 +5,52 @@ import logging
 import os
 import sys
 
-import oauth2client.tools
-
+import gspread
 import ibdataloader
-from gservices import setup_services, prepare_sheet, update_sheet
+from gservices import update_sheet, authorize_services
 from webscrapetools.urlcaching import set_cache_path
 
 _DEFAULT_CONFIG_FILE = os.sep.join(('.', 'config.json'))
+_DEFAULT_GOOGLE_SVC_ACCT_CREDS_FILE = os.sep.join(('.', 'google-service-account-creds.json'))
 
 
 def main():
     parser = argparse.ArgumentParser(description='Loading instruments data from IBrokers',
-                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter,
-                                     parents=[oauth2client.tools.argparser]
+                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter
                                      )
 
     parser.add_argument('--output-dir', type=str, help='location of output directory', default='.')
     parser.add_argument('--output-prefix', type=str, help='prefix for the output files', default='ib-instr')
     parser.add_argument('--list-product-types', action='store_true', help='only displays available product types')
     parser.add_argument('--use-cache', action='store_true', help='caches web requests (for dev only)')
-    parser.add_argument('product_types', type=str, nargs='*',
-                        help='download specified product types, or all if not specified')
     parser.add_argument('--config',
                         metavar='JSON_FILENAME',
                         type=str,
                         help='location of config file, using "{}" by default'.format(_DEFAULT_CONFIG_FILE),
                         default=_DEFAULT_CONFIG_FILE
                         )
+    help_msg_creds = 'location of Google Service Account Credentials file, using "{}" by default'
+    parser.add_argument('--google-creds',
+                        metavar='GOOGLE_SERVICE_ACCOUNT_CREDS_JSON',
+                        type=str,
+                        help=help_msg_creds.format(_DEFAULT_GOOGLE_SVC_ACCT_CREDS_FILE),
+                        default=_DEFAULT_GOOGLE_SVC_ACCT_CREDS_FILE
+                        )
+    parser.add_argument('product_types', type=str, nargs='*',
+                        help='download specified product types, or all if not specified')
     args = parser.parse_args()
+
+    if args.list_product_types:
+        print('Available product types:')
+        for product in ibdataloader.get_product_type_names():
+            print(' - {} ({})'.format(ibdataloader.get_product_type_code(product), product))
+
+        return
+
+    full_creds_path = os.path.abspath(args.google_creds)
+    logging.info('reading Google Service Account credentials from "%s"', full_creds_path)
+    if not os.path.isfile(full_creds_path):
+        raise RuntimeError('unable to load Google Service Account credentials file: {}'.format(full_creds_path))
 
     full_config_path = os.path.abspath(args.config)
     logging.info('reading from config "%s"', full_config_path)
@@ -48,13 +66,6 @@ def main():
     if args.use_cache:
         set_cache_path(os.path.sep.join([args.output_dir, 'ib-instr-urlcaching']))
 
-    if args.list_product_types:
-        print('Available product types:')
-        for product in ibdataloader.get_product_type_names():
-            print(' - {} ({})'.format(ibdataloader.get_product_type_code(product), product))
-
-        return
-
     product_type_codes = set(args.product_types)
     if not product_type_codes.issubset(ibdataloader.get_product_type_codes()):
         allowed_types = ibdataloader.get_product_type_codes()
@@ -64,12 +75,9 @@ def main():
     if not product_type_codes:
         product_type_codes = ibdataloader.get_product_type_codes()
 
-    logging.info('loading %s', product_type_codes)
-
-    client_secret_filename = config_json['google_api_client_secret']
-    api_key = config_json['api_key']
-    token_filename = config_json['token_filename']
-    drive, sheets = setup_services(client_secret_filename, api_key, token_filename, args)
+    logging.info('loading product types {}'.format(product_type_codes))
+    authorized_http, credentials = authorize_services(args.google_creds)
+    svc_sheet = gspread.authorize(credentials)
 
     # noinspection PyTypeChecker
     def results_writer(product_type_code, currency, instruments):
@@ -87,11 +95,10 @@ def main():
 
         # saving to Google drive
         sheet_name = '{} {}-{}'.format(config_json['db_file_prefix'], product_type_code.upper(), currency.upper())
-        spreadsheet_id = prepare_sheet(drive, sheets, config_json['target_folder_id'], sheet_name)
-        logging.info('prepared Google sheet %s: %s', sheet_name, spreadsheet_id)
+        logging.info('prepared Google sheet %s: %s', sheet_name, args.spreadsheet_id)
         rows = instruments
         logging.info('saving %d instruments', len(rows))
-        update_sheet(sheets, spreadsheet_id, header, rows)
+        update_sheet(svc_sheet, args.spreadsheet_id, header, rows)
         logging.info('saved sheet %s', sheet_name)
 
     ibdataloader.process_instruments(args.output_dir, product_type_codes, results_writer)
@@ -108,5 +115,8 @@ if __name__ == '__main__':
     try:
         main()
 
+    except SystemExit:
+        pass
     except:
-        logging.exception('error occured')
+        logging.exception('error occured', sys.exc_info()[0])
+        raise

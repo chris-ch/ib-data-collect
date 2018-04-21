@@ -1,11 +1,11 @@
-import logging
-
 import httplib2
 
 from apiclient import discovery
-from oauth2client import file
-from oauth2client import client
-from oauth2client import tools
+from oauth2client.service_account import ServiceAccountCredentials
+
+
+_GOOGLE_DRIVE_SCOPE = 'https://www.googleapis.com/auth/drive'
+_GOOGLE_DRIVE_FILE_SCOPE = 'https://www.googleapis.com/auth/drive.file'
 
 
 def files(drive, query):
@@ -43,62 +43,30 @@ def file_by_id(drive, file_id):
     return response.execute()
 
 
-def prepare_sheet(drive, sheets, folder_id, folder_name):
+def authorize_services(credentials_file):
     """
-    Finds the sheet id for the specified name and creates the sheet if needed.
 
-    :param drive: Google Drive service
-    :param sheets: Google sheets service
-    :param folder_id:
-    :param folder_name:
+    :param credentials_file:
     :return:
     """
-    folders, files = children_by_id(drive, folder_id)
-    ibrokers_file_candidates = [item for item in files if item['name'] == folder_name]
-
-    if len(ibrokers_file_candidates) == 0:
-        logging.info('creating spreadsheet')
-        create_body = {
-            'properties': {
-                'title': folder_name,
-            },
-            'sheets': [
-                {
-                    'properties': {
-                        'title': 'IB Instruments'
-                    }
-                }
-            ],
-        }
-        spreadsheet_id = sheets.spreadsheets().create(body=create_body).execute()['spreadsheetId']
-        drive.files().update(fileId=spreadsheet_id,
-                             addParents=folder_id,
-                             removeParents='root',
-                             fields='id, parents').execute()
-        logging.info('created spreadsheet %s', spreadsheet_id)
-
-    else:
-        spreadsheet_id = ibrokers_file_candidates[0]['id']
-        sheets.spreadsheets().get(spreadsheetId=spreadsheet_id).execute()
-        logging.info('using existing spreadsheet %s', spreadsheet_id)
-
-    return spreadsheet_id
-
-
-def setup_services(client_secret_filename, api_key, token_filename, args):
-    store = file.Storage(token_filename)
-    credentials = store.get()
+    scopes = [_GOOGLE_DRIVE_SCOPE]
+    credentials = ServiceAccountCredentials.from_json_keyfile_name(credentials_file, scopes=scopes)
     if not credentials or credentials.invalid:
-        logging.info('renewing credentials')
-        scopes = ('https://www.googleapis.com/auth/drive',)
-        flow = client.flow_from_clientsecrets(client_secret_filename, scope=scopes)
-        credentials = tools.run_flow(flow, store, args)
+        raise Exception('Invalid credentials')
 
     authorized_http = credentials.authorize(httplib2.Http())
+    return authorized_http, credentials
 
-    drive = discovery.build('drive', 'v3', http=authorized_http, developerKey=api_key)
-    sheets = discovery.build('sheets', 'v4', http=authorized_http, developerKey=api_key)
-    return drive, sheets
+
+def setup_services(credentials_file):
+    """
+    :param credentials_file: Google JSON Service Account credentials
+    :return: tuple (Drive service, Sheets service)
+    """
+    authorized_http, credentials = authorize_services(credentials_file)
+    svc_drive = discovery.build('drive', 'v3', http=authorized_http, cache_discovery=False)
+    svc_sheets = discovery.build('sheets', 'v4', http=authorized_http, cache_discovery=False)
+    return svc_drive, svc_sheets
 
 
 def update_sheet(sheets, spreadsheet_id, header, rows):
