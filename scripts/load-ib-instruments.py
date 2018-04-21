@@ -95,7 +95,7 @@ def main():
 
         # saving to Google drive
         sheet_name = '{} {}-{}'.format(config_json['db_file_prefix'], product_type_code.upper(), currency.upper())
-        logging.info('prepared Google sheet %s: %s', sheet_name, args.spreadsheet_id)
+        logging.info('prepared Google sheet %s', sheet_name)
         rows = instruments
         logging.info('saving %d instruments', len(rows))
         update_sheet(svc_sheet, args.spreadsheet_id, header, rows)
