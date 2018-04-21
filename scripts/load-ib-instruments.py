@@ -22,7 +22,7 @@ def main():
     parser.add_argument('--output-dir', type=str, help='location of output directory', default='.')
     parser.add_argument('--output-prefix', type=str, help='prefix for the output files', default='ib-instr')
     parser.add_argument('--list-product-types', action='store_true', help='only displays available product types')
-    parser.add_argument('--use-cache', action='store_true', help='caches web requests (for dev only)')
+    parser.add_argument('--use-cache', action='store_true', help='caches web requests')
     parser.add_argument('--config',
                         metavar='JSON_FILENAME',
                         type=str,
