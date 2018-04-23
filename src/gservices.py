@@ -153,13 +153,23 @@ def walk_through_range(header, rows):
             yield row[field]
 
 
-def import_dictrows(spreadsheet, worksheet_name, rows):
+def import_dictrows(spreadsheet, worksheet_name, rows, header):
+    """
+
+    :param spreadsheet:
+    :param worksheet_name:
+    :param rows:
+    :param header:
+    :return:
+    """
     if len(rows) == 0:
         logging.warning("no row to be added for worksheet %s", worksheet_name)
         return
 
     count_rows = len(rows) + 1
-    header = rows[0].keys()
+    if header is None:
+        header = rows[0].keys()
+
     count_cols = len(header)
     worksheet = spreadsheet.add_worksheet(title=worksheet_name, rows=count_rows, cols=count_cols)
     header_range = worksheet.range('%s:%s' % (rowcol_to_a1(1, 1), rowcol_to_a1(1, count_cols)))
@@ -177,11 +187,25 @@ def import_dictrows(spreadsheet, worksheet_name, rows):
 
 
 def worksheets_by_title(spreadsheet):
+    """
+
+    :param spreadsheet:
+    :return:
+    """
     worksheets = spreadsheet.worksheets()
     return {worksheet.title: worksheet for worksheet in worksheets}
 
 
-def update_spreadsheet(svc_sheet, spreadsheet_id, worksheet_name, rows):
+def update_spreadsheet(svc_sheet, spreadsheet_id, worksheet_name, rows, header=None):
+    """
+
+    :param svc_sheet:
+    :param spreadsheet_id:
+    :param worksheet_name:
+    :param rows:
+    :param header:
+    :return:
+    """
     spreadsheet = get_spreadsheet(svc_sheet, spreadsheet_id)
     ws_by_title = worksheets_by_title(spreadsheet)
     matching_worksheets = [ws for ws in spreadsheet.worksheets() if ws.title == worksheet_name]
@@ -192,16 +216,23 @@ def update_spreadsheet(svc_sheet, spreadsheet_id, worksheet_name, rows):
             spreadsheet.del_worksheet(ws_by_title[rename_title])
 
         old_worksheet.update_title(rename_title)
-        new_worksheet = import_dictrows(spreadsheet, worksheet_name, rows)
+        new_worksheet = import_dictrows(spreadsheet, worksheet_name, rows, header)
         spreadsheet.del_worksheet(old_worksheet)
 
     else:
-        new_worksheet = import_dictrows(spreadsheet, worksheet_name, rows)
+        new_worksheet = import_dictrows(spreadsheet, worksheet_name, rows, header)
 
     return new_worksheet
 
 
 def clean_spreadsheet(svc_sheet, spreadsheet_id, worksheet_names):
+    """
+
+    :param svc_sheet:
+    :param spreadsheet_id:
+    :param worksheet_names:
+    :return:
+    """
     spreadsheet = get_spreadsheet(svc_sheet, spreadsheet_id)
     for worksheet in spreadsheet.worksheets():
         if len(spreadsheet.worksheets()) <= 1:
@@ -210,15 +241,6 @@ def clean_spreadsheet(svc_sheet, spreadsheet_id, worksheet_names):
         if worksheet.title not in worksheet_names:
             logging.info('removing worksheet "%s"', worksheet.title)
             spreadsheet.del_worksheet(worksheet)
-
-
-"""
-{
-  "requests": [
-    {
-      "updateDimensionProperties": 
-    },
-    """
 
 
 def resize_column(worksheet, column_index, column_width):

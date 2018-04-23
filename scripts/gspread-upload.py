@@ -97,9 +97,9 @@ def main():
                 for row in reader:
                     rows.append(row)
 
-            # TODO: create currency tab if not yet existing
             spreadsheet_id = config_json['spreadsheets'][product_type_code.lower()]
-            new_worksheet = gservices.update_spreadsheet(svc_sheet, spreadsheet_id, currency, rows)
+            header = ('conid', 'symbol', 'ib_symbol', 'label')
+            new_worksheet = gservices.update_spreadsheet(svc_sheet, spreadsheet_id, currency, rows, header)
             gservices.auto_resize_column(new_worksheet, 4)
 
         else:
