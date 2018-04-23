@@ -77,7 +77,7 @@ def main():
         logging.info("processing product type '%s', currency '%s'", product_type_code, currency)
 
         if product_type_code.lower() in config_json['spreadsheets']:
-            with open(input_file) as csvfile:
+            with open(os.path.join(args.input_dir, input_file)) as csvfile:
                 reader = csv.DictReader(csvfile, delimiter=',')
                 for row in reader:
                     print(row)
