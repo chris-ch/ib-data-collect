@@ -189,7 +189,7 @@ def update_spreadsheet(svc_sheet, spreadsheet_id, worksheet_name, rows):
         old_worksheet = matching_worksheets[0]
         rename_title = 'old_' + worksheet_name
         if rename_title in ws_by_title:
-            spreadsheet.del_worksheet(ws_by_title[old_worksheet])
+            spreadsheet.del_worksheet(ws_by_title[rename_title])
 
         old_worksheet.update_title(rename_title)
         new_worksheet = import_dictrows(spreadsheet, worksheet_name, rows)
