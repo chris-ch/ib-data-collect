@@ -51,7 +51,7 @@ def main():
         raise RuntimeError('unable to load config file: {}'.format(full_config_path))
 
     config_json = json.load(open(args.config, 'rt'))
-    config_keys = ('api_key', 'google_api_client_secret', 'token_filename', 'target_folder_id', 'db_file_prefix', 'spreadsheets')
+    config_keys = ('api_key', 'google_api_client_secret', 'token_filename', 'target_folder_id', 'spreadsheets')
     for config_key in config_keys:
         if config_key not in config_json.keys():
             raise RuntimeError('Key {} is missing from config file'.format(config_key))
