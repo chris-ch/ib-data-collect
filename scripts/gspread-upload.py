@@ -69,7 +69,7 @@ def main():
 
     logging.info('reading input files from %s', os.path.abspath(args.input_dir))
     os.makedirs(args.input_dir, exist_ok=True)
-    available_files = [filename for filename in os.listdir(args.input_dir) if filename.startswith(args.input_prefix)]
+    available_files = [filename for filename in os.listdir(args.input_dir) if filename.startswith(args.input_prefix) and filename.endswith('.csv')]
     logging.info('files: %s', available_files)
 
     categories_raw = [input_file[len(args.input_prefix):-4].split('-')[1:] for input_file in available_files]
