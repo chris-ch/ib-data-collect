@@ -239,3 +239,37 @@ def resize_column(worksheet, column_index, column_width):
     }
 
     return parent.batch_update(body)
+
+
+def auto_resize_columns(worksheet, column_index_start, column_index_end):
+    """
+
+    :param worksheet:
+    :param column_index_start: included, counting from 1
+    :param column_index_end: excluded, counting from 1
+    :return:
+    """
+    parent = worksheet.spreadsheet
+    body = {
+        'requests': [{
+          "autoResizeDimensions": {
+            "dimensions": {
+              "sheetId": worksheet.id,
+              "dimension": "COLUMNS",
+              "startIndex": column_index_start - 1,
+              "endIndex": column_index_end - 1
+            }
+          }
+        }]
+    }
+    return parent.batch_update(body)
+
+
+def auto_resize_column(worksheet, column_index):
+    """
+
+    :param worksheet:
+    :param column_index:
+    :return:
+    """
+    return  auto_resize_columns(worksheet, column_index, column_index + 1)

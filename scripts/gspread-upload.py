@@ -100,7 +100,7 @@ def main():
             # TODO: create currency tab if not yet existing
             spreadsheet_id = config_json['spreadsheets'][product_type_code.lower()]
             new_worksheet = gservices.update_spreadsheet(svc_sheet, spreadsheet_id, currency, rows)
-            gservices.resize_column(new_worksheet, 4, 600)
+            gservices.auto_resize_column(new_worksheet, 4)
 
         else:
             logging.info("missing key '%s' in config 'spreadsheets': not saving to Google sheet", product_type_code.lower())
