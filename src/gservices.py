@@ -176,13 +176,22 @@ def import_dictrows(spreadsheet, worksheet_name, rows):
     return worksheet
 
 
+def worksheets_by_title(spreadsheet):
+    worksheets = spreadsheet.worksheets()
+    return {worksheet.title: worksheet for worksheet in worksheets}
+
+
 def update_spreadsheet(svc_sheet, spreadsheet_id, worksheet_name, rows):
     spreadsheet = get_spreadsheet(svc_sheet, spreadsheet_id)
-
+    ws_by_title = worksheets_by_title(spreadsheet)
     matching_worksheets = [ws for ws in spreadsheet.worksheets() if ws.title == worksheet_name]
     if len(matching_worksheets) > 0:
         old_worksheet = matching_worksheets[0]
-        old_worksheet.update_title('old_' + worksheet_name)
+        rename_title = 'old_' + worksheet_name
+        if rename_title in ws_by_title:
+            spreadsheet.del_worksheet(ws_by_title[old_worksheet])
+
+        old_worksheet.update_title(rename_title)
         new_worksheet = import_dictrows(spreadsheet, worksheet_name, rows)
         spreadsheet.del_worksheet(old_worksheet)
 
