@@ -66,8 +66,8 @@ def main():
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
     logging.getLogger('requests').setLevel(logging.WARNING)
-    logname = os.path.abspath(sys.argv[0]).split(os.sep)[-1]
-    file_handler = logging.FileHandler(logname, mode='w')
+    logname = os.path.abspath(sys.argv[0]).split(os.sep)[-1].split(".")[0]
+    file_handler = logging.FileHandler(logname + '.log', mode='w')
     formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
     file_handler.setFormatter(formatter)
     logging.getLogger().addHandler(file_handler)
