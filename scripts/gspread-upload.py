@@ -72,10 +72,10 @@ def main():
     available_files = [filename for filename in os.listdir(args.input_dir) if filename.startswith(args.input_prefix)]
     logging.info('files: %s', available_files)
 
-
     categories_raw = [input_file[len(args.input_prefix):-4].split('-')[1:] for input_file in available_files]
+    logging.info('re-arranging categories: %s', categories_raw)
     currencies = defaultdict(set)
-    for category, input_file in zip(categories_raw, available_files):
+    for category in categories_raw:
         currency, product_type_code = category
         currencies[product_type_code].add(currency)
 
