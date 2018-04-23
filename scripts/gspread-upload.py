@@ -6,6 +6,7 @@ import os
 import sys
 
 import gspread
+from collections import defaultdict
 
 import gservices
 import ibdataloader
@@ -71,29 +72,42 @@ def main():
     available_files = [filename for filename in os.listdir(args.input_dir) if filename.startswith(args.input_prefix)]
     logging.info('files: %s', available_files)
 
+
+    categories_raw = [input_file[len(args.input_prefix):-4].split('-')[1:] for input_file in available_files]
+    currencies = defaultdict(set)
+    for category, input_file in zip(categories_raw, available_files):
+        currency, product_type_code = category
+        currencies[product_type_code].add(currency)
+
     # saving to Google drive
-    for input_file in available_files:
+    svc_sheet = gservices.authorize_gspread(args.google_creds)
+
+    for input_file in sorted(available_files):
         _, currency, product_type_code = input_file[len(args.input_prefix):-4].split('-')
+        if product_type_code not in args.product_types:
+            logging.info('skipping product type %s, not in %s', product_type_code, args.product_types)
+            continue
+
         logging.info("processing product type '%s', currency '%s'", product_type_code, currency)
 
         if product_type_code.lower() in config_json['spreadsheets']:
+            rows = list()
             with open(os.path.join(args.input_dir, input_file)) as csvfile:
                 reader = csv.DictReader(csvfile, delimiter=',')
                 for row in reader:
-                    print(row)
+                    rows.append(row)
 
             # TODO: create currency tab if not yet existing
-            # TODO: load from csv files
-            spreadsheets = config_json['spreadsheets'][product_type_code.lower()]
-            svc_sheet = gservices.authorize_gspread(args.google_creds)
-            for spreadsheet_id in spreadsheets:
-                rows = instruments
-                logging.info('saving %d instruments', len(rows))
-                update_sheet(svc_sheet, spreadsheet_id, header, rows)
-                logging.info('saved Google sheet %s', spreadsheet_id)
+            spreadsheet_id = config_json['spreadsheets'][product_type_code.lower()]
+            new_worksheet = gservices.update_spreadsheet(svc_sheet, spreadsheet_id, currency, rows)
+            gservices.resize_column(new_worksheet, 4, 400)
 
         else:
             logging.info("missing key '%s' in config 'spreadsheets': not saving to Google sheet", product_type_code.lower())
+
+    for product_type_code in config_json['spreadsheets']:
+        spreadsheet_id = config_json['spreadsheets'][product_type_code.lower()]
+        gservices.clean_spreadsheet(svc_sheet, spreadsheet_id, currencies[product_type_code.lower()])
 
 
 if __name__ == '__main__':

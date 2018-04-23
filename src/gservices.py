@@ -1,14 +1,15 @@
+import logging
 import gspread
 import httplib2
 
 from apiclient import discovery
+from gspread.utils import rowcol_to_a1
 from oauth2client.service_account import ServiceAccountCredentials
-
 
 _GOOGLE_DRIVE_SCOPE = 'https://www.googleapis.com/auth/drive'
 _GOOGLE_DRIVE_FILE_SCOPE = 'https://www.googleapis.com/auth/drive.file'
 
-flag_authorized = False
+svc_sheet = None
 
 
 def authorize_gspread(google_creds):
@@ -18,12 +19,10 @@ def authorize_gspread(google_creds):
     :param google_creds:
     :return:
     """
-    global flag_authorized
-    svc_sheet = None
-    if not flag_authorized:
+    global svc_sheet
+    if not svc_sheet:
         authorized_http, credentials = authorize_services(google_creds)
         svc_sheet = gspread.authorize(credentials)
-        flag_authorized = True
 
     return svc_sheet
 
@@ -89,17 +88,17 @@ def setup_services(credentials_file):
     return svc_drive, svc_sheets
 
 
-def update_sheet(sheets, spreadsheet_id, header, rows):
+def update_sheet(srv_sheets, spreadsheet_id, header, rows):
     """
     Updates the first available sheet from spreadsheet_id with the specified rows and header.
 
-    :param sheets: Google Sheets service
+    :param srv_sheets: Google Sheets service
     :param spreadsheet_id:
     :param header:
     :param rows:
     :return:
     """
-    spreadsheet_data = sheets.spreadsheets().get(spreadsheetId=spreadsheet_id).execute()
+    spreadsheet_data = srv_sheets.spreadsheets().get(spreadsheetId=spreadsheet_id).execute()
     first_sheet_id = spreadsheet_data['sheets'][0]['properties']['sheetId']
     first_sheet_title = spreadsheet_data['sheets'][0]['properties']['title']
     clear_sheet_body = {
@@ -141,4 +140,102 @@ def update_sheet(sheets, spreadsheet_id, header, rows):
     batch_update_body = {
         'requests': [clear_sheet_body, set_sheet_properties_body, cell_update_body]
     }
-    sheets.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=batch_update_body).execute()
+    srv_sheets.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=batch_update_body).execute()
+
+
+def get_spreadsheet(srv_sheet, spreadsheet_id):
+    return srv_sheet.open_by_key(spreadsheet_id)
+
+
+def walk_through_range(header, rows):
+    for row in rows:
+        for field in header:
+            yield row[field]
+
+
+def import_dictrows(spreadsheet, worksheet_name, rows):
+    if len(rows) == 0:
+        logging.warning("no row to be added for worksheet %s", worksheet_name)
+        return
+
+    count_rows = len(rows) + 1
+    header = rows[0].keys()
+    count_cols = len(header)
+    worksheet = spreadsheet.add_worksheet(title=worksheet_name, rows=count_rows, cols=count_cols)
+    header_range = worksheet.range('%s:%s' % (rowcol_to_a1(1, 1), rowcol_to_a1(1, count_cols)))
+    for field, cell in zip(header, header_range):
+        cell.value = field
+
+    worksheet.update_cells(header_range)
+
+    data_range = worksheet.range('%s:%s' % (rowcol_to_a1(2, 1), rowcol_to_a1(count_rows, count_cols)))
+    for cell, value in zip(data_range, walk_through_range(header, rows)):
+        cell.value = value
+
+    worksheet.update_cells(data_range)
+    return worksheet
+
+
+def update_spreadsheet(svc_sheet, spreadsheet_id, worksheet_name, rows):
+    spreadsheet = get_spreadsheet(svc_sheet, spreadsheet_id)
+
+    matching_worksheets = [ws for ws in spreadsheet.worksheets() if ws.title == worksheet_name]
+    if len(matching_worksheets) > 0:
+        old_worksheet = matching_worksheets[0]
+        old_worksheet.update_title('old_' + worksheet_name)
+        new_worksheet = import_dictrows(spreadsheet, worksheet_name, rows)
+        spreadsheet.del_worksheet(old_worksheet)
+
+    else:
+        new_worksheet = import_dictrows(spreadsheet, worksheet_name, rows)
+
+    return new_worksheet
+
+
+def clean_spreadsheet(svc_sheet, spreadsheet_id, worksheet_names):
+    spreadsheet = get_spreadsheet(svc_sheet, spreadsheet_id)
+    for worksheet in spreadsheet.worksheets():
+        if len(spreadsheet.worksheets()) <= 1:
+            break
+
+        if worksheet.title not in worksheet_names:
+            logging.info('removing worksheet "%s"', worksheet.title)
+            spreadsheet.del_worksheet(worksheet)
+
+
+"""
+{
+  "requests": [
+    {
+      "updateDimensionProperties": 
+    },
+    """
+
+
+def resize_column(worksheet, column_index, column_width):
+    """
+
+    :param worksheet:
+    :param column_index: counting from 1
+    :param column_width:
+    :return:
+    """
+    parent = worksheet.spreadsheet
+    body = {
+        'requests': [{
+            'updateDimensionProperties': {
+                "range": {
+                    "sheetId": worksheet.id,
+                    "dimension": "COLUMNS",
+                    "startIndex": column_index - 1,
+                    "endIndex": column_index
+                },
+                "properties": {
+                    "pixelSize": column_width
+                },
+                "fields": "pixelSize"
+            }
+        }]
+    }
+
+    return parent.batch_update(body)
