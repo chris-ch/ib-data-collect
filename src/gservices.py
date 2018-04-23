@@ -1,3 +1,4 @@
+import gspread
 import httplib2
 
 from apiclient import discovery
@@ -6,6 +7,25 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 _GOOGLE_DRIVE_SCOPE = 'https://www.googleapis.com/auth/drive'
 _GOOGLE_DRIVE_FILE_SCOPE = 'https://www.googleapis.com/auth/drive.file'
+
+flag_authorized = False
+
+
+def authorize_gspread(google_creds):
+    """
+    Authorization is called only once and then re-used.
+
+    :param google_creds:
+    :return:
+    """
+    global flag_authorized
+    svc_sheet = None
+    if not flag_authorized:
+        authorized_http, credentials = authorize_services(google_creds)
+        svc_sheet = gspread.authorize(credentials)
+        flag_authorized = True
+
+    return svc_sheet
 
 
 def files(drive, query):

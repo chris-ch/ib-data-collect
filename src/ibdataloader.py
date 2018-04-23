@@ -156,10 +156,9 @@ def list_instruments(product_type_codes):
 
 
 # noinspection PyTypeChecker
-def process_instruments(output_dir, product_type_codes, results_processor, limit=None):
+def process_instruments(product_type_codes, results_processor, limit=None):
     """
 
-    :param output_dir: temp file directory
     :param product_type_codes:
     :param results_processor: function taking (product_type_code, currency, instruments list) as input
     :param limit: limits the number of instruments to process (dev only)
