@@ -4,6 +4,7 @@ import json
 import logging
 import os
 
+import sys
 from twitter import OAuth
 from twitter import Twitter
 from twitter import oauth_dance
@@ -13,22 +14,16 @@ _DEFAULT_CONFIG_FILE = os.sep.join(('.', 'config.json'))
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Loading instruments data from IBrokers',
+    parser = argparse.ArgumentParser(description='Publishing IBroker DB updates on twitter',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter,
                                      )
-
-    parser.add_argument('--output-dir', type=str, help='location of output directory', default='.')
-    parser.add_argument('--output-prefix', type=str, help='prefix for the output files', default='ib-instr')
-    parser.add_argument('--list-product-types', action='store_true', help='only displays available product types')
-    parser.add_argument('--use-cache', action='store_true', help='caches web requests (for dev only)')
-    parser.add_argument('product_types', type=str, nargs='*',
-                        help='download specified product types, or all if not specified')
     parser.add_argument('--config',
                         metavar='JSON_FILENAME',
                         type=str,
                         help='location of config file, using "{}" by default'.format(_DEFAULT_CONFIG_FILE),
                         default=_DEFAULT_CONFIG_FILE
                         )
+    parser.add_argument('--log-only', action='store_true', help='only logs message to be published, no twitter update')
     args = parser.parse_args()
     full_config_path = os.path.abspath(args.config)
     logging.info('reading from config "%s"', full_config_path)
@@ -36,9 +31,7 @@ def main():
         raise RuntimeError('unable to load config file: {}'.format(full_config_path))
 
     config_json = json.load(open(args.config, 'rt'))
-    config_keys = ('api_key', 'google_api_client_secret', 'token_filename',
-                   'target_folder_id', 'db_file_prefix',
-                   'twitter_consumer_token', 'twitter_consumer_secret',)
+    config_keys = ('target_folder_id', 'twitter_consumer_token', 'twitter_consumer_secret', 'twitter_token_filename')
     for config_key in config_keys:
         if config_key not in config_json.keys():
             raise RuntimeError('Key {} is missing from config file'.format(config_key))
@@ -54,23 +47,25 @@ def main():
 
     twitter_service = Twitter(auth=OAuth(oauth_token, oauth_token_secret, consumer_token, consumer_secret))
     target_folder_id = config_json['target_folder_id']
-    publish_twitter(twitter_service, target_folder_id)
+    publish_twitter(twitter_service, target_folder_id, args.log_only)
 
 
-def publish_twitter(twitter_service, target_folder_id):
-    timeline = twitter_service.statuses.home_timeline()[0]
-    logging.info('{}: {}'.format(timeline['user'], timeline['text']))
-    message = '#InteractiveBrokers mapping conId vs instruments available for stocks and ETFS: {} {} update'
+def publish_twitter(twitter_service, target_folder_id, log_only=False):
+    message = '({0} update) #InteractiveBroker mapping conId vs available instruments (stocks, ETFs, future contracts): {1}'
     dir_url = 'https://drive.google.com/open?id={}'.format(target_folder_id)
     month = ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
              'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')[datetime.today().month - 1]
-    twitter_service.statuses.update(status=message.format(dir_url, month))
+    twitter_message = message.format(month, dir_url)
+    logging.info('publishing message: %s', twitter_message)
+    if not log_only:
+        timeline = twitter_service.statuses.home_timeline()[0]
+        logging.info('{}: {}'.format(timeline['user'], timeline['text']))
+        twitter_service.statuses.update(status=twitter_message)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
-    logging.getLogger('requests').setLevel(logging.WARNING)
-    logging.getLogger('googleapiclient.discovery').setLevel(logging.WARNING)
-    file_handler = logging.FileHandler('ib-instruments.log', mode='w')
+    logname = os.path.abspath(sys.argv[0]).split(os.sep)[-1].split(".")[0]
+    file_handler = logging.FileHandler(logname + '.log', mode='w')
     formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
     file_handler.setFormatter(formatter)
     logging.getLogger().addHandler(file_handler)
