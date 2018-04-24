@@ -31,7 +31,7 @@ def main():
     if args.use_cache:
         cache_path = os.path.abspath(os.path.sep.join([args.use_cache, 'ib-instr-urlcaching']))
         logging.info('using cache %s for web requests', cache_path)
-        set_cache_path(cache_path)
+        set_cache_path(cache_path, expiry_days=2)
 
     product_type_codes = set(args.product_types)
     if not product_type_codes.issubset(ibdataloader.get_product_type_codes()):
