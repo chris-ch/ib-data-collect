@@ -5,15 +5,14 @@ import logging
 import os
 import sys
 
-import gspread
 from collections import defaultdict
 
 import gservices
 import ibdataloader
-from gservices import update_sheet, authorize_services
 
 _DEFAULT_CONFIG_FILE = os.sep.join(('.', 'config-gspread-upload.json'))
 _DEFAULT_GOOGLE_SVC_ACCT_CREDS_FILE = os.sep.join(('.', 'google-service-account-creds.json'))
+_FILENAME_SEPARATOR = '_'
 
 
 def main():
@@ -72,7 +71,7 @@ def main():
     available_files = [filename for filename in os.listdir(args.input_dir) if filename.startswith(args.input_prefix) and filename.endswith('.csv')]
     logging.info('files: %s', available_files)
 
-    categories_raw = [input_file[len(args.input_prefix):-4].split('-')[1:] for input_file in available_files]
+    categories_raw = [input_file[len(args.input_prefix):-4].split(_FILENAME_SEPARATOR)[1:] for input_file in available_files]
     logging.info('re-arranging categories: %s', categories_raw)
     currencies = defaultdict(set)
     for category in categories_raw:
@@ -83,7 +82,7 @@ def main():
     svc_sheet = gservices.authorize_gspread(args.google_creds)
 
     for input_file in sorted(available_files):
-        _, currency, product_type_code = input_file[len(args.input_prefix):-4].split('-')
+        _, currency, product_type_code = input_file[len(args.input_prefix):-4].split(_FILENAME_SEPARATOR)
         if product_type_code not in args.product_types:
             logging.info('skipping product type %s, not in %s', product_type_code, args.product_types)
             continue
@@ -124,5 +123,5 @@ if __name__ == '__main__':
     except SystemExit:
         pass
     except:
-        logging.exception('error occured', sys.exc_info()[0])
+        logging.exception('error occurred', sys.exc_info()[0])
         raise

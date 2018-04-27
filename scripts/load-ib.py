@@ -7,6 +7,7 @@ import sys
 import ibdataloader
 from webscrapetools.urlcaching import set_cache_path
 
+_FILENAME_SEPARATOR = '_'
 
 def main():
     parser = argparse.ArgumentParser(description='Loading instruments data from IBrokers',
@@ -49,7 +50,7 @@ def main():
         # saving to local drive
         logging.info('saving results to %s', os.path.abspath(args.output_dir))
         os.makedirs(args.output_dir, exist_ok=True)
-        output_filename = args.output_prefix + '-' + currency.lower() + '-' + product_type_code.lower() + '.csv'
+        output_filename = args.output_prefix + _FILENAME_SEPARATOR + currency.lower() + _FILENAME_SEPARATOR + product_type_code.lower() + '.csv'
         output_path = os.path.abspath(os.sep.join((args.output_dir, output_filename)))
         header = ('conid', 'symbol', 'ib_symbol', 'label')
         with open(output_path, 'w') as csv_file:
@@ -77,5 +78,5 @@ if __name__ == '__main__':
     except SystemExit:
         pass
     except:
-        logging.exception('error occured', sys.exc_info()[0])
+        logging.exception('error occurred', sys.exc_info()[0])
         raise
