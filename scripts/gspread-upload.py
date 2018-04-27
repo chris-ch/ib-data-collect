@@ -71,18 +71,29 @@ def main():
     available_files = [filename for filename in os.listdir(args.input_dir) if filename.startswith(args.input_prefix) and filename.endswith('.csv')]
     logging.info('files: %s', available_files)
 
-    categories_raw = [input_file[len(args.input_prefix):-4].split(_FILENAME_SEPARATOR)[1:] for input_file in available_files]
+    def check_input(inp, prefix):
+        return inp[len(prefix):-4].split(_FILENAME_SEPARATOR)
+
+    categories_raw = [check_input(input_file, args.input_prefix)[1:] for input_file in available_files]
     logging.info('re-arranging categories: %s', categories_raw)
     currencies = defaultdict(set)
     for category in categories_raw:
-        currency, product_type_code = category
-        currencies[product_type_code].add(currency)
+        if len(category) == 2:
+            currency, product_type_code = category
+            currencies[product_type_code].add(currency)
+
+        else:
+            logging.warning('ignoring input: %s (unable to identify category and currency)', category)
 
     # saving to Google drive
     svc_sheet = gservices.authorize_gspread(args.google_creds)
 
     for input_file in sorted(available_files):
-        _, currency, product_type_code = input_file[len(args.input_prefix):-4].split(_FILENAME_SEPARATOR)
+        input_category = check_input(input_file, args.input_prefix)
+        if len(input_category) != 3:
+            continue
+
+        _, currency, product_type_code = input_category
         if product_type_code not in args.product_types:
             logging.info('skipping product type %s, not in %s', product_type_code, args.product_types)
             continue
