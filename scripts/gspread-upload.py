@@ -6,6 +6,7 @@ import os
 import sys
 
 from collections import defaultdict
+from time import sleep
 
 import gservices
 import ibdataloader
@@ -98,6 +99,7 @@ def main():
             logging.info('skipping product type %s, not in %s', product_type_code, args.product_types)
             continue
 
+        sleep(100)  # gives Google some time to breathe (limit is 100 requests within a 100s period for any given user)
         logging.info("processing product type '%s', currency '%s'", product_type_code, currency)
 
         if product_type_code.lower() in config_json['spreadsheets']:
