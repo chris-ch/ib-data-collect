@@ -87,7 +87,9 @@ def main():
             logging.warning('ignoring input: %s (unable to identify category and currency)', category)
 
     # saving to Google drive
+    logging.info('sending credentials: "%s"', args.google_creds)
     svc_sheet = gservices.authorize_gspread(args.google_creds)
+
 
     for input_file in sorted(available_files):
         input_category = check_input(input_file, args.input_prefix)
@@ -111,6 +113,7 @@ def main():
 
             spreadsheet_id = config_json['spreadsheets'][product_type_code.lower()]
             header = ('conid', 'symbol', 'ib_symbol', 'label')
+            logging.info('updating spreadsheet %s', spreadsheet_id)
             new_worksheet = gservices.update_spreadsheet(svc_sheet, spreadsheet_id, currency, rows, header)
             gservices.auto_resize_column(new_worksheet, 4)
 
