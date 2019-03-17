@@ -18,6 +18,7 @@ def main():
     parser.add_argument('--output-prefix', type=str, help='prefix for the output files', default='ib-instr')
     parser.add_argument('--list-product-types', action='store_true', help='only displays available product types')
     parser.add_argument('--use-cache', type=str, help='directory for caching web requests', default=None)
+    parser.add_argument('--cache-expiry', type=int, help='number of days for cache expiry', default=2)
     parser.add_argument('product_types', type=str, nargs='*',
                         help='download specified product types, or all if not specified')
     args = parser.parse_args()
@@ -31,8 +32,8 @@ def main():
 
     if args.use_cache:
         cache_path = os.path.abspath(os.path.sep.join([args.use_cache, 'ib-instr-urlcaching']))
-        logging.info('using cache %s for web requests', cache_path)
-        set_cache_path(cache_path, expiry_days=2)
+        logging.info('using cache %s for web requests (expiring after %d days)', cache_path, args.cache_expiry)
+        set_cache_path(cache_path, expiry_days=args.cache_expiry)
 
     product_type_codes = set(args.product_types)
     if not product_type_codes.issubset(ibdataloader.get_product_type_codes()):

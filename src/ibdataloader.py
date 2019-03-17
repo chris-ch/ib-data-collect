@@ -8,7 +8,7 @@ from urllib.parse import parse_qs, urlparse
 import pickle
 from bs4 import BeautifulSoup
 
-from webscrapetools.urlcaching import open_url, invalidate_key
+from webscrapetools import urlcaching
 
 _PRODUCT_TYPES = {
     'Stock': 'stk',
@@ -43,7 +43,8 @@ def get_product_type_names():
 def load_exchanges_for_product_type(product_type_code):
     url_template = _BASE_URL + '/en/index.php?f=products&p={product_type_code}'
     url = url_template.format(product_type_code=product_type_code)
-    html_text = open_url(url, rejection_marker='To continue please enter', throttle=3)
+    logging.info('loading data for product type %s: %s', product_type_code, url)
+    html_text = urlcaching.open_url(url, rejection_marker='To continue please enter', throttle=3)
     html = BeautifulSoup(html_text, 'html.parser')
     region_list_tag = html.find('div', {'id': product_type_code})
     if region_list_tag is None:
@@ -57,13 +58,22 @@ def load_exchanges_for_product_type(product_type_code):
     exchanges = list()
     for region_name in region_urls:
         region_url = region_urls[region_name]
-        html_exchanges_text = open_url(region_url, rejection_marker='To continue please enter', throttle=3)
+        html_exchanges_text = urlcaching.open_url(region_url, rejection_marker='To continue please enter', throttle=3)
+
         html_exchanges = BeautifulSoup(html_exchanges_text, 'html.parser')
         exchanges_region = list()
         for link_tag in html_exchanges.find_all('a'):
             if link_tag.get('href') and link_tag.get('href').startswith('index.php?f='):
                 exchange_name = link_tag.string.encode('ascii', 'ignore').decode().strip()
-                exchange_url = _BASE_URL + '/en/' + link_tag['href']
+                last_request = urlcaching.get_last_request()
+                if last_request:
+                    base_url = urlparse(last_request.url)
+                    exchange_url = base_url.scheme + '://' + base_url.netloc + '/en/' + link_tag['href']
+
+                else:
+                    exchange_url = _BASE_URL + '/en/' + link_tag['href']
+
+                logging.info('found url for exchange %s: %s', exchange_name, exchange_url)
                 exchanges_region.append((exchange_name, exchange_url))
 
         exchanges += exchanges_region
@@ -73,7 +83,7 @@ def load_exchanges_for_product_type(product_type_code):
 
 def load_for_exchange_partial(exchange_name, exchange_url):
     instruments = list()
-    html_text = open_url(exchange_url, rejection_marker='To continue please enter', throttle=3)
+    html_text = urlcaching.open_url(exchange_url, rejection_marker='To continue please enter', throttle=3)
 
     def find_stock_details_link(tag):
         is_link = tag.name == 'a'
@@ -113,7 +123,7 @@ def load_for_exchange_partial(exchange_name, exchange_url):
 
     except Exception:
         logging.error('failed to load exchange "%s"', exchange_name, exc_info=True)
-        invalidate_key(exchange_url)
+        urlcaching.invalidate_key(exchange_url)
         raise
 
     return instruments, next_page_url
@@ -129,7 +139,11 @@ def load_for_exchange(exchange_name, exchange_url):
     instruments = list()
     next_page_link = exchange_url
     while True:
+        logging.info('processing page %s', next_page_link)
         new_instruments, next_page_link = load_for_exchange_partial(exchange_name, next_page_link)
+        if len(new_instruments) > 0:
+            logging.info('retrieved %d instruments from "%s" through "%s"', len(new_instruments), new_instruments[0]['label'], new_instruments[-1]['label'])
+
         instruments += new_instruments
         if next_page_link is None:
             break

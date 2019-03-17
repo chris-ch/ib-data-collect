@@ -11,5 +11,5 @@ simplejson                == 3.8.2
 six                       == 1.10.0
 uritemplate               == 0.6
 twitter                   == 1.17.1
-webscrapetools            == 0.4.0
+webscrapetools            == 0.4.1
 gspread                   == 3.0.0
