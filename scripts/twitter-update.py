@@ -62,6 +62,7 @@ def publish_twitter(twitter_service, target_folder_id, log_only=False):
         logging.info('{}: {}'.format(timeline['user'], timeline['text']))
         twitter_service.statuses.update(status=twitter_message)
 
+
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
     logname = os.path.abspath(sys.argv[0]).split(os.sep)[-1].split(".")[0]

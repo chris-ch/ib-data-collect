@@ -1,3 +1,4 @@
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -91,3 +92,8 @@ ENV/
 /output/
 .idea
 ib-instr-urlcaching
+
+awscli-bundle
+/awscli-bundle.zip
+.aws-sam
+/packaged.yaml

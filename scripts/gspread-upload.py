@@ -90,7 +90,6 @@ def main():
     logging.info('sending credentials: "%s"', args.google_creds)
     svc_sheet = gservices.authorize_gspread(args.google_creds)
 
-
     for input_file in sorted(available_files):
         input_category = check_input(input_file, args.input_prefix)
         if len(input_category) != 3:
