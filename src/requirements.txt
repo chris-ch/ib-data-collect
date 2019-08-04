@@ -13,3 +13,5 @@ uritemplate               == 0.6
 twitter                   == 1.17.1
 webscrapetools            == 0.4.1
 gspread                   == 3.1.0
+pytest
+pytest-mock

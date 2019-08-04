@@ -93,7 +93,7 @@ Next, we install test dependencies and we run `pytest` against our `tests` folde
 
 ```bash
 pip install pytest pytest-mock --user
-python -m pytest tests/ -v
+PYTHONPATH=src python -m pytest tests/ -v
 ```
 
 ## Cleanup
