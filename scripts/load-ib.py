@@ -3,11 +3,13 @@ import csv
 import logging
 import os
 import sys
+from typing import Iterable
 
 import ibdataloader
 from webscrapetools.urlcaching import set_cache_path
 
 _FILENAME_SEPARATOR = '_'
+
 
 def main():
     parser = argparse.ArgumentParser(description='Loading instruments data from IBrokers',
@@ -25,8 +27,8 @@ def main():
 
     if args.list_product_types:
         print('Available product types:')
-        for product in ibdataloader.get_product_type_names():
-            print(' - {} ({})'.format(ibdataloader.get_product_type_code(product), product))
+        for product in ibdataloader.ProductType:
+            print(' - {} ({})'.format(product.value, product.long_name()))
 
         return
 
@@ -36,22 +38,25 @@ def main():
         set_cache_path(cache_path, expiry_days=args.cache_expiry)
 
     product_type_codes = set(args.product_types)
-    if not product_type_codes.issubset(ibdataloader.get_product_type_codes()):
-        allowed_types = ibdataloader.get_product_type_codes()
+    if not product_type_codes.issubset(set(prod_type.value for prod_type in ibdataloader.ProductType)):
+        allowed_types = set((prod_type.value for prod_type in ibdataloader.ProductType))
         logging.error('some instrument types are not defined: %s', product_type_codes.difference(allowed_types))
         sys.exit(0)
 
     if not product_type_codes:
-        product_type_codes = ibdataloader.get_product_type_codes()
+        product_types = list(ibdataloader.ProductType)
 
-    logging.info('loading product types {}'.format(product_type_codes))
+    else:
+        product_types = list(prod_type for prod_type in ibdataloader.ProductType if prod_type.value in product_type_codes)
+
+    logging.info('loading product types {}'.format(product_types))
 
     # noinspection PyTypeChecker
-    def results_writer(product_type_code, currency, instruments):
+    def results_writer(product_type: ibdataloader.ProductType, currency: str, instruments: Iterable[str]) -> None:
         # saving to local drive
         logging.info('saving results to %s', os.path.abspath(args.output_dir))
         os.makedirs(args.output_dir, exist_ok=True)
-        output_filename = args.output_prefix + _FILENAME_SEPARATOR + currency.lower() + _FILENAME_SEPARATOR + product_type_code.lower() + '.csv'
+        output_filename = args.output_prefix + _FILENAME_SEPARATOR + currency.lower() + _FILENAME_SEPARATOR + product_type.value + '.csv'
         output_path = os.path.abspath(os.sep.join((args.output_dir, output_filename)))
         header = ('conid', 'symbol', 'ib_symbol', 'label')
         with open(output_path, 'w') as csv_file:
@@ -62,7 +67,7 @@ def main():
 
         logging.info('saved file: %s', output_path)
 
-    ibdataloader.process_instruments(product_type_codes, results_writer)
+    ibdataloader.process_instruments(product_types, results_writer)
 
 
 if __name__ == '__main__':

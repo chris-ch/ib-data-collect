@@ -1,3 +1,21 @@
+# sam-app
+
+This is a sample template for sam-app - Below is a brief explanation of what we have generated for you:
+
+```bash
+.
+├── README.md                   <-- This instructions file
+├── event.json                  <-- API Gateway Proxy Integration event payload
+├── hello_world                 <-- Source code for a lambda function
+│   ├── __init__.py
+│   ├── app.py                  <-- Lambda function code
+│   ├── requirements.txt        <-- Lambda function code
+├── template.yaml               <-- SAM Template
+└── tests                       <-- Unit tests
+    └── unit
+        ├── __init__.py
+        └── test_handler.py
+```
 
 ## Requirements
 
@@ -7,18 +25,12 @@
 
 ## Setup process
 
-### Build
-
-```bash
-sam build --use-container --template ./aws-template.yaml
-```
-
 ### Local development
 
 **Invoking function locally using a local sample payload**
 
 ```bash
-sam local invoke HelloWorldFunction --event resources/event.json
+sam local invoke HelloWorldFunction --event event.json
 ```
 
 **Invoking function locally through local API Gateway**
@@ -26,7 +38,21 @@ sam local invoke HelloWorldFunction --event resources/event.json
 ```bash
 sam local start-api
 ```
-If the previous command ran successfully you should now be able to hit the following local endpoint to invoke your function http://localhost:3000/hello
+
+If the previous command ran successfully you should now be able to hit the following local endpoint to invoke your function `http://localhost:3000/hello`
+
+**SAM CLI** is used to emulate both Lambda and API Gateway locally and uses our `template.yaml` to understand how to bootstrap this environment (runtime, where the source code is, etc.) - The following excerpt is what the CLI will read in order to initialize an API and its routes:
+
+```yaml
+...
+Events:
+    HelloWorld:
+        Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+        Properties:
+            Path: /hello
+            Method: get
+```
+
 ## Packaging and deployment
 
 AWS Lambda Python runtime requires a flat folder with all dependencies including the application. SAM will use `CodeUri` property to know where to look up for both application and dependencies:
@@ -50,7 +76,7 @@ Next, run the following command to package our Lambda function to S3:
 
 ```bash
 sam package \
-    --output-template-file output/packaged.yaml \
+    --output-template-file packaged.yaml \
     --s3-bucket REPLACE_THIS_WITH_YOUR_S3_BUCKET_NAME
 ```
 
@@ -58,7 +84,7 @@ Next, the following command will create a Cloudformation Stack and deploy your S
 
 ```bash
 sam deploy \
-    --template-file output/packaged.yaml \
+    --template-file packaged.yaml \
     --stack-name sam-app \
     --capabilities CAPABILITY_IAM
 ```
@@ -93,7 +119,7 @@ Next, we install test dependencies and we run `pytest` against our `tests` folde
 
 ```bash
 pip install pytest pytest-mock --user
-PYTHONPATH=src python -m pytest tests/ -v
+python -m pytest tests/ -v
 ```
 
 ## Cleanup

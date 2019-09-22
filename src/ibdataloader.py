@@ -2,7 +2,9 @@ import logging
 import re
 import tempfile
 import base64
+from enum import Enum, unique
 from operator import itemgetter
+from typing import Iterable, Callable, Generator, Dict, Tuple, List
 from urllib.parse import parse_qs, urlparse
 
 import pickle
@@ -10,43 +12,37 @@ from bs4 import BeautifulSoup
 
 from webscrapetools import urlcaching
 
-_PRODUCT_TYPES = {
-    'Stock': 'stk',
-    'Option': 'opt',
-    'Future': 'fut',
-    'Futures Option': 'fop',
-    'ETF': 'etf',
-    'Warrant': 'war',
-    'Structured Product': 'iop',
-    'Single Stock Future': 'ssf',
-    'Forex': 'fx',
-    'Metals': 'cmdty',
-    'Index': 'ind',
-    'Fund': 'mf',
-    'CFD': 'cfd',
-}
+
+@unique
+class ProductType(Enum):
+    STOCK = 'stk'
+    OPTION = 'opt'
+    FUTURE = 'fut'
+    FUTURES_OPTION = 'fop'
+    ETF = 'etf'
+    WARRANT = 'war'
+    STRUCTURED_PRODUCT = 'iop'
+    SINGLE_STOCK_FUTURE = 'ssf'
+    FOREX = 'fx'
+    METALS = 'cmdty'
+    INDEX = 'ind'
+    FUND = 'mf'
+    CFD = 'cfd'
+
+    def long_name(self):
+        return self.name.replace('_', ' ').capitalize()
+
+
 _BASE_URL = 'https://www.interactivebrokers.com'
 
 
-def get_product_type_codes():
-    return set(_PRODUCT_TYPES.values())
-
-
-def get_product_type_code(product_type_name):
-    return _PRODUCT_TYPES[product_type_name]
-
-
-def get_product_type_names():
-    return _PRODUCT_TYPES.keys()
-
-
-def load_exchanges_for_product_type(product_type_code):
+def load_exchanges_for_product_type(product_type: ProductType) -> List[List[Tuple[str, str]]]:
     url_template = _BASE_URL + '/en/index.php?f=products&p={product_type_code}'
-    url = url_template.format(product_type_code=product_type_code)
-    logging.info('loading data for product type %s: %s', product_type_code, url)
+    url = url_template.format(product_type_code=product_type.value)
+    logging.info('loading data for product type %s: %s', product_type.value, url)
     html_text = urlcaching.open_url(url, rejection_marker='To continue please enter', throttle=3)
     html = BeautifulSoup(html_text, 'html.parser')
-    region_list_tag = html.find('div', {'id': product_type_code})
+    region_list_tag = html.find('div', {'id': product_type.value})
     if region_list_tag is None:
         region_urls = {'unknown': url}
 
@@ -81,14 +77,14 @@ def load_exchanges_for_product_type(product_type_code):
     return exchanges
 
 
-def load_for_exchange_partial(exchange_name, exchange_url):
+def load_for_exchange_partial(exchange_name: str, exchange_url : str) -> Tuple[List[Dict[str, str]], str]:
     instruments = list()
     html_text = urlcaching.open_url(exchange_url, rejection_marker='To continue please enter', throttle=3)
 
     def find_stock_details_link(tag):
         is_link = tag.name == 'a'
         if is_link and 'href' in tag.attrs:
-            return tag['href'].startswith("javascript:NewWindow('https://misc.interactivebrokers.com/cstools")
+            return tag['href'].startswith("javascript:NewWindow('https://contract.ibkr.info/index.php")
 
         return False
 
@@ -129,7 +125,7 @@ def load_for_exchange_partial(exchange_name, exchange_url):
     return instruments, next_page_url
 
 
-def load_for_exchange(exchange_name, exchange_url):
+def load_for_exchange(exchange_name: str, exchange_url: str) -> List[Dict[str, str]]:
     """
 
     :param exchange_name:
@@ -151,43 +147,45 @@ def load_for_exchange(exchange_name, exchange_url):
     return instruments
 
 
-# noinspection PyTypeChecker
-def list_instruments(product_type_codes):
+def list_instruments(product_types: Iterable[ProductType]) -> Generator[Dict[str, str], None, None]:
     """
 
-    :param product_type_codes:
+    :param product_types:
     :return: dict() representing the instrument row
     """
-    for product_type_code in sorted(product_type_codes):
-        exchanges = load_exchanges_for_product_type(product_type_code)
-        logging.info('%d available exchanges for product type "%s"', len(exchanges), product_type_code)
+    for product_type in sorted(product_types):
+        exchanges = load_exchanges_for_product_type(product_type)
+        logging.info('%d available exchanges for product type "%s"', len(exchanges), product_type)
         for exchange_name, exchange_url in sorted(exchanges, key=itemgetter(0)):
             logging.info('processing exchange data %s, %s', exchange_name, exchange_url)
             exchange_instruments = load_for_exchange(exchange_name, exchange_url)
             for instrument in exchange_instruments:
-                instrument['product_type_code'] = product_type_code
+                instrument['product_type_code'] = product_type.value
                 yield instrument
 
 
-# noinspection PyTypeChecker
-def process_instruments(product_type_codes, results_processor, limit=None):
+def process_instruments(product_types: Iterable[ProductType],
+                        results_processor: Callable[[ProductType, str, Iterable[str]], None],
+                        limit: int=None) -> None:
     """
 
-    :param product_type_codes:
+    :param product_types:
     :param results_processor: function taking (product_type_code, currency, instruments list) as input
     :param limit: limits the number of instruments to process (dev only)
     :return:
     """
     instruments_db_files = dict()
     con_id_set = set()
-    for count, row in enumerate(list_instruments(product_type_codes)):
+    logging.info('processing instruments')
+    instruments = list(list_instruments(product_types))
+    for count, row in enumerate(instruments):
         product_type_code = row['product_type_code']
         currency = row['currency']
         con_id = row['conid']
         symbol = row['symbol']
         ib_symbol = row['ib_symbol']
         label = row['label']
-        shelve_key = (product_type_code, currency)
+        shelve_key = (ProductType(product_type_code), currency)
         if shelve_key not in instruments_db_files:
             instruments_db_files[shelve_key] = tempfile.TemporaryFile(mode='w+b')
 
@@ -200,7 +198,7 @@ def process_instruments(product_type_codes, results_processor, limit=None):
         if count == limit:
             break
 
-    for key in instruments_db_files:
+    for key in instruments_db_files.keys():
         instruments_db_files[key].seek(0)
         currency_instruments = list()
         for line in instruments_db_files[key]:
@@ -211,5 +209,5 @@ def process_instruments(product_type_codes, results_processor, limit=None):
 
         instruments_db_files[key].close()
         logging.info('processing %d instruments for %s', len(currency_instruments), key)
-        product_type_code, currency = key
-        results_processor(product_type_code, currency, sorted(currency_instruments, key=lambda k: k['label'].upper()))
+        product_type, currency = key
+        results_processor(product_type, currency, sorted(currency_instruments, key=lambda k: k['label'].upper()))
