@@ -9,8 +9,12 @@ from urllib.parse import parse_qs, urlparse
 
 import pickle
 from bs4 import BeautifulSoup
-
 from webscrapetools import urlcaching
+
+_URL_BASE = 'https://www.interactivebrokers.com'
+_URL_TEMPLATE_EXCHANGES = '/en/index.php?f=products&p={product_type_code}'
+_EXCHANGES_REJECTION_MARKER = 'To continue please enter'
+_URL_CONTRACT_DETAILS = 'https://contract.ibkr.info/index.php'
 
 
 @unique
@@ -33,28 +37,37 @@ class ProductType(Enum):
         return self.name.replace('_', ' ').capitalize()
 
 
-_BASE_URL = 'https://www.interactivebrokers.com'
+def load_url(url, rejection_marker=None):
+    if not rejection_marker:
+        rejection_marker = _EXCHANGES_REJECTION_MARKER
+
+    html_text = urlcaching.open_url(url, rejection_marker=rejection_marker, throttle=3)
+    return html_text
+
+
+def notify_url_error(url):
+    urlcaching.invalidate_key(url)
 
 
 def load_exchanges_for_product_type(product_type: ProductType) -> List[List[Tuple[str, str]]]:
-    url_template = _BASE_URL + '/en/index.php?f=products&p={product_type_code}'
+    url_template = _URL_BASE + _URL_TEMPLATE_EXCHANGES
     url = url_template.format(product_type_code=product_type.value)
     logging.info('loading data for product type %s: %s', product_type.value, url)
-    html_text = urlcaching.open_url(url, rejection_marker='To continue please enter', throttle=3)
+    html_text = load_url(url)
     html = BeautifulSoup(html_text, 'html.parser')
     region_list_tag = html.find('div', {'id': product_type.value})
     if region_list_tag is None:
         region_urls = {'unknown': url}
 
     else:
-        region_urls = {region_link_tag.string: _BASE_URL + region_link_tag['href']
+        region_urls = {region_link_tag.string: _URL_BASE + region_link_tag['href']
                        for region_link_tag in region_list_tag.find_all('a')
                        }
 
     exchanges = list()
     for region_name in region_urls:
         region_url = region_urls[region_name]
-        html_exchanges_text = urlcaching.open_url(region_url, rejection_marker='To continue please enter', throttle=3)
+        html_exchanges_text = load_url(region_url)
 
         html_exchanges = BeautifulSoup(html_exchanges_text, 'html.parser')
         exchanges_region = list()
@@ -67,7 +80,7 @@ def load_exchanges_for_product_type(product_type: ProductType) -> List[List[Tupl
                     exchange_url = base_url.scheme + '://' + base_url.netloc + '/en/' + link_tag['href']
 
                 else:
-                    exchange_url = _BASE_URL + '/en/' + link_tag['href']
+                    exchange_url = _URL_BASE + '/en/' + link_tag['href']
 
                 logging.info('found url for exchange %s: %s', exchange_name, exchange_url)
                 exchanges_region.append((exchange_name, exchange_url))
@@ -79,12 +92,15 @@ def load_exchanges_for_product_type(product_type: ProductType) -> List[List[Tupl
 
 def load_for_exchange_partial(exchange_name: str, exchange_url : str) -> Tuple[List[Dict[str, str]], str]:
     instruments = list()
-    html_text = urlcaching.open_url(exchange_url, rejection_marker='To continue please enter', throttle=3)
+    html_text = load_url(exchange_url)
+
+    rule_contract_url = re.compile(r"javascript:NewWindow\('(.*?)\)',")
 
     def find_stock_details_link(tag):
         is_link = tag.name == 'a'
         if is_link and 'href' in tag.attrs:
-            return tag['href'].startswith("javascript:NewWindow('https://contract.ibkr.info/index.php")
+            check_contract_url = rule_contract_url.match(tag['href'])
+            return check_contract_url and check_contract_url.group(1).startswith(_URL_CONTRACT_DETAILS)
 
         return False
 
@@ -97,11 +113,11 @@ def load_for_exchange_partial(exchange_name: str, exchange_url : str) -> Tuple[L
             if current_page_tag is not None:
                 next_page_tag = current_page_tag.find_next_sibling()
                 if next_page_tag:
-                    next_page_url = _BASE_URL + next_page_tag.find('a').get('href')
+                    next_page_url = _URL_BASE + next_page_tag.find('a').get('href')
 
         stock_link_tags = html.find_all(find_stock_details_link)
         for tag in stock_link_tags:
-            url = re.search(r"javascript:NewWindow\('(.*?)',", tag['href']).group(1)
+            url = rule_contract_url.search(tag['href']).group(1)
             query = parse_qs(urlparse(url).query)
             if 'conid' in query.keys():
                 instrument_data = dict(conid=query['conid'][0], label=tag.string, exchange=exchange_name)
@@ -119,7 +135,7 @@ def load_for_exchange_partial(exchange_name: str, exchange_url : str) -> Tuple[L
 
     except Exception:
         logging.error('failed to load exchange "%s"', exchange_name, exc_info=True)
-        urlcaching.invalidate_key(exchange_url)
+        notify_url_error(exchange_url)
         raise
 
     return instruments, next_page_url
