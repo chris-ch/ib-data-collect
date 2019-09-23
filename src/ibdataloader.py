@@ -46,6 +46,7 @@ def load_url(url, rejection_marker=None):
 
 
 def notify_url_error(url):
+    logging.error('failed to load url: {}'.format(url))
     urlcaching.invalidate_key(url)
 
 
@@ -74,14 +75,7 @@ def load_exchanges_for_product_type(product_type: ProductType) -> List[List[Tupl
         for link_tag in html_exchanges.find_all('a'):
             if link_tag.get('href') and link_tag.get('href').startswith('index.php?f='):
                 exchange_name = link_tag.string.encode('ascii', 'ignore').decode().strip()
-                last_request = urlcaching.get_last_request()
-                if last_request:
-                    base_url = urlparse(last_request.url)
-                    exchange_url = base_url.scheme + '://' + base_url.netloc + '/en/' + link_tag['href']
-
-                else:
-                    exchange_url = _URL_BASE + '/en/' + link_tag['href']
-
+                exchange_url = _URL_BASE + '/en/' + link_tag['href']
                 logging.info('found url for exchange %s: %s', exchange_name, exchange_url)
                 exchanges_region.append((exchange_name, exchange_url))
 
@@ -90,7 +84,59 @@ def load_exchanges_for_product_type(product_type: ProductType) -> List[List[Tupl
     return exchanges
 
 
-def load_for_exchange_partial(exchange_name: str, exchange_url : str) -> Tuple[List[Dict[str, str]], str]:
+class Instrument(object):
+
+    def __init__(self, con_id: str, label: str, exchange: str):
+        self._con_id = con_id
+        self._label = label
+        self._exchange = exchange
+        self._symbol = None
+        self._ib_symbol = None
+        self._currency = None
+        self._product_type = None
+
+    @property
+    def con_id(self) -> str:
+        return self._con_id
+
+    @property
+    def label(self) -> str:
+        return self._label
+
+    @property
+    def symbol(self) -> str:
+        return self._symbol
+
+    @symbol.setter
+    def symbol(self, value: str)-> None:
+        self._symbol = value
+
+    @property
+    def ib_symbol(self) -> str:
+        return self._ib_symbol
+
+    @ib_symbol.setter
+    def ib_symbol(self, value: str)-> None:
+        self._ib_symbol = value
+
+    @property
+    def currency(self) -> str:
+        return self._currency
+
+    @currency.setter
+    def currency(self, value: str) -> None:
+        self._currency = value
+
+    @property
+    def product_type(self) -> ProductType:
+        return self._product_type
+
+    @product_type.setter
+    def product_type(self, value: ProductType) -> None:
+        self._product_type = value
+
+
+def load_for_exchange_partial(exchange_name: str, exchange_url : str) -> Tuple[List[Instrument], str]:
     instruments = list()
     html_text = load_url(exchange_url)
 
@@ -120,18 +166,17 @@ def load_for_exchange_partial(exchange_name: str, exchange_url : str) -> Tuple[L
             url = rule_contract_url.search(tag['href']).group(1)
             query = parse_qs(urlparse(url).query)
             if 'conid' in query.keys():
-                instrument_data = dict(conid=query['conid'][0], label=tag.string, exchange=exchange_name)
+                instrument = Instrument(con_id=query['conid'][0], label=tag.string, exchange=exchange_name)
                 tag_row = tag.parent.parent
                 instrument_tags = [tag.string for tag in tag_row.find_all('td')]
                 if len(instrument_tags) != 4:
                     raise RuntimeError('Unexpected instrument tags found: %s', instrument_tags)
 
                 ib_symbol, url_text, symbol, currency = instrument_tags
-
-                instrument_data['ib_symbol'] = ib_symbol
-                instrument_data['symbol'] = symbol
-                instrument_data['currency'] = currency
-                instruments.append(instrument_data)
+                instrument.ib_symbol = ib_symbol
+                instrument.symbol = symbol
+                instrument.currency = currency
+                instruments.append(Instrument(ib_symbol, symbol, currency))
 
     except Exception:
         logging.error('failed to load exchange "%s"', exchange_name, exc_info=True)
@@ -141,7 +186,7 @@ def load_for_exchange_partial(exchange_name: str, exchange_url : str) -> Tuple[L
     return instruments, next_page_url
 
 
-def load_for_exchange(exchange_name: str, exchange_url: str) -> List[Dict[str, str]]:
+def load_for_exchange(exchange_name: str, exchange_url: str) -> List[Instrument]:
     """
 
     :param exchange_name:
@@ -163,7 +208,7 @@ def load_for_exchange(exchange_name: str, exchange_url: str) -> List[Dict[str, s
     return instruments
 
 
-def list_instruments(product_types: Iterable[ProductType]) -> Generator[Dict[str, str], None, None]:
+def list_instruments(product_types: Iterable[ProductType]) -> Generator[Instrument, None, None]:
     """
 
     :param product_types:
@@ -176,7 +221,7 @@ def list_instruments(product_types: Iterable[ProductType]) -> Generator[Dict[str
             logging.info('processing exchange data %s, %s', exchange_name, exchange_url)
             exchange_instruments = load_for_exchange(exchange_name, exchange_url)
             for instrument in exchange_instruments:
-                instrument['product_type_code'] = product_type.value
+                instrument.product_type = product_type
                 yield instrument
 
 
@@ -191,25 +236,13 @@ def process_instruments(product_types: Iterable[ProductType],
     :return:
     """
     instruments_db_files = dict()
-    con_id_set = set()
     logging.info('processing instruments')
     instruments = list(list_instruments(product_types))
-    for count, row in enumerate(instruments):
-        product_type_code = row['product_type_code']
-        currency = row['currency']
-        con_id = row['conid']
-        symbol = row['symbol']
-        ib_symbol = row['ib_symbol']
-        label = row['label']
+    for count, instrument in enumerate(instruments):
+        product_type_code = instrument.product_type.value
+        currency = instrument.currency
         shelve_key = (ProductType(product_type_code), currency)
-        if shelve_key not in instruments_db_files:
-            instruments_db_files[shelve_key] = tempfile.TemporaryFile(mode='w+b')
-
-        if con_id not in con_id_set:
-            instrument_data = {'conid': str(con_id), 'symbol': str(symbol), 'ib_symbol': str(ib_symbol), 'label': str(label)}
-            line = base64.b64encode(pickle.dumps(instrument_data))
-            instruments_db_files[shelve_key].write(line + b'\n')
-            con_id_set.add(con_id)
+        instruments_db_files[shelve_key] = tempfile.TemporaryFile(mode='w+b')
 
         if count == limit:
             break
