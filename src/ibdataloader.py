@@ -1,13 +1,11 @@
 import logging
 import re
-import tempfile
-import base64
+from collections import defaultdict
 from enum import Enum, unique
 from operator import itemgetter
 from typing import Iterable, Callable, Generator, Dict, Tuple, List
 from urllib.parse import parse_qs, urlparse
 
-import pickle
 from bs4 import BeautifulSoup
 from webscrapetools import urlcaching
 
@@ -84,7 +82,14 @@ def load_exchanges_for_product_type(product_type: ProductType) -> List[List[Tupl
     return exchanges
 
 
-class Instrument(object):
+class AsDict(object):
+
+    def as_dict(self):
+        return {field: self.__getattribute__(field) for field in self.__dir__()
+                if not field.startswith('_') and field not in ('as_dict', 'fields')}
+
+
+class Instrument(AsDict):
 
     def __init__(self, con_id: str, label: str, exchange: str):
         self._con_id = con_id
@@ -140,7 +145,7 @@ def load_for_exchange_partial(exchange_name: str, exchange_url : str) -> Tuple[L
     instruments = list()
     html_text = load_url(exchange_url)
 
-    rule_contract_url = re.compile(r"javascript:NewWindow\('(.*?)\)',")
+    rule_contract_url = re.compile(r"javascript:NewWindow\(\'(.*?)\'")
 
     def find_stock_details_link(tag):
         is_link = tag.name == 'a'
@@ -176,7 +181,7 @@ def load_for_exchange_partial(exchange_name: str, exchange_url : str) -> Tuple[L
                 instrument.ib_symbol = ib_symbol
                 instrument.symbol = symbol
                 instrument.currency = currency
-                instruments.append(Instrument(ib_symbol, symbol, currency))
+                instruments.append(instrument)
 
     except Exception:
         logging.error('failed to load exchange "%s"', exchange_name, exc_info=True)
@@ -199,7 +204,7 @@ def load_for_exchange(exchange_name: str, exchange_url: str) -> List[Instrument]
         logging.info('processing page %s', next_page_link)
         new_instruments, next_page_link = load_for_exchange_partial(exchange_name, next_page_link)
         if len(new_instruments) > 0:
-            logging.info('retrieved %d instruments from "%s" through "%s"', len(new_instruments), new_instruments[0]['label'], new_instruments[-1]['label'])
+            logging.info('retrieved %d instruments from "%s" through "%s"', len(new_instruments), new_instruments[0].label, new_instruments[-1].label)
 
         instruments += new_instruments
         if next_page_link is None:
@@ -226,8 +231,7 @@ def list_instruments(product_types: Iterable[ProductType]) -> Generator[Instrume
 
 
 def process_instruments(product_types: Iterable[ProductType],
-                        results_processor: Callable[[ProductType, str, Iterable[str]], None],
-                        limit: int=None) -> None:
+                        results_processor: Callable[[ProductType, str, Iterable[Instrument]], None]) -> None:
     """
 
     :param product_types:
@@ -235,28 +239,12 @@ def process_instruments(product_types: Iterable[ProductType],
     :param limit: limits the number of instruments to process (dev only)
     :return:
     """
-    instruments_db_files = dict()
     logging.info('processing instruments')
-    instruments = list(list_instruments(product_types))
-    for count, instrument in enumerate(instruments):
-        product_type_code = instrument.product_type.value
-        currency = instrument.currency
-        shelve_key = (ProductType(product_type_code), currency)
-        instruments_db_files[shelve_key] = tempfile.TemporaryFile(mode='w+b')
+    by_product_type_and_currency = defaultdict(list)
+    for instrument in list_instruments(product_types):
+        by_product_type_and_currency[(instrument.product_type, instrument.currency)].append(instrument)
 
-        if count == limit:
-            break
+    for product_type, currency in by_product_type_and_currency:
+        instruments = by_product_type_and_currency[(product_type, currency)]
+        results_processor(product_type, currency, sorted(instruments, key=lambda k: k.label.upper()))
 
-    for key in instruments_db_files.keys():
-        instruments_db_files[key].seek(0)
-        currency_instruments = list()
-        for line in instruments_db_files[key]:
-            if len(line) > 0:
-                logging.debug('unpickling "%s"', line)
-                pickled = pickle.loads(base64.b64decode(line))
-                currency_instruments.append(pickled)
-
-        instruments_db_files[key].close()
-        logging.info('processing %d instruments for %s', len(currency_instruments), key)
-        product_type, currency = key
-        results_processor(product_type, currency, sorted(currency_instruments, key=lambda k: k['label'].upper()))

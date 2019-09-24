@@ -6,6 +6,7 @@ import sys
 from typing import Iterable
 
 import ibdataloader
+from ibdataloader import Instrument, ProductType
 from webscrapetools.urlcaching import set_cache_path
 
 _FILENAME_SEPARATOR = '_'
@@ -20,7 +21,7 @@ def main():
     parser.add_argument('--output-prefix', type=str, help='prefix for the output files', default='ib-instr')
     parser.add_argument('--list-product-types', action='store_true', help='only displays available product types')
     parser.add_argument('--use-cache', type=str, help='directory for caching web requests', default=None)
-    parser.add_argument('--cache-expiry', type=int, help='number of days for cache expiry', default=2)
+    parser.add_argument('--cache-expiry', type=int, help='number of days for cache expiry', default=20)
     parser.add_argument('product_types', type=str, nargs='*',
                         help='download specified product types, or all if not specified')
     args = parser.parse_args()
@@ -52,18 +53,23 @@ def main():
     logging.info('loading product types {}'.format(product_types))
 
     # noinspection PyTypeChecker
-    def results_writer(product_type: ibdataloader.ProductType, currency: str, instruments: Iterable[str]) -> None:
+    def results_writer(product_type: ProductType, currency: str, instruments: Iterable[Instrument]) -> None:
         # saving to local drive
         logging.info('saving results to %s', os.path.abspath(args.output_dir))
         os.makedirs(args.output_dir, exist_ok=True)
         output_filename = args.output_prefix + _FILENAME_SEPARATOR + currency.lower() + _FILENAME_SEPARATOR + product_type.value + '.csv'
         output_path = os.path.abspath(os.sep.join((args.output_dir, output_filename)))
-        header = ('conid', 'symbol', 'ib_symbol', 'label')
         with open(output_path, 'w') as csv_file:
-            writer = csv.DictWriter(csv_file, fieldnames=header)
-            writer.writeheader()
+            is_first = True
             for instrument in instruments:
-                writer.writerow(instrument)
+                if is_first:
+                    writer = csv.DictWriter(csv_file, fieldnames=list(instrument.as_dict().keys()))
+                    writer.writeheader()
+                    is_first = False
+
+                else:
+                    as_dict = instrument.as_dict()
+                    writer.writerow(as_dict)
 
         logging.info('saved file: %s', output_path)
 
