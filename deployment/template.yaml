@@ -48,13 +48,12 @@ Resources:
       - FARGATE
       NetworkMode: awsvpc
       ExecutionRoleArn: !Ref ExecutionRole
-      Cpu: 256
-      Memory: 0.5GB
+      Cpu: 1024
+      Memory: 2GB
       ContainerDefinitions:
       - Name: IBrokerGateway
         Essential: true
         Image: chris1204/interactivebroker-gateway:latest
-        Memory: 128
         Environment:
         - Name: TZ
           Value: America/Chicago
