@@ -75,6 +75,7 @@ Resources:
     Type: AWS::ECS::Service
     Properties:
       ServiceName: IBrokerGateway
+      Cluster: !Ref IBrokerGatewayCluster
       LaunchType: FARGATE
       NetworkConfiguration:
         AwsvpcConfiguration:
@@ -86,6 +87,9 @@ Resources:
             - !Ref IBrokerGatewaySecurityGroup
       TaskDefinition: !Ref TaskDefinitionIBroker
       DesiredCount: 1
+
+  IBrokerGatewayCluster:
+    Type: AWS::ECS::Cluster
 
   ExecutionRole:
     Type: AWS::IAM::Role
