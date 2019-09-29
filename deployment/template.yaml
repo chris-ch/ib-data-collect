@@ -53,7 +53,7 @@ Resources:
       ContainerDefinitions:
       - Name: IBrokerGateway
         Essential: true
-        Image: chris1204/interactivebroker-gateway:latest
+        Image: chris1204/interactivebroker-gateway
         Environment:
         - Name: TZ
           Value: America/Chicago
