@@ -1,45 +1,162 @@
-AWSTemplateFormatVersion: '2010-09-09'
-Transform: AWS::Serverless-2016-10-31
-Description: >
-  sam-app
+AWSTemplateFormatVersion: "2010-09-09"
 
-  SAM Template for IBroker Gateway
+Description:
+  IBroker Gateway infrastructure description
 
-# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
-Globals:
-  Function:
-    Timeout: 3
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: AWS Placement
+        Parameters:
+          - VpcId
+          - SubnetId1
+          - SubnetId2
+
+    ParameterLabels:
+      VpcId:
+        default: VPC
+
+Parameters:
+
+  InfraPrefix:
+    Description: The prefix used for all resources in this infra
+    Type: String
+    MinLength: 1
+    MaxLength: 40
+    Default: "test"
+
+  InfraSuffix:
+    Description: The prefix used for all resources in this infra
+    Type: String
+    MinLength: 0
+    MaxLength: 40
+    Default: "-ibgateway"
+
+  DnsTTL:
+    Description: Ttl of the dns (default 1 minute)
+    Type: Number
+    Default: 1
 
 Resources:
 
-  myVPC:
+  S3BucketLogs:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: PublicReadWrite
+      BucketName: !Join ['',[ !Ref 'InfraPrefix' , '.logs.ibgateway' ]]
+
+  IBrokerGatewayCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: !Join ['',[ !Ref "InfraPrefix" , '_ibgateway' ]]
+
+  IBrokerInternetGateway:
+    Type: AWS::EC2::InternetGateway
+
+  VPC:
     Type: AWS::EC2::VPC
     Properties:
-      CidrBlock: 10.0.0.0/16
       EnableDnsSupport: 'false'
       EnableDnsHostnames: 'false'
-      InstanceTenancy: dedicated
+      CidrBlock: 10.0.0.0/16
 
-  SubnetA:
-    Type: AWS::EC2::Subnet
+  VPCGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
     Properties:
-      VpcId:
-        Ref: myVPC
+      InternetGatewayId: !Ref IBrokerInternetGateway
+      VpcId: !Ref VPC
+
+  PrivateSubnet1:
+    Type: AWS::EC2::Subnet
+    DependsOn: VPC
+    Properties:
+      VpcId: !Ref VPC
+      AvailabilityZone: !Join [ "", [ !Ref "AWS::Region", a ] ]
       CidrBlock: 10.0.1.0/24
-      AvailabilityZone: "eu-central-1a"
 
-  SubnetB:
+  PrivateSubnet2:
     Type: AWS::EC2::Subnet
+    DependsOn: VPC
     Properties:
-      VpcId:
-        Ref: myVPC
+      VpcId: !Ref VPC
+      AvailabilityZone: !Join [ "", [ !Ref "AWS::Region", b ] ]
       CidrBlock: 10.0.2.0/24
-      AvailabilityZone: "eu-central-1b"
 
-  CloudWatchLogsGroup:
-    Type: AWS::Logs::LogGroup
+  LoadBalancer:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
     Properties:
-      LogGroupName: !Join ['', [/ecs/, service, TaskDefinitionIBroker]]
+      Name: !Join ['',[ !Ref 'InfraPrefix' , '-ibgateway' ]]
+      Scheme: internet-facing
+      Type: application
+      LoadBalancerAttributes:
+        - Key: 'routing.http2.enabled'
+          Value: true
+        - Key: 'access_logs.s3.enabled'
+          Value: true
+        - Key: 'access_logs.s3.prefix'
+          Value: !Ref 'AWS::StackName'
+        - Key: 'access_logs.s3.bucket'
+          Value: !Ref S3BucketLogs
+      SecurityGroups:
+        - !Ref AlbSecurityGroup
+      Subnets:
+        - !Ref PrivateSubnet1
+        - !Ref PrivateSubnet2
+
+  AlbSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: 'Allow external traffic to load balancer'
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - CidrIp: 0.0.0.0/0
+          IpProtocol: "tcp"
+          FromPort: "80"
+          ToPort: "80"
+        - CidrIp: 0.0.0.0/0
+          IpProtocol: "tcp"
+          FromPort: "443"
+          ToPort: "443"
+      SecurityGroupEgress:
+        - CidrIp: 0.0.0.0/0
+          IpProtocol: "tcp"
+          FromPort: "0"
+          ToPort: "65535"
+
+  TargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      TargetType: ip
+      VpcId: !Ref VPC
+      Port: 80
+      Protocol: HTTP
+      Matcher:
+        HttpCode: 200-299
+
+  Listener:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Properties:
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref TargetGroup
+      LoadBalancerArn: !Ref LoadBalancer
+      Port: '80'
+      Protocol: HTTP
+
+
+  ListenerRule:
+    Type: AWS::ElasticLoadBalancingV2::ListenerRule
+    Properties:
+      ListenerArn: !Ref Listener
+      Priority: 1
+      Conditions:
+        - Field: path-pattern
+          Values:
+            - /
+      Actions:
+        - TargetGroupArn: !Ref TargetGroup
+          Type: forward
 
   TaskDefinitionIBroker:
     Type: AWS::ECS::TaskDefinition
@@ -47,13 +164,13 @@ Resources:
       RequiresCompatibilities:
       - FARGATE
       NetworkMode: awsvpc
-      ExecutionRoleArn: !Ref ExecutionRole
       Cpu: 1024
       Memory: 2GB
       ContainerDefinitions:
-      - Name: IBrokerGateway
+      - Name: IBrokerGatewayService
         Essential: true
-        Image: chris1204/interactivebroker-gateway
+        Image: tomcat:8.0
+        #Image: chris1204/interactivebroker-gateway
         Environment:
         - Name: TZ
           Value: America/Chicago
@@ -62,60 +179,46 @@ Resources:
         - Name: TRADING_MODE
           Value: paper
         PortMappings:
-        - ContainerPort: 4003
-        LogConfiguration:
-          LogDriver: awslogs
-          Options:
-            awslogs-group: !Ref CloudWatchLogsGroup
-            awslogs-region: !Ref AWS::Region
-            awslogs-stream-prefix: ecs
+        #- ContainerPort: 4003
+        - ContainerPort: 8080
 
-  IBrokerGateway:
+  IBrokerGatewayService:
     Type: AWS::ECS::Service
+    DependsOn: ListenerRule
     Properties:
-      ServiceName: IBrokerGateway
       Cluster: !Ref IBrokerGatewayCluster
+      TaskDefinition: !Ref TaskDefinitionIBroker
+      ServiceName: IBrokerGatewayService
       LaunchType: FARGATE
       NetworkConfiguration:
         AwsvpcConfiguration:
-          AssignPublicIp: ENABLED
+          AssignPublicIp: DISABLED
           Subnets:
-            - !Ref SubnetA
-            - !Ref SubnetB
+          - !Ref PrivateSubnet1
+          - !Ref PrivateSubnet2
           SecurityGroups:
-            - !Ref IBrokerGatewaySecurityGroup
-      TaskDefinition: !Ref TaskDefinitionIBroker
+          - !Ref AlbSecurityGroup
       DesiredCount: 1
+      LoadBalancers:
+      - ContainerName: IBrokerGatewayService
+        ContainerPort: 8080
+        TargetGroupArn: !Ref TargetGroup
 
-  IBrokerGatewayCluster:
-    Type: AWS::ECS::Cluster
+Outputs:
+  TemplateVersion:
+    Description: 'cloudonaut.io template version.'
+    Value: '__VERSION__'
+  StackName:
+    Description: 'Stack name.'
+    Value: !Sub '${AWS::StackName}'
+  DNSName:
+    Description: 'The DNS name for the ECS cluster/service load balancer.'
+    Value: !GetAtt 'LoadBalancer.DNSName'
+    Export:
+      Name: !Sub '${AWS::StackName}-DNSName'
+  URL:
+    Description: 'URL to the ECS service.'
+    Value: !Sub 'http://${LoadBalancer.DNSName}'
+    Export:
+      Name: !Sub '${AWS::StackName}-URL'
 
-  ExecutionRole:
-    Type: AWS::IAM::Role
-    Properties:
-      RoleName: !Join ['', [service, ExecutionRole]]
-      AssumeRolePolicyDocument:
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service: ecs-tasks.amazonaws.com
-            Action: 'sts:AssumeRole'
-      ManagedPolicyArns:
-        - 'arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy'
-
-  IBrokerGatewaySecurityGroup:
-    Type: AWS::EC2::SecurityGroup
-    Properties:
-        GroupDescription: Allow http to client host
-        VpcId:
-           Ref: myVPC
-        SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: 80
-          ToPort: 80
-          CidrIp: 0.0.0.0/0
-        SecurityGroupEgress:
-        - IpProtocol: tcp
-          FromPort: 80
-          ToPort: 80
-          CidrIp: 0.0.0.0/0
