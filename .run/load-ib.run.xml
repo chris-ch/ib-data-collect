@@ -23,7 +23,7 @@
       </ENTRIES>
     </EXTENSION>
     <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/load-ib.py" />
-    <option name="PARAMETERS" value="--use-cache .cache stk fut etf iop fx cmdty ind" />
+    <option name="PARAMETERS" value="--use-cache .cache stk fut etf fx cmdty ind" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />
     <option name="MODULE_MODE" value="false" />
