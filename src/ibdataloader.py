@@ -34,6 +34,11 @@ class ProductType(Enum):
     def long_name(self):
         return self.name.replace('_', ' ').capitalize()
 
+    def __lt__(self, other):
+        if self.__class__ is other.__class__:
+            return self.value < other.value
+        return NotImplemented
+
 
 def load_url(url, rejection_marker=None):
     if not rejection_marker:
