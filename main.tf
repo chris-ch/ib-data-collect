@@ -15,7 +15,7 @@
 */
 
 data "google_project" "project" {
-  project_id = var.project_id
+  project_id = var.GOOGLE_PROJECT_ID
 }
 
 
@@ -24,7 +24,7 @@ module "project-services" {
   version = "13.0.0"
   disable_services_on_destroy = false
 
-  project_id = var.project_id
+  project_id = var.GOOGLE_PROJECT_ID
   enable_apis = var.enable_apis
 
   activate_apis = [
@@ -44,7 +44,7 @@ resource "google_storage_bucket" "default" {
   # Every bucket name must be globally unique
   location = "US"
   uniform_bucket_level_access = true
-  project = var.project_id
+  project = var.GOOGLE_PROJECT_ID
 }
 
 data "archive_file" "default" {
@@ -65,7 +65,7 @@ resource "google_cloudfunctions2_function" "http_services" {
   provider = google-beta
   description = "HTTP services"
   location = var.region
-  project = var.project_id
+  project = var.GOOGLE_PROJECT_ID
 
   build_config {
     runtime = "python311"
@@ -83,9 +83,9 @@ resource "google_cloudfunctions2_function" "http_services" {
     available_memory = "256M"
     timeout_seconds = 60
     environment_variables = {
-      GOOGLE_PROJECT_ID = var.project_id
-      GOOGLE_MESSAGING_SENDER_ID = var.project_number
-      GOOGLE_API_KEY = var.api_key
+      GOOGLE_PROJECT_ID = var.GOOGLE_PROJECT_ID
+      GOOGLE_MESSAGING_SENDER_ID = var.GOOGLE_MESSAGING_SENDER_ID
+      GOOGLE_API_KEY = var.GOOGLE_API_KEY
     }
   }
 }

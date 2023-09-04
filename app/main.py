@@ -4,15 +4,16 @@ import functions_framework
 
 from services import app
 
-from google import cloud
-import google.cloud.logging
+import os
+from google.cloud import logging
 
-logger = google.cloud.logging.Client()
+logger = logging.Client()
 logger.setup_logging()
 
 
 @functions_framework.http
 def main(request: flask.Request):
+    print(f"Using Firebase API Key: {os.getenv('GOOGLE_API_KEY')}")
     internal_context = app.test_request_context(path=request.full_path, method=request.method)
     internal_context.request.data = request.data
     internal_context.request.headers = request.headers

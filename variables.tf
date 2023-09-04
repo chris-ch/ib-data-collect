@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-variable "project_id" {
+variable "GOOGLE_PROJECT_ID" {
   type        = string
   description = "The Google Project ID to deploy to"
 }
 
-variable "project_number" {
+variable "GOOGLE_MESSAGING_SENDER_ID" {
   type        = number
   description = "The Google Project Number"
 }
 
-variable "api_key" {
+variable "GOOGLE_API_KEY" {
   type        = string
   description = "The Google API key"
 }
