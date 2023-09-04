@@ -1,22 +1,21 @@
 import logging
 import re
 from collections import defaultdict
-from enum import Enum, unique
+from enum import unique, StrEnum
 from operator import itemgetter
-from typing import Iterable, Callable, Generator, Dict, Tuple, List
+from typing import Iterable, Callable, Generator, Tuple, List
 from urllib.parse import parse_qs, urlparse
 
 from bs4 import BeautifulSoup
 from webscrapetools import urlcaching
 
 _URL_BASE = 'https://www.interactivebrokers.com'
-_URL_TEMPLATE_EXCHANGES = '/en/index.php?f=products&p={product_type_code}'
 _EXCHANGES_REJECTION_MARKER = 'To continue please enter'
 _URL_CONTRACT_DETAILS = 'https://contract.ibkr.info/index.php'
 
 
 @unique
-class ProductType(Enum):
+class ProductType(StrEnum):
     STOCK = 'stk'
     OPTION = 'opt'
     FUTURE = 'fut'
@@ -40,7 +39,7 @@ class ProductType(Enum):
         return NotImplemented
 
 
-def load_url(url, rejection_marker=None):
+def load_url(url: str, rejection_marker=None) -> str:
     if not rejection_marker:
         rejection_marker = _EXCHANGES_REJECTION_MARKER
 
@@ -48,15 +47,14 @@ def load_url(url, rejection_marker=None):
     return html_text
 
 
-def notify_url_error(url):
+def notify_url_error(url: str) -> None:
     logging.error('failed to load url: {}'.format(url))
     urlcaching.invalidate_key(url)
 
 
 def load_exchanges_for_product_type(product_type: ProductType) -> List[List[Tuple[str, str]]]:
-    url_template = _URL_BASE + _URL_TEMPLATE_EXCHANGES
-    url = url_template.format(product_type_code=product_type.value)
-    logging.info('loading data for product type %s: %s', product_type.value, url)
+    url = _URL_BASE + f'/en/index.php?f=products&p={product_type.value}'
+    logging.info(f'loading data for product type {product_type.value}: {url}')
     html_text = load_url(url)
     html = BeautifulSoup(html_text, 'html.parser')
     region_list_tag = html.find('div', {'id': product_type.value})
@@ -78,8 +76,8 @@ def load_exchanges_for_product_type(product_type: ProductType) -> List[List[Tupl
         for link_tag in html_exchanges.find_all('a'):
             if link_tag.get('href') and link_tag.get('href').startswith('index.php?f='):
                 exchange_name = link_tag.string.encode('ascii', 'ignore').decode().strip()
-                exchange_url = _URL_BASE + '/en/' + link_tag['href']
-                logging.info('found url for exchange %s: %s', exchange_name, exchange_url)
+                exchange_url = _URL_BASE + f"/en/{link_tag['href']}"
+                logging.info(f'found url for exchange {exchange_name}: {exchange_url}')
                 exchanges_region.append((exchange_name, exchange_url))
 
         exchanges += exchanges_region
@@ -146,7 +144,7 @@ class Instrument(AsDict):
         self._product_type = value
 
 
-def load_for_exchange_partial(exchange_name: str, exchange_url : str) -> Tuple[List[Instrument], str]:
+def load_for_exchange_partial(exchange_name: str, exchange_url: str) -> Tuple[List[Instrument], str]:
     instruments = list()
     html_text = load_url(exchange_url)
 
@@ -209,7 +207,7 @@ def load_for_exchange(exchange_name: str, exchange_url: str) -> List[Instrument]
         logging.info('processing page %s', next_page_link)
         new_instruments, next_page_link = load_for_exchange_partial(exchange_name, next_page_link)
         if len(new_instruments) > 0:
-            logging.info('retrieved %d instruments from "%s" through "%s"', len(new_instruments), new_instruments[0].label, new_instruments[-1].label)
+            logging.info(f'retrieved {len(new_instruments)} instruments from "{new_instruments[0].label}" through "{new_instruments[-1].label}"')
 
         instruments += new_instruments
         if next_page_link is None:
@@ -226,9 +224,9 @@ def list_instruments(product_types: Iterable[ProductType]) -> Generator[Instrume
     """
     for product_type in sorted(product_types):
         exchanges = load_exchanges_for_product_type(product_type)
-        logging.info('%d available exchanges for product type "%s"', len(exchanges), product_type)
+        logging.info(f'{len(exchanges)} available exchanges for product type "{product_type}"', )
         for exchange_name, exchange_url in sorted(exchanges, key=itemgetter(0)):
-            logging.info('processing exchange data %s, %s', exchange_name, exchange_url)
+            logging.info(f'processing exchange data {exchange_name}, {exchange_url}')
             exchange_instruments = load_for_exchange(exchange_name, exchange_url)
             for instrument in exchange_instruments:
                 instrument.product_type = product_type
@@ -241,7 +239,6 @@ def process_instruments(product_types: Iterable[ProductType],
 
     :param product_types:
     :param results_processor: function taking (product_type_code, currency, instruments list) as input
-    :param limit: limits the number of instruments to process (dev only)
     :return:
     """
     logging.info('processing instruments')
