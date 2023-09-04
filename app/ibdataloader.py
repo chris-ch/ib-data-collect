@@ -6,11 +6,10 @@ from operator import itemgetter
 from typing import Iterable, Callable, Generator, Tuple, List
 from urllib.parse import parse_qs, urlparse
 
+import requests
 from bs4 import BeautifulSoup
-from webscrapetools import urlcaching
 
 _URL_BASE = 'https://www.interactivebrokers.com'
-_EXCHANGES_REJECTION_MARKER = 'To continue please enter'
 _URL_CONTRACT_DETAILS = 'https://contract.ibkr.info/index.php'
 
 
@@ -39,17 +38,11 @@ class ProductType(StrEnum):
         return NotImplemented
 
 
-def load_url(url: str, rejection_marker=None) -> str:
-    if not rejection_marker:
-        rejection_marker = _EXCHANGES_REJECTION_MARKER
-
-    html_text = urlcaching.open_url(url, rejection_marker=rejection_marker, throttle=3)
+def load_url(url: str) -> str:
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, "html.parser")
+    html_text = soup.get_text()
     return html_text
-
-
-def notify_url_error(url: str) -> None:
-    logging.error('failed to load url: {}'.format(url))
-    urlcaching.invalidate_key(url)
 
 
 def load_exchanges_for_product_type(product_type: ProductType) -> List[List[Tuple[str, str]]]:
@@ -188,7 +181,6 @@ def load_for_exchange_partial(exchange_name: str, exchange_url: str) -> Tuple[Li
 
     except Exception:
         logging.error('failed to load exchange "%s"', exchange_name, exc_info=True)
-        notify_url_error(exchange_url)
         raise
 
     return instruments, next_page_url
@@ -249,4 +241,3 @@ def process_instruments(product_types: Iterable[ProductType],
     for product_type, currency in by_product_type_and_currency:
         instruments = by_product_type_and_currency[(product_type, currency)]
         results_processor(product_type, currency, sorted(instruments, key=lambda k: k.label.upper()))
-

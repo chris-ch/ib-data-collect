@@ -99,3 +99,6 @@ awscli-bundle
 /packaged.yaml
 
 /output
+.terraform/
+.terraform.lock.hcl
+secrets.*
