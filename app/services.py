@@ -61,6 +61,17 @@ def index():
 def post_job_exchange(exchange_name: str, exchange_url: str):
     logging.info(f'posting url {exchange_url} for exchange {exchange_name}')
     client = tasks_v2.CloudTasksClient()
+    # Initialize request argument(s)
+    request = tasks_v2.CreateTaskRequest(
+        parent="parent_value",
+    )
+
+    # Make the request
+    response = client.create_task(request=request)
+    function_name = ''
+    target = client.get_target(
+        name=f"projects/{function_name.split('.')[0]}/locations/global/functions/{function_name.split('.')[1]}")
+
     task = tasks_v2.Task()
     #task.target = client.get_function(function_name)
     #task.queue = queue_name

@@ -31,9 +31,13 @@ You will need to execute the above command any time you modify the poetry packag
 Install Podman and create a machine:
 
 ```Shell
-podman machine init --cpus=2 --disk-size=12 --memory=4096
-podman machine start
-podman system connection default podman-machine-default-root
+podman machine init --cpus=2 --disk-size=12 --memory=4096 -v $HOME/.config/gcloud:/gcp:ro gcp
+podman machine set --rootful gcp
+podman machine start gcp
+# inspecting content: podman machine ssh gcp
+pack build --builder=gcr.io/buildpacks/builder --path=app --workspace=/app app
+#podman system connection default gcp-root
+podman run --env GOOGLE_PROJECT_ID=local-dev --env GOOGLE_APPLICATION_CREDENTIALS=/home/cnb/creds.json -v /gcp/application_default_credentials.json:/home/cnb/creds.json:ro -it -ePORT=8080 -p8080:8080 -u root app
 ```
 
 ### Terraform setup
