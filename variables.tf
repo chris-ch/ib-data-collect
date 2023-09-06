@@ -29,12 +29,12 @@ variable "GOOGLE_API_KEY" {
   description = "The Google API key"
 }
 
-variable "region" {
+variable "GOOGLE_REGION" {
   type        = string
   description = "The Compute Region to deploy to"
 }
 
-variable "zone" {
+variable "GOOGLE_ZONE" {
   type        = string
   description = "The Compute Zone to deploy to"
 }

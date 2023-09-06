@@ -47,7 +47,7 @@ resource "google_storage_bucket" "default" {
   project = var.GOOGLE_PROJECT_ID
 }
 
-data "archive_file" "default" {
+data "archive_file" "server_files" {
   type = "zip"
   output_path = "/tmp/function-source.zip"
   source_dir = "app/"
@@ -56,15 +56,14 @@ data "archive_file" "default" {
 resource "google_storage_bucket_object" "object" {
   name = "function-source.zip"
   bucket = google_storage_bucket.default.name
-  source = data.archive_file.default.output_path
-  # Add path to the zipped function source code
+  source = data.archive_file.server_files.output_path
 }
 
 resource "google_cloudfunctions2_function" "http_services" {
   name = "${var.deployment_name}-http-services"
   provider = google-beta
   description = "HTTP services"
-  location = var.region
+  location = var.GOOGLE_REGION
   project = var.GOOGLE_PROJECT_ID
 
   build_config {

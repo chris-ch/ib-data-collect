@@ -38,18 +38,11 @@ class ProductType(StrEnum):
         return NotImplemented
 
 
-def load_url(url: str) -> str:
-    response = requests.get(url)
-    soup = BeautifulSoup(response.content, "html.parser")
-    html_text = soup.get_text()
-    return html_text
-
-
 def load_exchanges_for_product_type(product_type: ProductType) -> List[List[Tuple[str, str]]]:
     url = _URL_BASE + f'/en/index.php?f=products&p={product_type.value}'
     logging.info(f'loading data for product type {product_type.value}: {url}')
-    html_text = load_url(url)
-    html = BeautifulSoup(html_text, 'html.parser')
+    response = requests.get(url)
+    html = BeautifulSoup(response.content, 'html.parser')
     region_list_tag = html.find('div', {'id': product_type.value})
     if region_list_tag is None:
         region_urls = {'unknown': url}
@@ -62,9 +55,9 @@ def load_exchanges_for_product_type(product_type: ProductType) -> List[List[Tupl
     exchanges = list()
     for region_name in region_urls:
         region_url = region_urls[region_name]
-        html_exchanges_text = load_url(region_url)
+        response_exchanges = requests.get(region_url)
 
-        html_exchanges = BeautifulSoup(html_exchanges_text, 'html.parser')
+        html_exchanges = BeautifulSoup(response_exchanges.content, 'html.parser')
         exchanges_region = list()
         for link_tag in html_exchanges.find_all('a'):
             if link_tag.get('href') and link_tag.get('href').startswith('index.php?f='):
@@ -139,21 +132,21 @@ class Instrument(AsDict):
 
 def load_for_exchange_partial(exchange_name: str, exchange_url: str) -> Tuple[List[Instrument], str]:
     instruments = list()
-    html_text = load_url(exchange_url)
+    response = requests.get(exchange_url)
 
     rule_contract_url = re.compile(r"javascript:NewWindow\(\'(.*?)\'")
 
-    def find_stock_details_link(tag):
-        is_link = tag.name == 'a'
-        if is_link and 'href' in tag.attrs:
-            check_contract_url = rule_contract_url.match(tag['href'])
+    def find_stock_details_link(a_tag):
+        is_link = a_tag.name == 'a'
+        if is_link and 'href' in a_tag.attrs:
+            check_contract_url = rule_contract_url.match(a_tag['href'])
             return check_contract_url and check_contract_url.group(1).startswith(_URL_CONTRACT_DETAILS)
 
         return False
 
     next_page_url = None
     try:
-        html = BeautifulSoup(html_text, 'lxml')
+        html = BeautifulSoup(response.content, 'lxml')
         pagination_tag = html.find('ul', {'class': 'pagination'})
         if pagination_tag is not None:
             current_page_tag = pagination_tag.find('li', {'class': 'active'})
