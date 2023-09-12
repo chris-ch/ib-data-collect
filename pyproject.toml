@@ -27,6 +27,7 @@ google-cloud-logging = "^3.6.0"
 functions-framework = "3.0.0"
 google-cloud-tasks = "^2.14.1"
 beautifulsoup4 = "^4.12.2"
+routes = "^2.5.1"
 
 [tool.poetry.group.dev.dependencies]
 Flask = "2.0.2"
@@ -34,7 +35,3 @@ Flask = "2.0.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[[build.env]]
-name = "GOOGLE_FUNCTION_TARGET"
-value = "main"

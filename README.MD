@@ -35,8 +35,12 @@ podman machine init --cpus=2 --disk-size=12 --memory=4096 -v $HOME/.config/gclou
 podman machine set --rootful gcp
 podman machine start gcp
 # inspecting content: podman machine ssh gcp
-pack build --builder=gcr.io/buildpacks/builder --path=app --workspace=/app app
-#podman system connection default gcp-root
+```
+
+Building an app image and run it:
+
+```Shell
+pack build --builder=gcr.io/buildpacks/builder --env GOOGLE_FUNCTION_SIGNATURE_TYPE=http --env GOOGLE_FUNCTION_TARGET=main --path=app --workspace=/app app
 podman run --env GOOGLE_PROJECT_ID=local-dev --env GOOGLE_APPLICATION_CREDENTIALS=/home/cnb/creds.json -v /gcp/application_default_credentials.json:/home/cnb/creds.json:ro -it -ePORT=8080 -p8080:8080 -u root app
 ```
 
