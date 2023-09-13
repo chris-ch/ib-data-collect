@@ -31,17 +31,28 @@ You will need to execute the above command any time you modify the poetry packag
 Install Podman and create a machine:
 
 ```Shell
-podman machine init --cpus=2 --disk-size=12 --memory=4096 -v $HOME/.config/gcloud:/gcp:ro gcp
+# Creating a Host VM and mounting Google credentials directory
+podman machine init --cpus=2 --disk-size=12 --memory=4096 -v $HOME/.config/gcloud:/gcloud:ro gcp
 podman machine set --rootful gcp
 podman machine start gcp
-# inspecting content: podman machine ssh gcp
 ```
 
-Building an app image and run it:
+#### Using the _Dockerfile_
 
 ```Shell
-pack build --builder=gcr.io/buildpacks/builder --env GOOGLE_FUNCTION_SIGNATURE_TYPE=http --env GOOGLE_FUNCTION_TARGET=main --path=app --workspace=/app app
-podman run --env GOOGLE_PROJECT_ID=local-dev --env GOOGLE_APPLICATION_CREDENTIALS=/home/cnb/creds.json -v /gcp/application_default_credentials.json:/home/cnb/creds.json:ro -it -ePORT=8080 -p8080:8080 -u root app
+# Building docker image on local repo
+podman build -t ibc-docker .
+# Starting Docker container on the Host VM using the mounted directory for Google credentials
+GOOGLE_PROJECT_ID=private-cloud-393113 && APP_PORT=8080 && podman run -e GOOGLE_APPLICATION_CREDENTIALS=/mnt/gcloud/application_default_credentials.json -v /gcloud:/mnt/gcloud -p 8080:${APP_PORT} -e FLASK_DEBUG=True -e LOCAL_LOGGING=True -e PORT=${APP_PORT} -e GOOGLE_PROJECT_ID=${GOOGLE_PROJECT_ID} -e GOOGLE_CLOUD_PROJECT=${GOOGLE_PROJECT_ID} ibc-docker
+```
+
+#### Using _buildpacks_
+
+```Shell
+# buildpack needs requirements.txt in order to properly create the python libs
+poetry export --format requirements.txt --output app/requirements.txt --without-hashes
+pack build --builder=gcr.io/buildpacks/builder --path=app --workspace=/app ibc-pack
+GOOGLE_PROJECT_ID=private-cloud-393113 && APP_PORT=8080 && podman run --env GOOGLE_CLOUD_PROJECT=${GOOGLE_PROJECT_ID} --env GOOGLE_APPLICATION_CREDENTIALS=/home/cnb/creds.json -v /gcloud/application_default_credentials.json:/home/cnb/creds.json:ro -it -e PORT=${APP_PORT} -p 8080:${APP_PORT} -u root ibc-pack
 ```
 
 ### Terraform setup
@@ -50,9 +61,4 @@ podman run --env GOOGLE_PROJECT_ID=local-dev --env GOOGLE_APPLICATION_CREDENTIAL
 
 
 ### Running local tests
-**From directory** `app/`:
-
-`app> functions-framework-python --target main --debug`
-
 You can then access the app through `http://localhost:8080/`.
-

@@ -189,7 +189,7 @@ packaging = "*"
 name = "flask"
 version = "2.0.2"
 description = "A simple framework for building complex web applications."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 files = [
@@ -206,25 +206,6 @@ Werkzeug = ">=2.0"
 [package.extras]
 async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
-
-[[package]]
-name = "functions-framework"
-version = "3.0.0"
-description = "An open source FaaS (Function as a service) framework for writing portable Python functions -- brought to you by the Google Cloud Functions team."
-category = "main"
-optional = false
-python-versions = ">=3.5, <4"
-files = [
-    {file = "functions-framework-3.0.0.tar.gz", hash = "sha256:422aa72c54c5e26076e34e074eadf3e713595a25b387ec51068aa7b9952a5047"},
-    {file = "functions_framework-3.0.0-py3-none-any.whl", hash = "sha256:9c1fe2dd78e9ac7e87aae7f0f59a8c4bd2dec2b31010c2552c8c4dc061d52011"},
-]
-
-[package.dependencies]
-click = ">=7.0,<9.0"
-cloudevents = ">=1.2.0,<2.0.0"
-flask = ">=1.0,<3.0"
-gunicorn = {version = ">=19.2.0,<21.0", markers = "platform_system != \"Windows\""}
-watchdog = ">=1.0.0,<2.0.0"
 
 [[package]]
 name = "google-api-core"
@@ -935,4 +916,4 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "d31af504c612d514615ee8cd0efc4fe221fe85bad6581d04efd59c2c91cbcc5b"
+content-hash = "aa3c4fb20bfe69a39a19bf144c77f599cfdccd8a5ccc78a0a8669cda9ca0c1de"

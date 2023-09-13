@@ -1,44 +1,108 @@
+import os
+import logging
+from datetime import datetime, timezone
+from operator import itemgetter
 import flask
 
-import functions_framework
-
 import ibdataloader
-from services import app
-
-import os
+from auth import authenticated
 
 import google.cloud.logging
-import logging
+from google.cloud import tasks_v2
+from google.cloud import datastore
 
 
-log_client = google.cloud.logging.Client(project=os.getenv('GOOGLE_PROJECT_ID'))
-log_client.setup_logging(log_level=logging.INFO)
-logger = logging.getLogger()
-if os.getenv("LOCAL_LOGGING", "False") == "True":
-    # output logs to console - otherwise logs are only visible when running in GCP
-    console_output = logging.StreamHandler()
-    console_output.setFormatter(logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s'))
-    logging.getLogger().addHandler(console_output)
+app = flask.Flask(__name__)
 
 
-@functions_framework.http
-def main(request: flask.Request):
+def store_time(dt):
+    entity = datastore.Entity(key=datastore.Client().key("visit"))
+    entity.update({"timestamp": dt})
+    datastore.Client().put(entity)
+
+
+def fetch_times(limit):
+    query = datastore.Client().query(kind="visit")
+    query.order = ["-timestamp"]
+    times = query.fetch(limit=limit)
+    return times
+
+
+@app.route('/openapi', methods=['GET', 'POST'])
+def openapi():
+    with authenticated() as claim:
+        return {'user-data': claim.user_data}
+
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
     logging.info(f"Using Firebase API Key: {os.getenv('GOOGLE_API_KEY')}")
-    internal_context = app.test_request_context(path=request.full_path, method=request.method)
-    internal_context.request.data = request.data
-    internal_context.request.headers = request.headers
-    internal_context.push()
-    return_value = app.full_dispatch_request()
-    internal_context.pop()
-    return return_value
+    with authenticated(fail_if_not=False) as claim:
+        store_time(datetime.now(tz=timezone.utc))
+        if claim.user_data:
+            times = fetch_times(10)
+
+        else:
+            times = None
+
+        project_id = os.getenv("GOOGLE_PROJECT_ID")
+        messaging_sender_id = os.getenv("GOOGLE_MESSAGING_SENDER_ID")
+        api_key = os.getenv("GOOGLE_API_KEY")
+        return flask.render_template(
+            "index.html",
+            user_data=claim.user_data,
+            error_message=claim.error_message,
+            times=times,
+            api_key=api_key,
+            auth_domain=f"{project_id}.firebaseapp.com",
+            project_id=project_id,
+            messaging_sender_id=messaging_sender_id,
+            storage_bucket=f"{project_id}.appspot.com"
+        )
 
 
-@functions_framework.http
-def job_start_exchange(request: flask.Request):
-    # extract exchange_name, exchange_url and product_type
-    exchange_name = ''
-    exchange_url = ''
-    product_type = ibdataloader.ProductType.ETF
-    exchange_instruments = ibdataloader.load_for_exchange(exchange_name, exchange_url)
-    for instrument in exchange_instruments:
-        instrument.product_type = product_type
+def post_job_exchange(exchange_name: str, exchange_url: str):
+    logging.info(f'posting url {exchange_url} for exchange {exchange_name}')
+    client = tasks_v2.CloudTasksClient()
+    # Initialize request argument(s)
+    request = tasks_v2.CreateTaskRequest(
+        parent="parent_value",
+    )
+
+    # Make the request
+    response = client.create_task(request=request)
+    function_name = ''
+    target = client.get_target(
+        name=f"projects/{function_name.split('.')[0]}/locations/global/functions/{function_name.split('.')[1]}")
+
+    task = tasks_v2.Task()
+    #task.target = client.get_function(function_name)
+    #task.queue = queue_name
+    #task.project = project_id
+    #return client.create_task(task)
+
+
+@app.route('/launch/download/<product_type>', methods=['GET', 'POST'])
+def launch_task_download(product_type: str):
+    exchanges = ibdataloader.load_exchanges_for_product_type(ibdataloader.ProductType(product_type.lower()))
+    for exchange_name, exchange_url in sorted(exchanges, key=itemgetter(0)):
+        # posting job for every exchange
+        post_job_exchange(exchange_name, exchange_url)
+
+    return {'message': f'tasks successfully launched for product type {product_type}, loading from {len(exchanges)} exchanges'}
+
+
+if __name__ == "__main__":
+    log_client = google.cloud.logging.Client(project=os.getenv('GOOGLE_PROJECT_ID'))
+    log_client.setup_logging(log_level=logging.INFO)
+    logger = logging.getLogger()
+    if os.getenv("LOCAL_LOGGING", "False").upper() in ("TRUE", "ON", "ENABLED"):
+        # output logs to console - otherwise logs are only visible when running in GCP
+        console_output = logging.StreamHandler()
+        console_output.setFormatter(logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s'))
+        logging.getLogger().addHandler(console_output)
+
+    is_debug = os.getenv("FLASK_DEBUG", "True")
+    if is_debug:
+        logging.warning('flask: DEBUG mode is on')
+    app.run(debug=is_debug.upper() in ("TRUE", "ON", "ENABLED"), host="0.0.0.0", port=int(os.environ.get("PORT", "8080")))

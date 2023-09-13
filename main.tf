@@ -59,6 +59,49 @@ resource "google_storage_bucket_object" "object" {
   source = data.archive_file.server_files.output_path
 }
 
+resource "google_cloud_run_v2_service" "http_services" {
+  name = "${var.deployment_name}-http-services"
+  description = "HTTP services"
+  location = var.GOOGLE_REGION
+  project = var.GOOGLE_PROJECT_ID
+  runtime = "python311"
+  entrypoint = ["main"]
+  image = "gcr.io/my-project/my-image"
+  ingress = "INGRESS_TRAFFIC_ALL"
+
+  template {
+    containers {
+      image = "us-docker.pkg.dev/cloudrun/container/hello"
+    }
+  }
+
+  build_config {
+    runtime = "python311"
+    entry_point = "main"
+    source {
+      storage_source {
+        bucket = google_storage_bucket.default.name
+        object = google_storage_bucket_object.object.name
+      }
+    }
+  }
+  traffic {
+    weight = 100
+    destination {
+      port = 8080
+      url_path = "/"
+    }
+  }
+
+  traffic {
+    weight = 0
+    destination {
+      port = 8081
+      url_path = "/other"
+    }
+  }
+}
+
 resource "google_cloudfunctions2_function" "http_services" {
   name = "${var.deployment_name}-http-services"
   provider = google-beta
