@@ -1,0 +1,3131 @@
+Symbol	Description
+AAA	First Priority Clo Bond ETF
+AAAU	GS Physical Gold ETF
+AAMC	Altisource Asset Management Corp Com
+AAPY	Neos Strategy Apple [Aapl] ETF
+AAU	Almaden Minerals
+ABEQ	Absolute Core Strategy ETF
+ACES	Alps Clean Energy ETF
+ACIO	Aptus Collared Income Opportunity ETF
+ACSI	American Customer Satisfaction Core Alpha ETF
+ACTV	Leadershares Activist Leaders ETF
+ACU	Acme United Corp
+ACVF	American Conservative Values ETF
+ACWV	Ishares Global Min Vol Factor ETF
+ADE.U	Adit Edtech Acquisition Corp [Adex.U]
+ADE.W	Adit Edtech Acquisition Corp WT [Adex/W]
+ADEX	Adit Edtech Acquisition Corp
+ADFI	Anfield Dynamic Fixed Income ETF
+ADIV	Smartetfs Asia Pacific Dividend Builder ETF
+ADME	Aptus Drawdown Managed Equity ETF
+ADPV	Adaptiv Select ETF
+ADR.S	Ault Disruptive Technologies Corp [Adrt.U]
+ADRT	Ault Disruptive Technologies Corp
+ADVE	Matthews Asia Dividend Active ETF
+AE	Adams Resources & Energy
+AEF	Abrdn EM Equity Income Fund Inc
+AEMB	American Century Emerging Markets Bond ETF
+AEO.W	Aeon Biopharma Inc WT [Aeon.W]
+AEON	Aeon Biopharma Inc
+AESR	Anfield U.S. Equity Sector Rotation ETF
+AETH	Bitwise Ethereum Strategy ETF
+AFIF	Anfield Universal Fixed Income ETF
+AFK	Vaneck Africa Index ETF
+AFLG	FT Active Factor Large Cap ETF
+AFMC	FT Active Factor Mid Cap ETF
+AFSM	FT Active Factor Small Cap ETF
+AFTY	CSOP FTSE China A50 ETF
+AGE	Agex Therapeutics Inc
+AGG	US Aggregate Bond Ishares Core ETF
+AGGH	Simplify Aggregate Bond Plus Credit ETF
+AGGY	Wisdomtree Yield Enhd U.S. Agg Bond Fund
+AGIH	Ishares Inflation Hedged U.S. Aggregate Bond ETF
+AGOV	Etc Gavekal Asia Pacific Government Bond ETF
+AGOX	Adaptive Growth Opportunities ETF
+AGQ	Ultra Silver 2X ETF
+AGQI	First Trust Active Global Quality Income ETF
+AGRH	Interest Rate Hedged U.S. Agg Bond ETF
+AGZ	Agency Bond Ishares ETF
+AHLT	American Beacon Ahl Trend ETF
+AHOY	Tidal Newday Ocean Health ETF
+AHYB	American Century Select High Yield ETF
+AIDB	Ai-Pilot Large Cap Dynamic Beta Income ETF
+AIEQ	A.I. Powered Equity ETF
+AIM	Aim Immunotech Inc
+AINC	Ashford Inc
+AIRI	Air Industries Group Inc
+AIVI	Wisdomtree International Dividend Top 100 Fund
+AIVL	Wisdomtree U.S. Dividend Ex-Financials Fund
+AIYY	Yieldmax Ai Option Income Strategy ETF
+ALTL	Pacer Lunt Large Cap Alternator ETF
+ALUM	Uscf Aluminum Strategy Fund
+AMAX	Roundhill Hedged Multi-Asset Income ETF
+AMB.V	Ambipar Emergency Response [Ambi/W]
+AMBI	Ambipar Emergency Response Cl A
+AMBO	Ambow Education Holding Ltd ADR
+AMDY	Yieldmax Amd Option Income ETF
+AMJ	Alerian MLP Index ETN JP Morgan
+AMLP	Alps Alerian MLP ETF
+AMNA	Etracs Alerian Midstream Energy Index ETN
+AMND	UBS Ag Alerian Midstream Energy High Div ETF
+AMOM	Qraft Ai-Enhanced U.S. Large Cap Momentum ETF
+AMPD	Cnic Carbon Neutral Power Futures ETF
+AMPE	Ampio Pharmaceuticals
+AMS	American Shared Hospital Services
+AMTR	Etracs Alerian Midstream Energy TR ETN
+AMUB	Etracs Alerian MLP Index ETN Series B
+AMZA	Infracap MLP ETF
+AMZP	Neos Yield Premium Strategy Amazon [Amzn] ETF
+AMZY	Yieldmax Amzn Option Income ETF
+ANEW	MSCI Transformational Changes ETF
+AOA	Aggressive Allocation Ishares Core ETF
+AOK	Conservative Allocation Ishares Core ETF
+AOM	Moderate Allocation Ishares Core ETF
+AOR	Growth Allocation Ishares Core ETF
+AP.W	Ampco-Pittsburgh Corp Series A WT
+APCB	Activepassive Core Bond ETF
+APIE	Activepassive International Equity ETF
+APLY	Yieldmax Aapl Option Income ETF
+APMU	Activepassive Intermediate Municipal Bond ETF
+APRD	Innovator Premium Income 10 Barrier ETF - Apr
+APRH	Innovator Premium Income 20 Barrier ETF - Apr
+APRJ	Innovator Premium Income 30 Barrier ETF - Apr
+APRQ	Innovator Premium Income 40 Barrier ETF - Apr
+APRT	Allianzim U.S. Large Cap Buffer10 Apr ETF
+APRW	Allianzim U.S. Large Cap Buffer20 Apr ETF
+APRZ	Trueshares Structured Outcome [Apr] ETF
+APT	Alpha Pro Tech
+APUE	Activepassive U.S. Equity ETF
+ARB	Altshares Merger Arbitrage ETF
+ARCM	Arrow Reserve Capital Management ETF
+AREN	The Arena Group Holdings Inc
+ARGT	GX MSCI Argentina ETF
+ARKA	Ark Active Bitcoin Futures Strategy ETF
+ARKC	Ark Active On-Chain Bitcoin Strategy ETF
+ARKD	Ark Blockchain and Digital Economy Innov ETF
+ARKF	Ark Fintech Innovation ETF
+ARKG	Ark Genomic Revolution ETF
+ARKK	Ark Innovation ETF
+ARKQ	Ark Autonomous Tech & Robotics ETF
+ARKW	Ark Next Generation Internet ETF
+ARKX	Ark Space Exploration & Innovation ETF
+ARKY	Ark Active Bitcoin Ethereum Strategy ETF
+ARKZ	Ark Active Ethereum Futures Strategy ETF
+ARMN	Aris Mining Corp
+ARMP	Armata Pharmaceuticals Inc
+ARMR	Armor US Equity Index ETF
+ARP	Inner Circle II Pmv Adaptive Risk Parity ETF
+ASEA	GX FTSE Southeast Asia ETF
+ASHR	Xt Harvest CSI 300 China A-Shares ETF
+ASHS	Xt Harvest CSI 500 China A-Shares Small Cap ETF
+ASHX	Xt MSCI China A Inclusion Equity ETF
+ASIA	Matthews Pacific Tiger Active ETF
+ASM	Avino Silver & Gold
+ASXC	Asensus Surgical Inc
+ATE.W	Athena Technology Acquisition II WT [Atek/W]
+ATEK	Athena Technology Acquisition Corp II Cl A
+ATFV	Alger 35 ETF
+ATMP	Barclays Plus Select MLP ETN
+ATNM	Actinium Pharmaceuticals Inc
+AUGT	Aim U.S. Large Cap Buffer10 Aug ETF
+AUGW	Aim U.S. Large Cap Buffer20 Aug ETF
+AUGZ	Trueshares Structured Outcome [Aug] ETF
+AUL-D	Ault Alliance Inc Pfd D
+AULT	Ault Alliance Inc
+AUMN	Golden Minerals Company
+AUSF	GX Adaptive U.S. Factor ETF
+AUST	Austin Gold Corp
+AVDE	Avantis International Equity ETF
+AVDS	Avantis International Small Cap Equity ETF
+AVDV	Avantis International Small Cap Value ETF
+AVEE	Avantis Emerging Markets Small Cap Equity ETF
+AVEM	Avantis Emerging Markets Equity ETF
+AVES	Avantis Emerging Markets Value ETF
+AVGE	Avantis All Equity Markets ETF
+AVGV	Avantis All Equity Markets Value ETF
+AVIE	Avantis Inflation Focused Equity ETF
+AVIG	Avantis Core Fixed Income ETF
+AVIV	Avantis International Large Cap Value ETF
+AVLC	Avantis U.S. Large Cap Equity ETF
+AVLV	Avantis U.S. Large Cap Value ETF
+AVMA	Avantis Moderate Allocation ETF
+AVMC	Avantis U.S. Mid Cap Equity ETF
+AVMU	Avantis Core Municipal Fixed Income ETF
+AVMV	Avantis U.S. Mid Cap Value ETF
+AVNM	Avantis All International Markets Equity ETF
+AVNV	Avantis All International Markets Value ETF
+AVRE	Avantis Real Estate ETF
+AVSC	Avantis U.S Small Cap Equity ETF
+AVSD	Avantis Responsible International Equity ETF
+AVSE	Avantis Responsible Emerging Markets ETF
+AVSF	Avantis Short-Term Fixed Income ETF
+AVSU	Avantis Responsible U.S. Equity ETF
+AVUS	Avantis U.S. Equity ETF
+AVUV	Avantis U.S. Small Cap Value ETF
+AWAY	ETFMG Travel Tech ETF
+AWEG	Alger Weatherbie Enduring Growth ETF
+AWX	Avalon Holdings Corp
+AZTD	Aztlan Global Stock Selection Dm Smid ETF
+AZTR	Azitra Inc
+BAB	Taxable Municipal Bond Invesco ETF
+BACA	Berenson Acquisition Corp I Cl A
+BAD	Listed B.A.D. ETF
+BALI	Blackrock Advantage Large Cap Income ETF
+BALT	Innovator Defined Wealth Shield ETF
+BAMA	Brookstone Active ETF
+BAMB	Brookstone Intermediate Bond Et
+BAMD	Brookstone Dividend Stock ETF
+BAMG	Brookstone Growth Stock ETF
+BAMO	Brookstone Opportunities ETF
+BAMU	Brookstone Ultra-Short Bond ETF
+BAMV	Brookstone Value Stock ETF
+BAMY	Brookstone Yield ETF
+BAPR	Innovator U.S. Buffer ETF - Apr
+BAR	Graniteshares Gold Trust Shares
+BATL	Battalion Oil Corp
+BATT	Adv Battery Metals and Materials Amplify ETF
+BAUG	Innovator U.S. Buffer ETF - Aug
+BBAG	JPM U.S. Aggregate Bond ETF
+BBAX	JPM Betabuilders Developed Asia-Ex Japan ETF
+BBC	Virtus Lifesci Biotech Clinical Trials ETF
+BBCA	JPM Betabuilders Canada ETF
+BBCB	JPM Corp Bond Research Enhanced ETF
+BBEM	JPM Betabuilders Emerging Markets Equity ETF
+BBEU	JPM Betabuilders Europe ETF
+BBHY	JPM Diversified High Yield ETF
+BBIB	JPM Betabuilders U.S Treasury Bond 3-10 Year ETF
+BBIN	JPM Betabuilders International Equity ETF
+BBIP	JPM Betabuilders U.S TIPS 0-5 Year ETF
+BBJP	JPM Betabuilders Japan ETF
+BBLB	JPM Betabuilders U.S Treasury Bond 20+ Year ETF
+BBLU	Ea Bridgeway Blue Chip ETF
+BBMC	JPM Betabuilders U.S. Mid Cap Equity ETF
+BBP	Virtus Lifesci Biotech Products ETF
+BBRE	JPM Betabuilders MSCI U.S. REIT ETF
+BBSA	JPM Betabuilders 1-5 Year U.S. Aggregate Bond
+BBSB	JPM Betabuilders U.S Treasury Bond 1-3 Year ETF
+BBSC	JPM Betabuilders U.S. Small Cap Equity ETF
+BBUS	JPM Betabuilders U.S. Equity ETF
+BCD	All Commodity Longer Dated Strategy K-1 Free ETF
+BCDF	Horizon Kinetics Blockchain Development ETF
+BCHP	Principal Exchange-Traded Funds Principal Focuse
+BCI	All Commodity Strategy K-1 Free ETF
+BCIM	Abrdn Bloomberg Industrial Metals Strategy K-1 F
+BCV	Bancroft Convertible Fund
+BCV-A	Bancroft Fund Ltd
+BDCX	Etracs Quarterly Pay 1.5X Bdc ETN
+BDCZ	Etracs Bus Dev ETN Series B
+BDEC	Innovator U.S. Buffer ETF - Dec
+BDL	Flanigan's Enterprises
+BDRY	Breakwave Dry Bulk Shipping ETF
+BDVG	Imgp Berkshire Dividend Growth ETF
+BECO	Blackrock Future Climate and Sustainable ETF
+BEDZ	Advisorshares Hotel ETF
+BEEP	Mobile Infrastructure Corp
+BEMB	JPM Broad USD Emerging Markets Bond
+BERZ	Microsectors Fang & Innovation -3X ETN
+BETE	Proshares Bitcoin & Ether EW Strategy ETF
+BETH	Proshares Bitcoin & Ether Mcap Weight ETF
+BETZ	Roundhill Sports Betting & Igaming ETF
+BFEB	Innovator U.S. Buffer ETF - Feb
+BFIX	Build Bond Innovation ETF
+BFOR	Barron's 400 ETF
+BGI	Birks Group Inc
+BGIG	ETF Series Bahl & Gaynor Income Growth ETF
+BGLD	FT Gold Strategy Quarterly Buffer ETF
+BHB	Bar Harbor Bankshares
+BHM	Bluerock Homes Trust Inc
+BHYB	Dbx USD High Yield Bb-B Ex Financials ETF
+BIBL	Inspire 100 ETF
+BIL	1-3 Month T-Bill Barclays Capital SPDR
+BILD	Macquarie Global Listed Infrastructure ETF
+BILS	SPDR Barclays 3-12 Month T-Bill ETF
+BILZ	Pimco Ultra Short Government Active ETF
+BINC	Blackrock Flexible Income ETF
+BINV	Brandes International ETF
+BIT.U	Bite Acquisition Corp [Bite.U]
+BIT.W	Bite Acquisition Corp [Bite/W]
+BITC	Bitwise Bitcoin Strategy Optimum Roll ETF
+BITE	Bite Acquisition Corp
+BITI	Proshares Short Bitcoin Strategy -1X ETF
+BITO	Proshares Bitcoin Strategy ETF
+BITQ	Bitwise Crypto Industry Innovators ETF
+BITX	Volatility 2X Bitcoin Strategy ETF
+BIV	Interm Term Bond ETF Vanguard
+BIZD	Vaneck Bdc Income ETF
+BJAN	Innovator U.S. Buffer ETF - Jan
+BJUL	Innovator U.S. Buffer ETF - Jul
+BJUN	Innovator U.S. Buffer ETF - Jun
+BKAG	BNY Mellon Core Bond ETF
+BKCI	BNY Concentrated International ETF
+BKEM	BNY Mellon Emerging Markets Equity ETF
+BKES	BNY Mellon Sustainable Global EM ETF
+BKF	BRIC Ishares MSCI ETF
+BKGI	BNY Mellon Global Infrastructure Income ETF
+BKHY	BNY Mellon High Yield Beta ETF
+BKIE	BNY Mellon International Equity ETF
+BKIS	BNY Mellon Sustainable International Equity ETF
+BKLC	BNY Mellon US Large Cap Core Equity ETF
+BKLN	Senior Loan Invesco ETF
+BKMC	BNY Mellon US Mid Cap Core Equity ETF
+BKSE	BNY Mellon US Small Cap Core Equity ETF
+BKTI	Bk Technologies Inc
+BKUI	BNY Mellon Ultra-Short Income ETF
+BKUS	BNY Mellon Sustainable US Equity ETF
+BLCV	Blackrock Large Cap Value ETF
+BLDG	Cambria Global Real Estate ETF
+BLES	Inspire Global Hope Large Cap ETF
+BLHY	Virtus Newfleet High Yield Bond ETF
+BLKC	Invesco Galaxy Blockchain Users and Decentralize
+BLOK	Transformational Data Sharing Amplify ETF
+BLU.U	Blueriver Acquisition Corp [Blua.U]
+BLU.W	Blueriver Acquisition Corp WT [Blua/W]
+BLUA	Blueriver Acquisition Corp Cl A
+BLV	Long Term Bond Index ETF Vanguard
+BMAR	Innovator U.S. Buffer ETF - Mar
+BMAY	Innovator U.S. Buffer ETF - May
+BMED	Blackrock Future Health ETF
+BMT.W	Bm Technologies Inc WT [Bmtx/W]
+BMTX	Bm Technologies Inc
+BMVP	Invesco Bloomberg Mvp Multi-Factor ETF
+BNDC	Flexshares Core Select Bond Fund
+BNDD	Quadratic Deflation ETF
+BNDI	Neos Enhanced Income Aggregate Bond ETF
+BNE	ETF Series Blue Horizon Bne ETF
+BNGE	S-Network Streaming and Gaming ETF FT
+BNKD	Microsectors U.S. Big Banks -3X ETN
+BNKU	Microsectors U.S. Big Banks 3X ETN
+BNO	US Brent Oil
+BNOV	Innovator U.S. Buffer ETF - Nov
+BOAT	Sonicshares Global Shipping ETF
+BOCT	Innovator U.S. Buffer ETF - Oct
+BOIL	Ultra Bloomberg Natural Gas 2X ETF
+BOSS	GX Founder-Run Companies ETF
+BOUT	Innovator Ibd Breakout Opportunities ETF
+BOXX	Ea Architect 1-3 Month Box ETF
+BPAY	Blackrock Future Financial and Technology ETF
+BQ	Boqii Holding Ltd ADR
+BRAZ	GX Brazil Active ETF
+BRBS	Blue Ridge Bankshare
+BRF	Vaneck Brazil Smallcap ETF
+BRLN	Blackrock Floating Rate Loan ETF
+BRN	Barnwell Industries
+BRZU	Brazil Bull 3X Direxion
+BSEP	Innovator U.S. Buffer ETF - Sep
+BSMC	Brandes U.S. Small-Mid Cap Value ETF
+BSR	Beacon Selective Risk ETF
+BSTP	Innovator Buffer Step-Up Strategy ETF
+BSV	Short-Term Bond ETF Vanguard
+BTAL	US Anti-Beta Fund Mkt Neutral Quantshares
+BTEK	Blackrock Future Tech ETF
+BTG	B2Gold Corp
+BTHM	Blackrock Future U.S. Themes ETF
+BTOP	Bitwise Bitcoin and Ether EW Strategy ETF
+BTR	Beacon Tactical Risk ETF
+BTTR	Better Choice Company Inc
+BUCK	Simplify Stable Income ETF
+BUFB	Innovator Laddered Allocation Buffer ETF
+BUFD	FT Fund of Deep Buffer ETF
+BUFF	Innovator Laddered Allocation Power Buffer ETF
+BUFG	FT Buffered Allocation Growth ETF
+BUFQ	FT CBOE Vest Fund of Nasdaq ViII
+BUFR	FT Fund of Buffer ETFS
+BUFT	FT Buffered Allocation Defensive ETF
+BUFZ	FT CBOE Vest Laddered Moderate Buf ETF
+BUL	Pacer US Cash Cows Growth ETF
+BULZ	Microsectors Fang & Innovation 3X ETN
+BUR.W	Nuburu Inc WT [Buru.W]
+BURU	Nuburu Inc
+BUSA	Brandes U.S. Value ETF
+BUYW	Northern IV Main Buywrite ETF
+BUYZ	Franklin Disruptive Commerce ETF
+BUZZ	Vaneck Social Sentiment ETF
+BWEB	Bitwise Web3 ETF
+BWET	Breakwave Tanker Shipping ETF
+BWTG	Brendan Wood Topgun Index ETF
+BWX	Intl Treasury Bond ETF SPDR
+BWZ	Short-Term Intl Treasury Bond ETF SPDR
+BYLD	Yield Optimized Bond Ishares ETF
+BYRE	Principal Real Estate ETF
+BYTE	Roundhill Io Digital Infrastructure ETF
+BZQ	Ultrashort MSCI Brazil Capped -2X ETF
+CALF	Pacer US Small Cap Cash Cows 100 ETF
+CAML	Congress Large Cap Growth ETF
+CAMX	Inner Circle Fund Cambiar Aggressive Value ETF
+CANE	Teucrium Sugar
+CANF	Can-Fite Biopharma Ltd ADR
+CAOS	Ea Alpha Architect Tail Risk ETF
+CAPE	Doubleline Shiller Cape U.S. Equities ETF
+CARD	Montreal Max Auto Industry -3X ETN
+CARU	Montreal Max Auto Industry 3X ETN
+CARY	Angel Oak Income ETF
+CATX	Perspective Therapeutics Inc
+CBLS	Changebridge Capital Long/Short Equity ETF
+CBOE	CBOE Global Markets Inc
+CBON	Vaneck Chinaamc China Bond ETF
+CBSE	Changebridge Capital Sustainable Equity ETF
+CCEL	Cryo-Cell Intl Inc
+CCF	Chase Corp
+CCOR	Core Alternative ETF
+CCRV	Ishares Commodity Curve Carry ETF
+CDEI	MS US Large-Cap Diversity Equity and Inclusion E
+CDX	Simplify High Yield Plus Credit ETF
+CEF	Sprott Physical Gold & Silver Trust
+CEFD	Etracs Monthly Pay 1.5X ETN
+CEFS	Exchange Listed Funds Trust ETF
+CEI	Camber Energy Inc
+CEMB	Emrg Mkts Corp Bond Ishares JPM ETF
+CET	Central Securities Corp
+CETF	Drivewealth ICE 100 Index ETF
+CEV	Eaton Vance California Muni Income Trust
+CEW	Wisdomtree Emerging Currency Strategy Fund
+CFCV	Clearbridge Focus Value ETF
+CGBL	Capital Group Core Balanced ETF
+CGCB	Capital Group Core Bond ETF
+CGCP	Capital Group Fixed Income ETF Trust
+CGDG	Capital Group Dividend Grower ETF
+CGDV	Capital Dividend Value ETF
+CGGO	Capital Global Growth Equity ETF
+CGGR	Capital Growth ETF
+CGIE	Capital Group International ETF
+CGMS	Capital Group U.S. Multi-Sector ETF
+CGMU	Capital Group Municipal Income ETF
+CGRO	Corevalues Alpha Greater China Growth ETF
+CGSD	Capital Group Short-Duration Income ETF
+CGSM	Capital Group Short Duration Muni Income ETF
+CGUS	Capital Core Equity ETF
+CGV	Affinity Conductor Global Equity Value ETF
+CGW	S&P Global Water Index Invesco ETF
+CGXU	Capital Intl Focus Equity ETF
+CHAA	Catcha Investment Corp Cl A
+CHAT	Roundhill Generative Ai & Technology ETF
+CHAU	CSI 300 China A 2X ETF Direxion
+CHGX	Diversified U.S. Large Cap Fossil Fuel ETF
+CHIC	GX MSCI China Communication Services ETF
+CHIE	GX MSCI China Energy ETF
+CHIH	GX MSCI China Health Care ETF
+CHII	GX MSCI China Industrials ETF
+CHIK	GX MSCI China Information Technology ETF
+CHIM	GX MSCI China Materials ETF
+CHIQ	GX MSCI China Consumer Discretionary ETF
+CHIR	GX MSCI China Real Estate ETF
+CHIS	GX MSCI China Consumer Staples ETF
+CHIU	GX MSCI China Utilities ETF
+CHIX	GX MSCI China Financials ETF
+CHRG	Energy & Minerals Group Battery Materials ETF
+CIK	Credit Suisse Asset Management
+CIX	Compx International Inc
+CKX	Ckx Lands
+CLD.W	Calidi Biotherapeutics Inc WT [Cldi.W]
+CLDI	Calidi Biotherapeutics Inc
+CLDL	Cloud Computing 2X Shares Direxion
+CLIA	Veridien Climate Action ETF
+CLIP	GX 1-3 Month T-Bill ETF
+CLIX	Long Online/Short Stores ETF
+CLM	Cornerstone Strategic Value Fund
+CLNR	IQ Cleaner Transport ETF
+CLOI	Vaneck Clo ETF
+CLOX	Panagram AAA Clo ETF
+CLOZ	Panagram BBb-B Clo ETF
+CLSE	Convergence Long/Short Equity ETF
+CMBS	CMBS Ishares ETF
+CMCI	Vaneck CMCI Commodity Strategy ETF
+CMCL	Caledonia Mining Cp
+CMDT	Pimco Commodity Strategy Active ETF
+CMDY	Bberg Roll Select cmdty Strategy Ishares ETF
+CMF	California Muni Bond Ishares ETF
+CMT	Core Molding Technologies Inc
+CN	Xt MSCI All China Equity ETF
+CNBS	Amplify Seymour Cannabis ETF
+CNRG	SPDR Kensho Clean Power ETF
+CNXT	Vaneck Chinaamc Sme-Chnext ETF
+CNYA	China A Ishares MSCI ETF
+COE	51Talk Online Education Group
+COHN	Cohen & Company Inc
+COM	Auspice Broad Commodity Strategy ETF Direxion
+COMB	Commodity Broad Strategy No K-1 ETF
+CONY	Yieldmax Coin Option Income ETF
+COPX	GX Copper Miners ETF
+CORN	Teucrium Corn
+CORP	Invst Grade Corp Bd Index Pimco ETF
+COWZ	Pacer US Cash Cows 100 ETF
+CPAI	Northern Lights Counterpoint Quantitative Equity
+CPER	US Copper
+CPHI	China Pharma Holdings
+CPI	IQ Real Return ETF
+CPII	Ionic Inflation Protection ETF
+CQP	Cheniere Energy Partners LP
+CQQQ	China Technology Invesco ETF
+CRAK	Vaneck Oil Refiners ETF
+CRBN	ACWI Low Carbon Target Ishares MSCI ETF
+CRDT	Simplify Opportunistic Income ETF
+CRED	Columbia Research Enhanced Real Estate ETF
+CRF	Cornerstone Strategic Return Fund
+CRIT	Optica Rare Earths & Critical Materials ETF
+CRPT	FT Skybridge Crypto Industry and Digital Economy
+CRTC	Dbx US National Critical Technologies ETF
+CRUZ	Defiance Hotel Airline and Cruise ETF
+CSD	S&P Spin-Off Invesco ETF
+CSHI	Neos Enhanced Income Cash Alternative ETF
+CSM	Largecap Core Plus ETF FT
+CSMD	Professionally Congress Smid Growth ETF
+CTA	Simplify Managed Futures Strategy
+CTEX	Proshares S&P Kensho Cleantech ETF
+CTGO	Contango Ore Inc
+CTM	Castellum Inc
+CURE	Healthcare Bull 3X ETF Direxion
+CUT	MSCI Global Timber Invesco ETF
+CVAR	ETF Opp Cultivar ETF
+CVIE	MS International Responsible Index ETF
+CVLC	MS US Large-Cap Core Responsible Index ETF
+CVM	Cel-Sci Corp
+CVMC	MS US Mid-Cap Core Responsible Index ETF
+CVR	Chicago Rivet & Machine Company
+CVRD	Madison Covered Call ETF
+CVRT	Calamos Convertible Equity Alternative ETF
+CVSB	MS Ultra-Short Investment Grade ETF
+CVSE	MS US Select Equity ETF
+CVU	CPI Aerostructures
+CVY	Zacks Multi-Asset Income Invesco ETF
+CWB	Convertible Secs Barclays Capital SPDR
+CWEB	CSI China Internet Idx Bull 2X ETF Direxion
+CWI	ACWI Ex-US MSCI ETF SPDR
+CWS	Advisorshares Focused Equity ETF
+CYA	Simplify Tail Risk Strategy ETF
+CYBN	Cybin Inc
+CZA	Zacks Midcap Invesco ETF
+DALT	Anfield Capital Diversified Alternatives ETF
+DAPR	FT U.S. Equity Deep Buffer ETF April
+DARP	Grizzle Growth ETF
+DAT	Proshares Big Data Refiners ETF
+DAUG	FT U.S. Equity Deep Buffer ETF August
+DBA	DB Agriculture Fund Invesco
+DBAW	Xt MSCI All World Ex US Hedged Equity ETF
+DBB	DB Base Metals Fund Invesco
+DBC	DB Commodity Index Fund Invesco
+DBE	DB Energy Fund Invesco
+DBEF	Xt MSCI EAFE Hedged Equity ETF
+DBEH	IM Dbi Hedge Strategy ETF
+DBEM	Xt MSCI Emerging Markets Hedged Equity ETF
+DBEU	Xt MSCI Europe Hedged Equity ETF
+DBEZ	Xt MSCI Eurozone Hedged Equity ETF
+DBGR	Xt MSCI Germany Hedged Equity ETF
+DBJA	Innovator Double Stacker 9 Buffer ETF - Jan
+DBJP	Xt MSCI Japan Hedged Equity ETF
+DBMF	IM Dbi Managed Futures Strategy ETF
+DBND	Doubleline Opportunistic Bond ETF
+DBO	DB Oil Fund Invesco
+DBP	DB Precious Metals Fund Invesco
+DC	Dakota Gold Corp
+DC.W	Dakota Gold Corp WT
+DCMB	Doubleline Commercial Real Estate ETF
+DCOR	Dimensional US Core Equity 1 ETF
+DDC	Ddc Enterprise Limited Cl A
+DDEC	FT U.S. Equity Deep Buffer ETF December
+DDLS	Wisdomtree Dynamic Cur-Hgd Intl Smallcap Equity
+DDM	Ultra Dow30 2X ETF
+DDWM	Wisdomtree Dynamic Cur-Hgd Intl Equity Fund
+DECT	Aim U.S. Large Cap Buffer10 Dec ETF
+DECW	Aim U.S. Large Cap Buffer20 Dec ETF
+DECZ	Trueshares Structured Outcome [Dec] ETF
+DEED	Tcw Securitized Plus ETF FT
+DEEF	Xt FTSE Developed Ex US Multifactor ETF
+DEEP	Deep Value ETF
+DEFI	Teucrium Corn Fund Hashdex Bitcoin Futures ETF
+DEHP	Dimensional E.M. High Profitability ETF
+DEIF	Northern IV Sterling Capital Diverse ETF
+DEM	Wisdomtree EM High Div Fund
+DES	Wisdomtree U.S. Smallcap Dividend Fund
+DESK	Vaneck Office and Commercial REIT ETF
+DEUS	Xt Russell US Multifactor ETF
+DEW	Wisdomtree Global High Dividend Fund
+DFAC	Dimensional U.S. Core Equity 2 ETF
+DFAE	Dimensional W.M. Core Equity Market ETF
+DFAI	Dimensional International Core Equity Market ETF
+DFAR	Dimensional US Real Estate ETF
+DFAS	Dimensional U.S. Small Cap ETF
+DFAT	Dimensional U.S. Targeted Value ETF
+DFAU	Dimensional US Core Equity Market ETF
+DFAW	Dimensional World Equity ETF
+DFAX	Dimensional World Ex U.S. Core Equity 2 ETF
+DFCA	Dimensional California Municipal Bond ETF
+DFCF	Dimensional Core Fixed Income ETF
+DFE	Wisdomtree Europe Smallcap Dividend Fund
+DFEB	FT U.S. Equity Deep Buffer ETF February
+DFEM	Dimensional E.M. Core Equity 2 ETF
+DFEN	Aerospace Defense Bull 3X ETF Direxion
+DFEV	Dimensional E.M. Value ETF
+DFGR	Dimensional Global Real Estate ETF
+DFHY	Trimtabs Forlines Tactical High Yield ETF
+DFIC	Dimensional Intl Core Equity 2 ETF
+DFIP	Dimensional Inflation-Protected Securities ETF
+DFIS	Dimensional Intl Small Cap ETF
+DFIV	Dimensional International Value ETF
+DFJ	Wisdomtree Japan Smallcap Fund
+DFLV	Dimensional US Large Cap Value ETF
+DFND	Siren Divcon Dividend Defender ETF
+DFNL	Davis Select Financial ETF
+DFNM	Dimensional National Municipal Bond ETF
+DFNV	Trimtabs Forlines Risk Managed Innovation ETF
+DFRA	Donoghue Forlines Yield Enhanced Real Asset ETF
+DFSB	Dimensional Global Sustainability Fixed Inc ETF
+DFSD	Dimensional Short-Duration Fixed Income ETF
+DFSE	Dimensional E.M. Sustainability ETF
+DFSI	Dimensional International Sustainability ETF
+DFSU	Dimensional US Sustainability Core 1 ETF
+DFSV	Dimensional US Small Cap Value ETF
+DFUS	Dimensional U.S. Equity ETF
+DFUV	Dimensional US Marketwide Value ETF
+DFVX	Dimensional US Large Cap Vector ETF
+DGIN	Vaneck Digital India ETF
+DGP	DB Gold 2X ETN Powershares
+DGRO	Dividend Growth Ishares Core ETF
+DGS	Wisdomtree Emerging Market Smallcap Fund
+DGT	Global Dow ETF SPDR
+DGZ	DB Gold -1X ETN Powershares
+DHS	Wisdomtree U.S. High Dividend Fund
+DHY	Credit Suisse High Yield Bond Fund
+DIA	Dow Industrials SPDR
+DIAL	Columbia Diversified Fixed Income ETF
+DIEM	Franklin Emerging Market Core Div Tilt ETF
+DIG	Ultra Oil & Gas 2X ETF
+DIHP	Dimensional Intl High Profitability ETF
+DIM	Wisdomtree International Midcap Dividend Fund
+DINT	Davis Select International ETF
+DISO	Yieldmax Dis Option Income ETF
+DISV	Dimensional Intl Small Cap Value ETF
+DIT	Amcon Distributing Company
+DIV	GX Super Dividend ETF
+DIVB	US Dividend and Buyback Ishares ETF
+DIVI	Franklin Intl Core Div Tilt ETF
+DIVL	Madison Dividend Value ETF
+DIVO	Yieldshares Cwp Dividend & Option Income Amplify
+DIVS	Smartetfs Dividend Builder ETF
+DIVY	Sound Equity Income ETF
+DIVZ	Trueshares Low Volatility Equity Income ETF
+DJAN	FT U.S. Equity Deep Buffer ETF January
+DJCB	Etracs Commodity Index TR ETN
+DJD	Dow Jones Indu Dividend Invesco ETF
+DJIA	GX Funds Gx Dow 30 Covered Call ETF
+DJP	Ipath Commodity Index TR ETN
+DJUL	FT U.S. Equity Deep Buffer ETF July
+DJUN	FT U.S. Equity Deep Buffer ETF June
+DKRB	Subversive Decarbonization ETF
+DLA	Delta Apparel
+DLN	Wisdomtree U.S. Largecap Dividend Fund
+DLS	Wisdomtree International Smallcap Fund
+DMAR	FT U.S. Equity Deep Buffer ETF March
+DMAY	FT U.S. Equity Deep Buffer ETF May
+DMBS	Doubleline Mortgage ETF
+DMCY	Democracy International Fund
+DMDV	Aam S&P Dev Markets High Divd Value ETF
+DMF	Dreyfus Muni Income
+DMY.U	Dmy Squared Technology Group [Dmyy.U]
+DMY.W	Dmy Squared Technology Group WT [Dmyy/W]
+DMYY	Dmy Squared Technology Group Inc Cl A
+DNL	Wisdomtree Global Ex-US Quality Div Growth Fund
+DNN	Denison Mines Corp
+DNOV	FT U.S. Equity Deep Buffer ETF November
+DOCT	FT U.S. Equity Deep Buffer ETF October
+DOG	Short Dow30 -1X ETF
+DOGG	FT CBOE Vest DJIA Dogs 10 Ta
+DOL	Wisdomtree International Largecap Dividend Fund
+DON	Wisdomtree U.S. Midcap Dividend Fund
+DPSI	Decisionpoint Systems Inc
+DPST	Regional Banks Bull 3X Direxion
+DRIP	S&P Oil & Gas Expl Bear -2X Direxion
+DRLL	Ea Series Strive U.S. Energy ETF
+DRN	Real Estate Bull 3X Direxion
+DRSK	Aptus Defined Risk ETF
+DRUP	Graniteshares Xout U.S. Large Cap ETF
+DRV	Real Estate Bear -3X Direxion
+DSCF	Discipline Fund ETF
+DSEP	FT U.S. Equity Deep Buffer ETF September
+DSI	KLD 400 Social Ishares MSCI ETF
+DSJA	Innovator Double Stacker ETF - Jan
+DSS	Document Security Systems
+DSTL	Distillate U.S. Fundamental Stability Value ETF
+DTD	Wisdomtree U.S. Total Dividend Fund
+DTEC	Alps Disruptive Technologies ETF
+DTH	Wisdomtree International High Dividend Fund
+DTRE	Alerian Dis Tech Real Estate ETF FT ETF
+DUBS	Aptus Large Cap Enhanced Yield ETF
+DUDE	Merlyn.Ai Sectorsurfer Momentum ETF
+DUG	Ultrashort Oil & Gas -2X ETF
+DUHP	Dimensional US High Profitability ETF
+DULL	Microsectors Gold -3X Inverse Leveraged ETN
+DURA	Vaneck Morningstar Durable Dividend ETF
+DUSA	Davis Select USA ETF
+DUSB	Dimensional Ultrashort Fixed Income ETF
+DUSL	Industrials Bull 3X Direxion
+DUST	Gold Miners Bear -2X Direxion
+DVDN	Kingsbarn Dividend Opportunity ETF
+DVND	Touchstone Dividend Select ETF
+DVYA	Asia Pacific Dividend Ishares ETF
+DVYE	Emrg Mkts Dividend Ishares ETF
+DWAT	Arrow DWA Tactic ETF
+DWCR	Arrow DWA Country Rotation ETF
+DWLD	Davis Select World Opportunities ETF
+DWM	Wisdomtree International Equity Fund
+DWMF	Wisdomtree International Multifactor Fund
+DWX	S&P Dividend Intl SPDR
+DXD	Ultrashort Dow30 -2X ETF
+DXF	Dunxin Financial Holdings Ltd ADR
+DXJ	Wisdomtree Japan Hedged Equity Fund
+DYLD	Leadershares Dynamic Yield ETF
+DYLG	GX Dow 30 Covered Call & Growth ETF
+DYNF	Blackrock U.S. Equity Factor Rotation ETF
+DZZ	DB Gold -2X ETN Powershares
+EAD	Wells Fargo Advantage
+EAGG	Ishares ESG U.S. Aggregate Bond ETF
+EALT	Innovator U.S. 5-15 Buffer ETF - Qtrly
+EAOA	Ishares ESG Aware Aggressive Allocation ETF
+EAOK	Ishares ESG Aware Conservative Allocation ETF
+EAOM	Ishares ESG Aware Moderate Allocation ETF
+EAOR	Ishares ESG Aware Growth Allocation ETF
+EAPR	Innovator EM Power Buffer ETF Apr
+EASG	Xt MSCI EAFE ESG Leaders Equity ETF
+EATV	Vegtech Plant-Based Innovation & Climate ETF
+EATZ	Advisorshares Restaurant ETF
+EBLU	Ecofin Global Water ESG Fund
+EBND	EM Local Bond ETF Barclays Capital SPDR
+ECF	Ellsworth Convertible Growth and Income
+ECF-A	Ellsworth Fund Ltd
+ECH	Chile Ishares MSCI ETF
+ECLN	Eip Carbon Impact ETF FT
+ECML	Ea Euclidean Fundamental Value ETF
+ECNS	China Smallcap Ishares MSCI ETF
+ECON	Emrg Mkts Consumer Egshares
+EDC	Emrg Mkts Bull 3X Direxion
+EDEN	Denmark Ishares MSCI ETF
+EDIV	S&P Emrg Mkts Dividend SPDR
+EDOG	Alps Emerging Sector Dividend
+EDOW	Dow 30 Equal Weight ETF FT
+EDV	Extended Dur Trs Idx ETF Vanguard
+EDZ	Emrg Mkts Bear -3X Direxion
+EELV	S&P Emerging Markets Low Vol Invesco ETF
+EEM	Emrg Mkts Ishares MSCI ETF
+EEMD	Aam S&P Emerging Markets High Dividend Value ETF
+EEMO	S&P Emerging Markets Momentum Invesco ETF
+EEMS	Emrg Mkts Smallcap Ishares MSCI ETF
+EEMV	Emrg Mkts Min Vol Ishares Edge MSCI ETF
+EEMX	EM Fossil Fuel Reserves MSCI ETF SPDR
+EES	Wisdomtree U.S. Smallcap Fund
+EET	Ultra MSCI Emerging Markets 2X ETF
+EETH	Proshares Ether Strategy ETF
+EEV	Ultrashort MSCI Emerging Markets -2X ETF
+EFA	EAFE Ishares MSCI ETF
+EFAD	Proshares MSCI EAFE Dividend Growers ETF
+EFAV	EAFE Min Vol Ishares Edge MSCI ETF
+EFAX	EAFE Fossil Fuel Reserves Free MSCI ETF SPDR
+EFG	EAFE Growth Ishares MSCI ETF
+EFIV	SPDR S&P 500 ESG ETF
+EFIX	FT ViII Tcw EMI
+EFNL	Finland Ishares MSCI ETF
+EFO	Ultra MSCI EAFE 2X ETF
+EFSH	1847 Holdings Llc
+EFU	Ultrashort MSCI EAFE -2X ETF
+EFUT	Vaneck Ethereum Strategy ETF
+EFV	EAFE Value Ishares MSCI ETF
+EFZ	Short MSCI EAFE -1X ETF
+EGPT	Vaneck Egypt Index ETF
+EGUS	Ishares ESG Aware MSCI USA Growth ETF
+EIDO	Indonesia Ishares MSCI ETF
+EIM	Eaton Vance Muni Bond Fund
+EINC	Vaneck Energy Income ETF
+EIPX	FT Energy Income Partners ST
+EIRL	Ireland Ishares MSCI ETF
+EIS	Israel Ishares MSCI ETF
+EJAN	Innovator EM Power Buffer ETF Jan
+EJUL	Innovator EM Power Buffer ETF Jul
+ELA	Envela Corp
+ELD	Wisdomtree Emerging Markets Local Debt Fund
+ELI.W	Electriq Power Holdings WT [Eliq/W]
+ELLO	Ellomay Capital Ltd
+ELMD	Electromed Inc
+ELQD	Ishares ESG Advanced Investment Grade Corporate
+EMBD	GX Emerging Markets Bond ETF
+EMC	GX Emerging Markets Great Consumer ETF
+EMCC	GX MSCI Emerging Markets Covered Call ETF
+EMCR	Xt E.M. Carbon Reduction Climate Improvers ETF
+EMDM	FT Bloomberg Emerging Democracies ETF
+EMDV	MSCI Emerging Markets Dividend Growers ETF
+EMFM	GX MSCI Next Emerging & Frontier ETF
+EMFQ	Amplify International Online Retail ETF
+EMGF	Emrg Mkts Edge Multifactor Ishares MSCI ETF
+EMHC	SPDR Emerging Markets USD Bond ETF
+EMHY	Emrg Mkts High Yield Bond Ishares ETF
+EMLC	Vaneck JPM EM Local Currency Bond ETF
+EMLP	North American Energy Infr Fund FT
+EMM	GX Emerging Markets ETF
+EMMF	Wisdomtree Emerging Markets Multifactor Fund
+EMNT	Pimco Enhanced Short Maturity Active ESG ETF
+EMQQ	Emrg Mkts Internet and E-Commerce ETF
+EMSF	Matthews Emerging Markets Sustainab
+EMSG	Xt MSCI Emerging Markets ESG Leaders Equity ETF
+EMTL	SPDR Doubleline EM Fixed Income ETF
+EMTY	Decline of The Retail Store -1X ETF
+EMX	Emx Royalty Group
+ENFR	Alerian Energy Infrastructure ETF
+ENOR	Norway Ishares MSCI ETF
+ENRG	Iclima Distributed Renewable Energy ETF
+ENSV	Enservco Corpporation
+ENTR	Entrepreneur 30 Fund
+ENX	Eaton Vance New York Muni Bond Fund
+EOCT	Innovator EM Power Buffer ETF - Oct
+EP	Empire Petroleum Corp
+EPHE	Philippines Ishares MSCI ETF
+EPI	Wisdomtree India Earnings Fund
+EPM	Evolution Petroleum Corp
+EPOL	Poland Ishares MSCI ETF
+EPP	Pacific Ex Japan Ishares MSCI ETF
+EPRF	Innovator S&P Investment Grade Preferred ETF
+EPS	Wisdomtree U.S. Largecap Fund
+EPU	Peru All Ishares MSCI ETF
+EPV	Ultrashort FTSE Europe -2X ETF
+EQAL	Russell 1000 EW Invesco ETF
+EQL	Alps Equal Sector Weight ETF
+EQLS	Simplify Neutral Equity Long/Short ETF
+EQTY	Kovitz Core Equity ETF
+EQUL	IQ Engender Equality ETF
+EQWL	Russell Top 200 EW Invesco ETF
+EQX	Equinox Gold Corp
+ERC	Wells Fargo Advantage Multi-Sector
+ERH	Wells Fargo Advantage Utilities and High
+ERSX	Ershares Non-US Small Cap ETF
+ERTH	Invesco MSCI Sustainable Future ETF
+ERX	Energy Bull 2X ETF Direxion
+ERY	Energy Bear -2X Direxion
+ESBA	Empire State Realty Op LP
+ESCR	Xt Bb US Investment Grade Corp ESG ETF
+ESEB	Xt JPM ESG Emerging Markets Sovereign ETF
+ESG	Flexshares US ESG Impact Index
+ESGA	American Century Sustainable Equity ETF
+ESGB	IQ Mackay ESG Core Plus Bond ETF
+ESGG	Flexshares Global ESG Impact Index
+ESGN	Columbia Sustainable International ETF
+ESGS	Columbia Sustainable U.S. Equity ETF
+ESGV	ESG U.S. Stock Vanguard ETF
+ESGY	American Century Sustainable Growth ETF
+ESHY	Xt JPM ESG USD High Yield Corp Bond ETF
+ESIX	SPDR S&P Smallcap 600 ESG ETF
+ESML	USA Smallcap ESG Optimized Ishares MSCI ETF
+ESP	Espey Mfg. & Electronics
+ESUS	Etracs 2X MSCI US ESG Focus TR ETN
+ETHO	Etho Climate Leadership U.S. ETF
+EU	Encore Energy Corp
+EUDG	Wisdomtree Europe Quality Dividend Growth Fund
+EUDV	MSCI Europe Dividend Growers ETF
+EUM	Short MSCI Emerging Markets -1X ETF
+EUO	Ultrashort Euro -2X ETF
+EURL	FTSE Europe Bull 3X Direxion
+EUSA	USA Equal Weighted Ishares MSCI ETF
+EUSB	Ishares ESG Advanced Total USD Bond Market ETF
+EUSC	Wisdomtree Europe Hedged Smallcap Equity Fund
+EVAV	Electric and Autonomous 2X ETF Direxion
+EVBN	Evans Bancorp
+EVE	Eve Mobility Acquisition Corp Cl A
+EVE.U	Eve Mobility Acquisition Corp
+EVE.W	Eve Mobility Acquisition Corp WT
+EVHY	Eaton Vance High Yield ETF
+EVI	Evi Industries Inc
+EVIM	Eaton Vance Intermediate Municipal Income ETF
+EVM	Eaton Vance California Muni Bond Fund
+EVNT	Altshares Event-Driven ETF
+EVSB	Eaton Vance Ultra-Short Income ETF
+EVUS	Ishares ESG Aware MSCI USA Value ETF
+EVV	Eaton Vance Ltd Duration
+EVX	Vaneck Environmental Services ETF
+EVXX	Defiance Pure Electric Vehicle ETF
+EWA	Australia Ishares MSCI ETF
+EWC	Canada Ishares MSCI ETF
+EWD	Sweden Ishares MSCI ETF
+EWG	Germany Ishares MSCI ETF
+EWH	Hong Kong Ishares MSCI ETF
+EWI	Italy Ishares MSCI ETF
+EWJ	Japan Ishares MSCI ETF
+EWK	Belgium Ishares MSCI ETF
+EWL	Switzerland Ishares MSCI ETF
+EWM	Malaysia Ishares MSCI ETF
+EWN	Netherlands Ishares MSCI ETF
+EWO	Austria Ishares MSCI ETF
+EWP	Spain Ishares MSCI ETF
+EWQ	France Ishares MSCI ETF
+EWS	Singapore Ishares MSCI ETF
+EWT	Taiwan Ishares MSCI ETF
+EWU	UK Ishares MSCI ETF
+EWUS	UK Smallcap Ishares MSCI ETF
+EWV	Ultrashort MSCI Japan -2X ETF
+EWW	Mexico Ishares MSCI ETF
+EWX	S&P Emrg Mkts Smallcap SPDR
+EWY	South Korea Ishares MSCI ETF
+EWZ	Brazil Ishares MSCI ETF
+EXI	Global Industrials Ishares ETF
+EYLD	Cambria Emerging Shareholder Yield ETF
+EZA	South Africa Ishares MSCI ETF
+EZJ	Ultra MSCI Japan 2X ETF
+EZM	Wisdomtree U.S. Midcap Fund
+EZU	Eurozone Ishares MSCI ETF
+FAIL	Cambria Global Tail Risk ETF
+FAN	Global Wind Energy ETF FT
+FAPR	FT U.S. Equity Buffer ETF April
+FAS	Financial Bull 3X Direxion
+FAUG	FT U.S. Equity Buffer ETF August
+FAX	Abrdn Asia-Pacific Income Fund Inc
+FAZ	Financial Bear -3X Direxion
+FBCG	Fidelity Blue Chip Growth ETF
+FBCV	Fidelity Blue Chip Value ETF
+FBGX	FI Enhanced Large Cap Growth 2X ETN
+FBND	Fidelity Total Bond ETF
+FBT	Biotechnology Index NYSE ETF
+FBY	Yieldmax Meta Option Income ETF
+FCFY	FT S&P 500 Diversified Free Cash ETF
+FCG	Natural Gas ETF FT
+FCLD	Fidelity Cloud Computing ETF
+FCO	Abrdn Global Income Fund Inc
+FCOM	Fidelity Telecommunication MSCI ETF
+FCOR	Fidelity Corporate Bond ETF
+FCPI	Fidelity Stocks For Inflation ETF
+FCSH	Federated Hermes Short-Duration Corp ETF
+FCTR	Lunt U.S. Factor Rotation ETF FT
+FCUS	Tidal Pinnacle Focused Opportunities ETF
+FDAT	Tactical Advantage ETF
+FDCE	Affinity Foundations Dynamic Core ETF
+FDD	Stoxx Euro Select Dividend ETF FT
+FDEC	FT U.S. Equity Buffer ETF December
+FDEM	Fidelity Targeted Emerging Markets Factor ETF
+FDEV	Fidelity Targeted International Factor ETF
+FDG	American Century Focused Dynamic Growth ETF
+FDGR	Affinity Foundations Dynamic Growth ETF
+FDHT	Fidelity Digital Health ETF
+FDHY	Fidelity High Yield Factor ETF
+FDIS	Fidelity Consumer Disc MSCI ETF
+FDL	Mstar Dividend Leaders ETF
+FDLO	Fidelity Low Volatility Factor ETF
+FDLS	Inspire Fidelis Multi Factor ETF
+FDM	DJ Select Microcap ETF FT
+FDMO	Fidelity Momentum Factor ETF
+FDN	DJ Internet Index ETF FT
+FDRR	Fidelity Dividend ETF For Rising Rates
+FDRV	Fidelity Electric Vehicles Transportation ETF
+FDTB	Affinity Foundations Dynamic Income ETF
+FDV	Federated Hermes U.S. Strategic Dividend ETF
+FDVL	Affinity Foundations Dynamic Value ETF
+FDVV	Fidelity High Dividend ETF
+FDWM	Fidelity Women's Leadership ETF
+FEBT	Allianzim U.S. Large Cap Buffer10 Feb ETF
+FEBW	Allianzim U.S. Large Cap Buffer20 Feb ETF
+FEBZ	Trueshares Structured Outcome [Feb] ETF
+FEDL	Etracs 2X Ifed Invest With The Fed TR
+FEDM	Flexshares ESG & Climate Developed Markets Ex-US
+FEEM	Flexshares ESG & Climate EM Core ETF
+FEIG	Flexshares ESG & Climate Investment Grade Corpor
+FELC	Fidelity Enhanced Large Cap Core ETF
+FELG	Fidelity Enhanced Large Cap Growth ETF
+FELV	Fidelity Enhanced Large Cap Value ETF
+FEN	Energy Income and Growth Fund
+FENI	Fidelity Enhanced International ETF
+FENY	Fidelity Energy MSCI ETF
+FESM	Fidelity Enhanced Small Cap ETF
+FEUS	Flexshares ESG & Climate US Large Cap Core Index
+FEZ	Euro Stoxx 50 ETF SPDR
+FFEB	FT U.S. Equity Buffer ETF February
+FFIU	Fieldstone Uva Med-Term Fixed Income ETF
+FFLS	Northern Lights II Long/Short ETF
+FFND	The Future Fund Active ETF
+FFOG	Franklin Focused Growth ETF
+FFTY	Innovator Ibd 50 ETF
+FGD	DJ Global Select Dividend ETF FT
+FGDL	Franklin Responsibly Sourced Gold ETF
+FGH	Fg Group Holdings Inc
+FGRO	Fidelity Growth Opportunities ETF
+FHLC	Fidelity Health Care MSCI ETF
+FHYS	Federated Hermes Short-Duration High ETF
+FIAX	Tidal Nicholas Fixed Income Alternative ETF
+FIBR	US Fixed Income Balanced Risk Ishares Edge ETF
+FIDI	Fidelity International High Dividend ETF
+FIDU	Fidelity Industrials MSCI ETF
+FIG	Simplify Macro Strategy ETF
+FIGB	Fidelity Investment Grade Bond ETF
+FIIG	FT Intermediate Duration Invt Grade Corp ETF
+FILL	Ishares Global Energy Producers Fund
+FISK	Empire State Realty Op LP Se
+FISR	SPDR SSGA Fixed Income Sector Rotation ETF
+FITE	SPDR Kensho Future Security ETF
+FIVA	Fidelity International Value Factor ETF
+FIVG	Defiance Next Gen Connectivity ETF
+FIW	Water ETF FT
+FJAN	FT U.S. Equity Buffer ETF January
+FJUL	FT U.S. Equity Buffer ETF July
+FJUN	FT U.S. Equity Buffer ETF June
+FLAU	Australia Franklin FTSE ETF
+FLAX	Franklin Asia Ex Japan ETF
+FLBL	Franklin Liberty Senior Loan ETF
+FLBR	Brazil Franklin FTSE ETF
+FLCA	Canada Franklin FTSE ETF
+FLCB	Franklin Liberty U.S. Core Bond ETF
+FLCH	China Franklin FTSE ETF
+FLCO	Liberty Investment Grade Corp ETF
+FLDR	Fidelity Low Duration Bond Factor ETF
+FLDZ	Rivernorth Volition America Patriot ETF
+FLEE	Europe Franklin FTSE ETF
+FLEU	Europe Hedged Franklin FTSE ETF
+FLFR	France Franklin FTSE ETF
+FLGB	UK Franklin FTSE ETF
+FLGR	Germany Franklin FTSE ETF
+FLGV	Franklin Liberty U.S. Treasury Bond ETF
+FLHK	Hong Kong Franklin FTSE ETF
+FLHY	Franklin Liberty High Yield Corp ETF
+FLIA	Franklin Liberty Intl Aggregate Bond ETF
+FLIN	Franklin India ETF
+FLIY	Italy Franklin FTSE ETF
+FLJH	Japan Hedged Franklin FTSE ETF
+FLJP	Japan Franklin FTSE ETF
+FLKR	South Korea Franklin FTSE ETF
+FLLA	Franklin FTSE Latin America ETF
+FLLV	Liberty US Low Volatility ETF
+FLMB	Franklin Liberty Municipal Bond ETF
+FLMI	Franklin Liberty Intermediate Municipal ETF
+FLMX	Mexico Franklin FTSE ETF
+FLOT	Floating Rate Bond Ishares ETF
+FLOW	Global X Funds Global X U.S. Cash Flow Kings 100
+FLQL	Franklin Liberty U.S. Equity ETF
+FLQM	Franklin Liberty U.S. Mid Cap Equity ETF
+FLQS	Franklin Liberty U.S. Small Cap Equity ETF
+FLRG	Fidelity U.S. Multifactor ETF
+FLRN	Investment Growth Floating Rate ETF SPDR
+FLRT	Advisorshares Pacific Asset Enh
+FLSA	Franklin FTSE Saudi Arabia ETF
+FLSP	Franklin Liberty Systematic Style Premia ETF
+FLSW	Franklin Switzerland ETF
+FLTB	Fidelity Ltd Term Bond ETF
+FLTN	Collaborative Rareview Inflation/Deflation
+FLTR	Vaneck Investment Grade Floating Rate ETF
+FLTW	Taiwan Franklin FTSE ETF
+FLUD	Franklin Liberty Ultra-Short Bond ETF
+FLV	American Century Focused Large Cap Value ETF
+FLYD	Microsectors Travel -3X ETN
+FLYU	Microsectors Travel 3X ETN
+FLZA	Franklin FTSE South Africa ETF
+FM	Frontier 100 Ishares MSCI ETF
+FMAG	Fidelity Magellan ETF
+FMAR	FT U.S. Equity Buffer ETF March
+FMAT	Fidelity Materials MSCI ETF
+FMAY	FT U.S. Equity Buffer ETF May
+FMCX	FMC Excelsior Focus Equity ETF
+FMDE	Fidelity Enhanced Mid Cap ETF
+FMF	Mstar Managed Futures Strategy Fund FT
+FMIL	Fidelity New Millennium ETF
+FMNY	New York Municipal High Income ETF FT
+FMQQ	Fmqq The Next Frontier Internet & Ecommerce ETF
+FNCL	Fidelity Financials MSCI ETF
+FNDA	Schwab Fundamental U.S. Small Co. ETF
+FNDB	Schwab Fundamental U.S. Broad Market ETF
+FNDC	Schwab Fundamental Intl Small Co. ETF
+FNDE	Schwab Fundamental Emrg Mkts Large Co. ETF
+FNDF	Schwab Fundamental Intl Large Co. ETF
+FNDX	Schwab Fundamental U.S. Large Co. ETF
+FNGD	Microsectors Fang+ -3X ETN
+FNGG	Large Caps & Fangs Bull 2X ETF Direxion
+FNGO	Microsectors Fang+ 2X ETN
+FNGS	Microsectors Fang+ ETN
+FNGU	Microsectors Fang+ 3X ETN
+FNOV	FT U.S. Equity Buffer ETF November
+FOCT	FT U.S. Equity Buffer ETF October
+FORH	Formidable ETF
+FOVL	Ishares Focused Value Factor ETF
+FOXO	Foxo Technologies Inc
+FPAG	Northern Lights Fund Trust III Fpa Global Equity
+FPE	Preferred Securities and Income ETF FT
+FPEI	FT Institutional Prfd Securities Income ETF
+FPFD	Fidelity Preferred Securities & Income ETF
+FPRO	Fidelity Real Estate Investment ETF
+FPX	FT US Equity Opportunities ETF
+FQAL	Fidelity Quality Factor ETF
+FRD	Friedman Industries Inc
+FRDM	Freedom 100 Emerging Markets ETF
+FREL	Fidelity Real Estate MSCI ETF
+FRI	S&P REIT Index
+FRNW	Fidelity Clean Energy ETF
+FRTY	Alger Mid Cap 40 ETF
+FSBD	Fidelity Sustainable Core Plus Bond ETF
+FSEC	Fidelity Investment Grade Securitized ETF
+FSEP	FT U.S. Equity Buffer ETF September
+FSI	Flexible Solutions International Inc
+FSIG	FT Duration Investment Grade Corporate ETF
+FSLD	Fidelity Sustainable Low Duration Bond ETF
+FSMB	Short-Duration Managed Municipal ETF FT
+FSMD	Fidelity Small-Mid Factor ETF
+FSMO	Fidelity Small-Mid Cap Opportunities ETF
+FSP	Franklin Street Properties
+FSST	Fidelity Sustainability U.S. Equity ETF
+FSTA	Fidelity Consumer Staples MSCI ETF
+FSYD	Fidelity Sustainable High Yield ETF
+FTBD	Fidelity Tactical Bond ETF
+FTCB	First Trust Exchange-Traded Fund IV First Trust
+FTEC	Fidelity Info Tech MSCI ETF
+FTF	Franklin Templeton Ltd Duration
+FTHF	FT Emerging Markets Human Flourishing ETF
+FTIF	FT Bloomberg Inflation ETF
+FTLS	Long/Short Equity ETF FT
+FTSD	Franklin Short-Dur US Government ETF
+FTWO	Strive Faang 2.0 ETF
+FUMB	Ultrashort Duration Municipal ETF FT
+FUNL	Cornercap Fundametrics Largecap ETF
+FURY	Fury Gold Mines Ltd
+FUSI	American Century Multisector Floating Income ETF
+FUTY	Fidelity Utilities MSCI ETF
+FVAL	Fidelity Value Factor ETF
+FVD	Value Line Dividend Index ETF FT
+FWD	Ab Disruptors ETF
+FXA	Australian Dollar Trust Currencyshares
+FXB	British Pound Sterling Trust Currencyshares
+FXC	Canadian Dollar Trust Currencyshares
+FXD	Consumer Disc Alphadex ETF FT
+FXE	Euro Trust Currencyshares
+FXED	Sound Enhanced Fixed Income ETF
+FXF	Swiss Franc Trust Currencyshares
+FXG	Consumer Staples Alphadex ETF FT
+FXH	Healthcare Alphadex FT ETF
+FXI	China Largecap Ishares ETF
+FXL	Technology Alphadex ETF FT
+FXN	Energy Alphadex ETF FT
+FXO	Financial Alphadex ETF FT
+FXP	Ultrashort FTSE China 50 -2X ETF
+FXR	Indust/Producer Dur Alphadex ETF FT
+FXU	Utilities Alphadex ETF FT
+FXY	Japanese Yen Trust Currencyshares
+FXZ	Materials Alphadex ETF FT
+FYLD	Cambria Foreign Shareholder Yield Fund
+FYLG	GX Financials Covered Call & Growth ETF
+GAA	Cambria Global Asset Allocation Fund
+GABF	Gabelli Financial Services Opportunities ETF
+GAL	SSGA Global Allocation ETF SPDR
+GAMR	ETFMG Video Game Tech ETF
+GAPR	FT U.S. Equity Moderate Buffer ETF - April
+GAST	Gabelli Automation ETF
+GAU	Galiano Gold Inc
+GAUG	FT CBOE Vest U.S. Equity Moderate ETF Aug
+GBF	Government/Credit Bond Ishares ETF
+GBIL	GS Treasuryaccess 0-1 Year ETF
+GBLD	Invesco MSCI Green Building ETF
+GBR	New Concept Energy Inc
+GBUY	GS Future Consumer Equity ETF
+GCAD	Gabelli Equity Income ETF
+GCC	Wisdomtree Enhancedcontinuous Commodity Fund
+GCLN	GS Bloomberg Clean Energy Equity ETF
+GCOR	GS Access U.S. Aggregate Bond ETF
+GCOW	Pacer Global Cash Cows Dividend ETF
+GDE	Wisdomtree Efficient Gold Plus Equity Strategy
+GDEF	GS Defensive Equity ETF
+GDMA	Gadsdena Dynamica Multi-Asseta ETF
+GDMN	Wisdomtree Efficient Gold Plus Gold Miners Stra
+GDOC	GS Future Health Care Equity ETF
+GDVD	Northern IV R3 Global Dividend Growth ETF
+GDX	Vaneck Gold Miners ETF
+GDXD	Microsectors Gold Miners -3X ETN
+GDXJ	Vaneck Junior Gold Miners ETF
+GDXU	Microsectors Gold Miners 3X ETN
+GEM	GS Activebeta Emerging Markets Equity ETF
+GEMD	GS Access Emerging Markets US ETF
+GENC	Gencor Industries IN
+GERM	ETFMG Treatments Testing & Adv ETF
+GFEB	FT CBOE Vest U.S. Equity Moderate Buffer ETF
+GFOF	Grayscale Future of Finance ETF
+GGM	Ggm Macro Alignment ETF
+GGME	Invesco Next Gen Media and Gaming ETF
+GGN	Gamco Global Gold Natural Resources
+GGN-B	Gamco Global Gold Natural Reou
+GGRW	Gabelli Growth Innovators ETF
+GGUS	GS Marketbeta Russell 1000 Growth ETF
+GHEE	Goose Hollow Enhanced Equity ETF
+GHMS	Goose Hollow Multi-Strategy ETF
+GHTA	Goose Hollow Tactical Allocation ETF
+GHYB	Access High Yield Corporate Bond ETF
+GHYG	US and Intl High Yield Corp Bond Ishares ETF
+GIGB	GS Access Investment Grade Corp Bond
+GII	FTSE Global Infra 100 SPDR
+GINN	GS Innovate Equity ETF
+GJAN	FT U.S. Equity Moderate Buffer ETF January
+GJUL	FT U.S. Equity Moderate B Jul ETF
+GJUN	FT CBOE Vest U.S. Equity Mod ETF Jun
+GK	Advisorshares Gerber Kawasaki ETF
+GLD	Gold SPDR
+GLDB	Strategy Shares Gold-Hedged Bond ETF
+GLDG	Goldmining Inc
+GLDM	SPDR Gold Minishares Trust
+GLDX	Uscf Gold Strategy Plus Income Fund
+GLIF	Agfiq Global Infrastructure ETF
+GLIN	Vaneck India Growth Leaders ETF
+GLL	Ultrashort Gold -2X ETF
+GLO	Clough Global Opportunities Fund
+GLOF	Ishares Global Multifactor ETF
+GLOV	GS Activebeta World Low Vol Plus Equity ETF
+GLQ	Clough Global Equity Fund
+GLRY	Northern IV Mid Cap Momentum ETF
+GLTR	Physical Precious Metals Basket ETF
+GLU	Gabelli Global Utility
+GLU-A	The Gabelli Global Utility and
+GLU-B	Gabelli Global Utility & Income TR
+GLV	Clough Global Dividend and Income Fund
+GMAR	FT U.S. Equity Moderate Buffer ETF March
+GMAY	FT U.S. Equity Moderate Buffer ETF - May
+GMET	Vaneck Green Metals ETF
+GMF	S&P Emerging Asia Pacific SPDR
+GMOM	Cambria Global Momentum ETF
+GMUN	GS Community Municipal Bond ETF
+GNOV	FT CBOE Vest U.S. Equity Moderate ETF - Nov
+GNR	S&P Global Natural Resources SPDR
+GNS	Genius Group Limited
+GOAU	US Global Go Gold and Precious Metal Miners ETF
+GOCT	FT CBOE Vest U.S. Equity Mod Buf ETF - Oct
+GOEX	GX Gold Explorers ETF
+GOOP	Neos Yield Premium Strategy Google [Googl] ETF
+GOOY	Yieldmax Googl Option Income ETF
+GORO	Gold Resource Corp
+GOVT	US Treasury Bond Ishares ETF
+GOVZ	Ishares 25 Year Treasury Strips Bond ETF
+GPAL	GS Activebeta Paris Climate U.S. Large Cap ETF
+GPOW	GS North American Pipelines & Power ETF
+GQRE	Flexshares Global Quality Real Estate ETF
+GREI	GS Future Real Estate Infrastructure
+GREK	GX MSCI Greece ETF
+GRES	IQ Global Resources ETF
+GRF	Eagle Capital Growth Fund
+GRFX	Graphex Group Ltd
+GRN	Ipath Series B Carbon ETN
+GRNB	Vaneck Green Bond ETF
+GRO.W	Gold Royalty Corp WT [Groy/W]
+GROY	Gold Royalty Corp
+GRPM	Invesco S&P Midcap 400 Garp ETF
+GSAT	Globalstar
+GSC	GS Small Cap Core Equity ETF
+GSEE	GS Marketbeta Emerging Markets Equity ETF
+GSEP	FT U.S. Equity Mod Buffer ETF - Sep
+GSEU	GS Activebeta Europe Equity ETF
+GSEW	Equal Weight U.S. Large Cap Equity ETF
+GSFP	GS Future Planet Equity ETF
+GSG	S&P GSCI Commodity-Indexed Ishares ETF
+GSID	GS Marketbeta International Equity ETF
+GSIE	GS Activebeta International Equity ETF
+GSIG	GS Access Investment Grade ETF
+GSJY	GS Activebeta Japan Equity ETF
+GSLC	GS Activebeta U.S. Large Cap Equity ETF
+GSPY	Gotham Enhanced 500 ETF
+GSSC	GS Activebeta U.S. Small Cap Equity ETF
+GSST	GS Access Ultra-Short Bond ETF
+GSUS	GS Marketbeta U.S. Equity ETF
+GSY	Ultrashort Duration Invesco ETF
+GTE	Gran Tierra Energy Inc
+GTEK	GS Future Tech Leaders Equity ETF
+GTIP	GS Access Inflation Protected USD Bond ETF
+GTO	Total Return Bond Invesco ETF
+GUNR	Mstar Global Upstream Natural Resources ETF
+GURU	GX Guru Index ETF
+GUSA	GS Marketbeta U.S. 1000 Equity ETF
+GUSH	S&P Oil & Gas Expl Bull 2X ETF Direxion
+GVAL	Cambria Global Value ETF
+GVI	Interm Govt/Credit Bond Ishares ETF
+GVIP	GS Hedge Industry Vip ETF
+GVLU	Tidal Gotham 1000 Value ETF
+GVUS	GS Marketbeta Russell 1000 Value ETF
+GWX	S&P Smallcap Intl SPDR
+GXC	S&P China SPDR
+GXG	GX MSCI Colombia ETF
+GXUS	GS Marketbeta Total Intl Equity ETF
+GYLD	Arrow DJ Global Yield ETF
+HACK	ETFMG Prime Cyber Security ETF
+HAIL	SPDR S&P Kenso Smart Mobility ETF
+HAP	Vaneck Natural Resources ETF
+HAPI	Harbor Corporate Culture ETF
+HAPS	Harbor Corporate Culture Small Cap ETF
+HAPY	Harbor Corporate Culture Leader ETF
+HARD	Simplify Commodities Strategy No K-1 ETF
+HART	IQ Healthy Hearts ETF
+HAUS	Tidal Home Appreciation U.S. REIT ETF
+HAUZ	Xt International Real Estate ETF
+HAWX	ACWI Curr Hedged Ex US Ishares MSCI ETF
+HCMT	Direxion Hcm Tactical Enhanced US ETF
+HCOM	Hartford Schroders Commodity Strategy ETF
+HCRB	Hartford Core Bond ETF
+HDAW	Xt MSCI All World Ex US High Div Yld Equity ETF
+HDEF	Xt MSCI EAFE High Dividend Yield Equity ETF
+HDG	Hedge Replication ETF
+HDGE	Active Bear ETF
+HDLB	Etracs 2X US HI Div Low Vol ETN Series B
+HDMV	Horizon Vol Dev Intl ETF FT
+HDRO	ETF Series Defiance Next Gen H2 ETF
+HDUS	Hartford Disciplined US Equity ETF
+HDV	High Dividend Ishares Core ETF
+HEAT	Touchstone Climate Transition ETF
+HEDJ	Wisdomtree Europe Hedged Equity Fund
+HEEM	Emrg Mkts Curr Hedged Ishares MSCI ETF
+HEFA	EAFE Curr Hedged Ishares MSCI ETF
+HEGD	Swan Hedged Equity US Large Cap ETF
+HELO	J.P. Morgan Exchange-Traded Fund Trust Jpmorgan
+HELX	Franklin Genomic Advancements ETF
+HEQT	Simplify Hedged Equity ETF
+HEWJ	Japan Curr Hedged Ishares MSCI ETF
+HEZU	Eurozone Curr Hedged Ishares MSCI ETF
+HF	Dga Absolute Return ETF
+HFGO	Hartford Large Cap Growth ETF
+HFND	Tidal Unlimited Hfnd Multi-Strategy ETF
+HFXI	IQ 50% Hedged FTSE International ETF
+HIBL	S&P 500 High Beta Bull 3X Direxion
+HIBS	S&P 500 High Beta Bear -3X Direxion
+HIDE	Ea Architect High Inflation and Deflation ETF
+HIDV	Ab US High Dividend ETF
+HIGH	Simplify Enhanced Income ETF
+HIPS	Graniteshares US High Income ETF
+HIYS	Invesco High Yield Select ETF
+HJEN	Direxion Hydrogen ETF
+HKND	Humankind US Stock ETF
+HLGE	Hartford Longevity Economy ETF
+HMOP	Hartford Municipal Opportunities ETF
+HNR.W	Hnr Acquisition Corp 1 [Hnra/W]
+HNRA	Hnr Acquisition Corp
+HNW	Pioneer Diversified High Income Fund
+HOCT	Innovator Premium Income 9 Buffer ETF - Oct
+HOMZ	Hoya Capital Housing ETF
+HOTL	Kelly Hotel & Lodging Sector ETF
+HSCZ	EAFE Smallcap Curr Hedged Ishares MSCI ETF
+HSMV	FT Horizon Managed Volatility Small/Mid ETF
+HSRT	Hartford Short-Duration ETF
+HSUN	Hartford Sustainable Income ETF
+HTAB	Hartford Schroders Tax-Aware Bond ETF
+HTEC	Robo Global Healthcare Tech and Innovation ETF
+HTRB	Hartford Total Return Bond ETF
+HTUS	Hull Tactical US ETF
+HUSA	Houston American Energy Corp
+HUSV	Horizon Vol Domestic ETF FT
+HWM.P	Howmet Aerospace Inc Pf
+HYBB	Ishares Bb Rated Corporate Bond ETF
+HYBL	SPDR Series Trust SPDR Blackstone High Income Et
+HYD	Vaneck High Yield Muni ETF
+HYDB	High Yield Defensive Bond Ishares Edge ETF
+HYDW	Xt Low Beta High Yield Bond ETF
+HYEM	Vaneck Emerging Markets High Yield Bond ETF
+HYFI	Ab High Yield ETF
+HYG	High Yield Corp Bond Ishares Iboxx $ ETF
+HYGH	Int Rate Hedged High Yield Bond Ishares ETF
+HYGI	Inflation Hedged High Yield Bond ETF
+HYGV	Flexshares High Yield Value-Scored Bond Fund
+HYGW	Ishares Hi-Yield Corp Bond Buywrite Strategy ETF
+HYHG	High Yield Interest Rate Hedged ETF
+HYIN	Wisdomtree Alternative Income Fund
+HYLB	Xt USD High Yield Corp Bond ETF
+HYLG	GX Health Care Covered Call & Growth ETF
+HYMB	S&P High Yield Muni Bond SPDR
+HYMU	Blackrock High Yield Muni Income Bond ETF
+HYRM	Xt Risk Managed USD High Yield Strategy ETF
+HYS	0-5 Year High Yield Corp Bond Pimco ETF
+HYSA	Bondbloxx USD High Yield Bond Sector Rotation Et
+HYTR	Cp High Yield Trend ETF
+HYUP	Xt High Beta High Yield Bond ETF
+HYXU	Intl High Yield Corp Bond Ishares ETF
+IAF	Abrdn Australia Equity Fund Inc
+IAGG	Intl Aggregate Bond Ishares Core ETF
+IAI	US Broker-Dealers & Sec Exch Ishares ETF
+IAK	US Insurance Ishares ETF
+IAPR	Innovator International Power Buffer ETF - Apr
+IAT	US Regional Banks Ishares ETF
+IAU	Gold Trust Ishares
+IAUF	Ishares Gold Strategy ETF
+IAUM	Ishares Gold Trust Micro ETV Shares
+IAUX	I-80 Gold Corp
+IBD	Inspire Corporate Bond Impact ETF
+IBDO	Dec 2023 Term Corp Ishares Ibonds ETF
+IBDP	Dec 2024 Term Corp Ishares Ibonds ETF
+IBDQ	Dec 2025 Term Corp Ishares Ibonds ETF
+IBDR	Dec 2026 Term Corp Ishares Ibonds ETF
+IBDS	Dec 2027 Term Corp Ishares Ibonds ETF
+IBDT	Ishares Ibonds Dec 2028 Term Corporate ETF
+IBDU	Ishares Ibonds Dec 2029 Term Corporate ETF
+IBDV	Ishares Ibonds Dec 2030 Term Corporate ETF
+IBDW	Ishares Ibonds Dec 2031 Term Corporate ETF
+IBDX	Ishares Ibonds Dec 2032 Term Corporate ETF
+IBDY	Ishares Ibonds Dec 2033 Term Corporate ETF
+IBHC	Ishares Ibonds 2023 Term High Yield Income ETF
+IBHD	Ishares Ibonds 2024 Term High Yield Income ETF
+IBHE	Ishares Ibonds 2025 Term High Yield Income ETF
+IBHF	Ishares Ibonds 2026 Term High Yield Income ETF
+IBHG	Ishares Ibonds 2027 Term High Yield Income ETF
+IBHH	Ishares Ibonds 2028 Term High Yield and Income E
+IBHI	Ishares Ibonds 2029 Term High Yield and Income E
+IBHJ	Ishares Ibonds 2030 Term High Yield and Income E
+IBIA	Ishares Trust Ishares Ibonds Oct 2024 Term TIPS
+IBIB	Ishares Trust Ishares Ibonds Oct 2025 Term TIPS
+IBIC	Ishares Trust Ishares Ibonds Oct 2026 Term TIPS
+IBID	Ishares Trust Ishares Ibonds Oct 2027 Term TIPS
+IBIE	Ishares Trust Ishares Ibonds Oct 2028 Term TIPS
+IBIF	Ishares Ibonds Oct 2029 Term TIPS ETF
+IBIG	Ishares Ibonds Oct 2030 Term TIPS ETF
+IBIH	Ishares Ibonds Oct 2031 Term TIPS ETF
+IBII	Ishares Ibonds Oct 2032 Term TIPS ETF
+IBIJ	Ishares Ibonds Oct 2033 Term TIPS ETF
+IBIO	Ibio Inc
+IBLC	Ishares Blockchain and Tech ETF
+IBML	Dec 2023 Term Muni Bond Ishares Ibonds ETF
+IBMM	Dec 2024 Term Muni Bond Ishares Ibonds ETF
+IBMN	Ishares Ibonds Dec 2025 Term Muni Bond ETF
+IBMO	Ishares Ibonds Dec 2026 Term Muni Bond ETF
+IBMP	Ishares Ibonds Dec 2027 Term Muni Bond ETF
+IBMQ	Ishares Ibonds Dec 2028 Term Muni Bond ETF
+IBMR	Ishares Ibonds Dec 2029 Term Muni Bond ETF
+IBND	Intl Corp Bond ETF SPDR
+IBRN	Ishares Neuroscience and Healthcare ETF
+IBUY	Online Retail Amplify ETF
+ICAP	Infracap Equity Income Fund ETF
+ICF	Cohen & Steers REIT Ishares ETF
+ICLO	Invesco AAA Clo Floating Rate Note ETF
+ICOW	Pacer Developed Markets International Cash
+ICSH	Ultrashort Term Ishares ETF
+ICVT	Convertible Bond Ishares ETF
+ID	Parts ID Inc
+IDAT	Ishares Cloud 5G and Tech ETF
+IDEC	Innovator International Power Buffer ETF - Dec
+IDEV	Intl Devd Markets Ishares Core MSCI ETF
+IDHQ	S&P Intl Developed Quality Invesco ETF
+IDLV	S&P Intl Developed Low Vol Invesco ETF
+IDMO	S&P Intl Developed Momentum Invesco ETF
+IDNA	Genomics Immunology and Healthcare ETF
+IDOG	Alps International Sector Dividend
+IDR	Idaho Strategic Resources
+IDRV	Ishares Self-Driving Ev and Tech ETF
+IDU	US Utilities Ishares ETF
+IDUB	Aptus International Enhanced Yield ETF
+IDV	Intl Select Dividend Ishares ETF
+IDVO	Amplify Intl Enhanced Dividend Income ETF
+IDX	Vaneck Indonesia Index ETF
+IE	Ivanhoe Electric Inc
+IEDI	US Discretionary Spending Ishares Evolved ETF
+IEFA	EAFE Ishares Core MSCI ETF
+IEMG	Emrg Mkts Ishares Core MSCI ETF
+IEO	US Oil & Gas Explor & Prod Ishares ETF
+IETC	US Technology Ishares Evolved ETF
+IEUR	Europe Ishares Core MSCI ETF
+IEV	Europe 350 Ishares ETF
+IEZ	US Oil Equipment & Services Ishares ETF
+IFED	Etracs Ifed Invest With The Fed TR Index ETN
+IFRA	US Infrastructure Ishares ETF
+IG	Principal Investment Grade Corporate Active ETF
+IGBH	Int Rate Hedged Long-Term Corp Bond Ishares ETF
+IGC	India Globalization Capital Inc
+IGE	Natural Resources North American Ishares ETF
+IGEB	Invst Grade Enhanced Bond Ishares Edge ETF
+IGHG	Invst Grade-Interest Rate Hedged ETF
+IGLB	Long-Term Corp Bond Ishares ETF
+IGLD	FT Gold Strategy Target Income ETF
+IGM	North American Tech Ishares ETF
+IGN	North American Tech-Multimedia Networking ETF
+IGPT	Invesco Ai and Next Gen Software ETF
+IGRO	Intl Dividend Growth Ishares ETF
+IGTR	Innovator Gradient Tactical Rotation ETF
+IGV	North American Tech-Software Ishares ETF
+IHAK	Ishares Cybersecurity and Tech ETF
+IHDG	Wisdomtree Intl Hedged Quality Div Growth ETF
+IHE	US Pharmaceuticals Ishares ETF
+IHF	US Healthcare Providers Ishares ETF
+IHI	US Medical Devices Ishares ETF
+IHT	Innsuites Hospitality Trust
+IHY	Vaneck International High Yield Bond
+IIGD	Invesco Investment Grade Defensive ETF
+IJAN	Innovator International Power Buffer ETF - Jan
+IJH	S&P Midcap 400 Ishares Core ETF
+IJJ	S&P Midcap 400 Value Ishares ETF
+IJK	S&P Midcap 400 Growth Ishares ETF
+IJR	S&P Smallcap Ishares Core ETF
+IJS	S&P Smallcap 600 Value Ishares ETF
+IJUL	Innovator International Power Buffer ETF - Jul
+ILCB	Mstar Largecap Ishares ETF
+ILCG	Mstar Largecap Growth Ishares ETF
+ILCV	Mstar Largecap Value Ishares ETF
+ILDR	FT Innovation Leaders ETF
+ILF	Latin America 40 Ishares ETF
+ILTB	10+ Year USD Bond Ishares Core ETF
+IMCB	Mstar Midcap Ishares ETF
+IMCG	Mstar Midcap Growth Ishares ETF
+IMFL	Invesco International Developed Dynamic Multifac
+IMO	Imperial Oil Ltd
+IMOM	Intl Quantitative Momentum ETF
+IMSI	Invesco Municipal Strategic Income Et
+IMTB	5-10 Year USD Bond Ishares Core ETF
+IMTM	Intl Momentum Factor Ishares Edge MSCI ETF
+INC	Vaneck Dynamic High Income ETF
+INCM	Franklin Income Focus ETF
+INCO	India Consumer Egshares ETF
+INDA	India MSCI Ishares ETF
+INDE	Matthews India Active ETF
+INDF	Nifty India Financials ETF
+INDL	India Bull 3X Direxion
+INDO	Indonesia Energy Corp Ltd
+INDS	Pacer Benchmark Industrial Real Estate ETF
+INFL	Horizon Kinetics Inflation Beneficiaries ETF
+INFU	Infusystems Holdings
+INKM	SSGA Income Allocation ETF SPDR
+INLX	Intellinetics Inc
+INMU	Blackrock Intermediate Muni Income Bond ETF
+INNO	Harbor Disruptive Innovation ETF
+INOV	Innovator Intl Developed Power Buf ETF - Nov
+INQQ	India Internet & Ecommerce ETF
+INTF	Intl Multifactor Ishares Edge MSCI ETF
+INTL	Northern Lights Fund Trust IV Main International
+INTT	Intest Corp
+INUV	Inuvo Inc
+IOCT	Innovator International Power Buffer ETF - Oct
+ION	Proshares S&P Global Core Battery Metals ETF
+IOO	Global 100 Ishares ETF
+IOR	Income Opportunity Realty Trust
+IPAC	Pacific Ishares Core MSCI ETF
+IPAY	ETFMG Prime Mobile Payments ETF
+IPB	Merrill Lynch & Company
+IPDP	Listed Funds Dividend Performers ETF
+IPO	Renaissance IPO ETF
+IPOS	Renaissance International IPO ETF
+IPPP	Listed Funds Preferred-Plus ETF
+IPV.S	Interprivate III Finl Partners [Ipvf.U]
+IPV.T	Interprivate III Finl Partners WT [Ipvf/W]
+IPVF	Interprivate III Financial Partners Inc Cl A
+IQDE	Flexshares Intl Quality Div Def Fund
+IQDF	Flexshares Intl Quality Div Fund
+IQDG	Wisdomtree Intl Quality Div Growth Fund
+IQDY	Flexshares Intl Quality Div Dyn Fund
+IQHI	IQ Mackay Municipal Insured ETF
+IQIN	IQ 500 International ETF
+IQLT	Intl Quality Factor Ishares Edge MSCI ETF
+IQM	Franklin Intelligent Machines ETF
+IQRA	IQ CBRE Real Assets ETF
+IQSI	IQ Candriam ESG International Equity ETF
+IQSM	IQ Candriam ESG U.S. Mid Cap Equity ETF
+IQSU	IQ Candriam ESG US Equity ETF
+IRBA	Imgp Rba Responsible Global Allocation ETF
+IRBO	Ishares Robotics and Artificial Intelligence ETF
+IRTR	Ishares Lifepath Retirement ETF
+IRVH	GX Interest Rate Vol & Inflation Hedge ETF
+ISCB	Mstar Smallcap Ishares ETF
+ISCF	Intl Smallcap Multifactor Ishares Edge MSCI ETF
+ISCG	Mstar Smallcap Growth Ishares ETF
+ISCV	Mstar Smallcap Value Ishares ETF
+ISDB	Invesco Short-Duration Bond ETF
+ISDR	Issuer Direct Corp
+ISEP	Innovator International Power Buffer ETF - Sep
+ISMD	Inspire Small/Mid Cap Impact ETF
+ISRA	Vaneck Israel ETF
+ISVL	Ishares Intl Dveloped Small Cap Value Factor ETF
+ISWN	Amplify Blackswan Iswn ETF
+ISZE	Intl Size Factor Ishares Edge MSCI ETF
+ITA	US Aerospace & Defense Ishares ETF
+ITAN	Sparkline Intangible Value ETF
+ITB	US Home Construction Ishares ETF
+ITDA	Ishares Lifepath Target Date 2025 ETF
+ITDB	Ishares Lifepath Target Date 2030 ETF
+ITDC	Ishares Lifepath Target Date 2035 ETF
+ITDD	Ishares Lifepath Target Date 2040 ETF
+ITDE	Ishares Lifepath Target Date 2045 ETF
+ITDF	Ishares Lifepath Target Date 2050 ETF
+ITDG	Ishares Lifepath Target Date 2055 ETF
+ITDH	Ishares Lifepath Target Date 2060 ETF
+ITDI	Ishares Lifepath Target Date 2065 ETF
+ITEQ	Bluestar Israel Technology ETF
+ITM	Vaneck Intermediate Muni ETF
+ITOT	S&P Total US Stock Market Ishares Core ETF
+ITP	IT Tech Packaging Inc
+ITRG	Integra Resources Corp
+IVAL	Intl Quantitative Valueshares ETF
+IVE	S&P 500 Value Ishares ETF
+IVES	ETFMG Global Cloud Technology ETF
+IVLU	Intl Value Factor Ishares Edge MSCI ETF
+IVOG	S&P Midcap 400 Growth ETF Vanguard
+IVOL	Quadratic Interest Rate Vol and Infl ETF
+IVOO	S&P Midcap 400 ETF Vanguard
+IVOV	S&P Midcap 400 Value ETF Vanguard
+IVRA	Invesco Real Assets ESG ETF
+IVRS	Ishares Future Metaverse Tech and Communications
+IVV	S&P 500 Ishares Core ETF
+IVVB	Ishares Large Cap Deep Buffer ETF
+IVVM	Ishares Large Cap Moderate Buffer ETF
+IVW	S&P 500 Growth Ishares ETF
+IWB	Russell 1000 Ishares ETF
+IWC	Micro-Cap Ishares ETF
+IWD	Russell 1000 Value Ishares ETF
+IWDL	Etracs 2X US Value Factor TR ETN
+IWF	Russell 1000 Growth Ishares ETF
+IWFG	IQ Mackay Municipal Insured ETF IQ Winslow Focus
+IWFH	Virtual Work and Life Multisector ETF
+IWFL	Etracs 2X US Growth Factor TR ETN
+IWIN	Amplify Inflation Fighter ETF
+IWL	Russell Top 200 Ishares ETF
+IWLG	IQ Mackay Municipal Insured ETF IQ Winslow Large
+IWM	Russell 2000 Ishares ETF
+IWML	Etracs 2X US Size Factor TR ETN
+IWMY	Defiance R2000 Enhanced Options Income ETF
+IWN	Russell 2000 Value Ishares ETF
+IWO	Russell 2000 Growth Ishares ETF
+IWP	Russell Midcap Growth Ishares ETF
+IWR	Russell Midcap Ishares ETF
+IWS	Russell Midcap Value Ishares ETF
+IWV	Russell 3000 Ishares ETF
+IWX	Russell Top 200 Value Ishares ETF
+IWY	Russell Top 200 Growth Ishares ETF
+IXC	Global Energy Ishares ETF
+IXG	Global Financials Ishares ETF
+IXJ	Global Healthcare Ishares ETF
+IXN	Global Tech Ishares ETF
+IXP	Global Telecom Ishares ETF
+IYC	US Consumer Services Ishares ETF
+IYE	US Energy Ishares ETF
+IYF	US Financials Ishares ETF
+IYG	US Financial Services Ishares ETF
+IYH	US Healthcare Ishares ETF
+IYJ	US Industrials Ishares ETF
+IYK	US Consumer Goods Ishares ETF
+IYLD	Mstar Multi-Asset Income Ishares ETF
+IYM	US Basic Materials Ishares ETF
+IYR	US Real Estate Ishares ETF
+IYT	Transportation Average Ishares ETF
+IYW	US Technology Ishares ETF
+IYY	DJ US Ishares ETF
+IYZ	US Telecommunications Ishares ETF
+IZRL	Ark Israel Innovative Technology ETF
+JAAA	Janus AAA Clo ETF
+JANT	Allianzim U.S. Large Cap Buffer10 Jan ETF
+JANW	Allianzim U.S. Large Cap Buffer20 Jan ETF
+JANZ	Trueshares Structured Outcome [Jan] ETF
+JAVA	JPM Active Value ETF
+JBBB	Janus B-BBB Clo ETF
+JBND	JPM Active Bond ETF
+JCHI	JPM Active China ETF
+JCPB	JPM Core Plus Bond ETF
+JCPI	Jpmorgan Inflation Managed Bond Fund
+JCTR	JPM Carbon Transition U.S. Equity ETF
+JDST	Junior Gold Mine Bear -3X Direxion
+JEMA	JPM Emerging Markets ETF
+JEPI	JPM Equity Premium Income ETF
+JEPY	Defiance S&P 500 Enhanced Options Income ETF
+JETD	Max Airlines -3X Inverse Leveraged Etns
+JETS	US Global Jets ETF
+JETU	Max Airlines 3X Leveraged Etns
+JFWD	Jacob Funds Inc Jacob Forward ETF
+JGRO	JPM Active Growth ETF
+JHAC	JH Fundamental All Cap Core ETF
+JHCB	JH Corporate Bond ETF
+JHDV	JH U.S. High Dividend ETF
+JHEM	JH Multifactor Emerging Markets ETF
+JHID	JH International High Dividend ETF
+JHMB	JH Mortgage-Backed Securities ETF
+JHMD	JH Developed Intl Multifactor ETF
+JHML	JH Largecap Multifactor ETF
+JHMM	JH Midcap Multifactor ETF
+JHMU	JH Dynamic Municipal Bond ETF
+JHPI	JH Preferred I ETF
+JHSC	JH Multifactor Small Cap ETF
+JIB	Janus Sustainable & Impact Bond ETF
+JIG	JPM International Growth ETF
+JIRE	JPM Intl Research Enhanced Equity ETF
+JMBS	Janus Mortgage-Backed Securities ETF
+JMEE	JPM Market Expansion Equity ETF
+JMHI	JPM High Yield Municipal ETF
+JMOM	JPM U.S. Momentum Factor ETF
+JMSI	JPM Sustainable Municipal ETF
+JMST	JPM Ultra-Short Municipal ETF
+JMUB	JPM Municipal ETF
+JNK	High Yield Bond ETF SPDR
+JNUG	Junior Gold Mine Bull 3X Direxion
+JOB	General Employment Enterprises
+JOET	Virtus Terranova U.S. Quality Momentum ETF
+JOJO	Atac Credit Rotation ETF
+JPAN	Matthews Japan Active ETF
+JPEM	JPM Dvsd Rtns EM ETF
+JPIB	JPM Global Bond Opportunities ETF
+JPIE	JPM Income ETF
+JPIN	JPM Dvsd Rtns Intl Equity ETF
+JPLD	Jpmorgan Limited Duration Bond ETF
+JPMB	JPM USD Emrg Mkts Sovereign Bond ETF
+JPME	JPM Dvsd Rtns US Midcap ETF
+JPMO	Yieldmax JPM Option Income ETF
+JPRE	JPM Realty Income ETF
+JPSE	JPM Dvsd Rtns US Smallcap Equity ETF
+JPST	JPM Ultra-Short Income ETF
+JPSV	J.P.M Active Small Cap ETF
+JPUS	JPM Dvsd Rtns US Equity ETF
+JPXN	Jpx-Nikkei 400 Ishares ETF
+JQUA	JPM U.S. Quality Factor ETF
+JRE	Janus U.S. Real Estate ETF
+JRNY	Alps Global Travel Beneficiaries ETF
+JSCP	JPM Short-Duration Core Plus ETF
+JSI	Janus Securitized Income ETF
+JSTC	Adasina Social Justice All Cap Global ETF
+JUCY	Aptus Enhanced Yield ETF
+JULD	Innovator Premium Income 10 Barrier ETF - Jul
+JULH	Innovator Premium Income 20 Barrier ETF - Jul
+JULJ	Innovator Premium Income 30 Barrier ETF - Jul
+JULQ	Innovator Premium Income 40 Barrier ETF - Jul
+JULT	Allianzim U.S. Large Cap Buffer10 Jul ETF
+JULW	Allianzim U.S. Large Cap Buffer20 Jul ETF
+JULZ	Trueshares Structured Outcome [Jul] ETF
+JUNT	Aim U.S. Large Cap Buffer10 Jun ETF
+JUNW	Aim U.S. Large Cap Buffer20 Jun ETF
+JUNZ	Trueshares Structured Outcome [Jun] ETF
+JUST	GS Just U.S. Large Cap Equity ETF
+JVAL	JPM U.S. Value Factor ETF
+JWS.S	Jaws Mustang Acquisition Corp [Jwsm.U]
+JWS.T	Jaws Mustang Acquisition Corp WT [Jwsm/W]
+JWSM	Jaws Mustang Acquisition Corp Cl A
+JXI	Global Utilities Ishares ETF
+KALL	KS MSCI All China Index ETF
+KAPR	Innovator U.S. Smallcap Power Buffer ETF - Apr
+KARB	ETF Series Carbon Strategy ETF
+KARS	KS Electric Vehicles and Future Mobility ETF
+KBA	KS Bosera MSCI China A ETF
+KBE	S&P Bank ETF SPDR
+KBND	KS Bloomberg Barclays China Bond ETF
+KBUY	KS Cicc China Consumer Leaders ETF
+KCAL	Subversive Food Security ETF
+KCCA	KS California Carbon Allowance ETF
+KCE	S&P Capital Markets ETF SPDR
+KDIV	KS S&P Pan Asia Dividend Aristo ETF
+KDRN	ETF Opp Kingsbarn Tactical Bond ETF
+KEM	KS Dynamic Emerging Markets Strategy ETF
+KEMQ	KS EM Consumer Technology Index ETF
+KEMX	KS MSCI Emerging Markets Ex China Index ETF
+KEUA	KS European Carbon Allowance ETF
+KFVG	KS Cicc China 5G and Semiconductor ETF
+KGRN	KS MSCI China Environment Index ETF
+KGRO	KS China Innovation ETF
+KHYB	KS Ccbs China Corp High Yield Bond USD ETF
+KIE	S&P Insurance ETF SPDR
+KIQ	Kelso Technologies
+KJAN	Innovator U.S. Smallcap Power Buffer ETF - Jan
+KJUL	Innovator U.S. Smallcap Power Buffer ETF - Jul
+KLDW	Knowledge Leaders Developed World ETF
+KLIP	KS China Internet and Covered Call Strategy ETF
+KLNE	Daily Global Clean Energy Bull 2X ETF Direxion
+KLXY	KS Global Luxury Index ETF
+KMET	KS Electrification Metals Strategy ETF
+KMLM	Kfa Mount Lucas Index Strategy ETF
+KNCT	Invesco Next Gen Connectivity ETF
+KNG	CBOE S&P 500 Dividend Aristocrats Target Income
+KNGS	Roundhill S&P Dividend Monarchs ETF
+KNW	Know Labs Inc
+KOCG	Fis Knights of Columbus Global Belief ETF
+KOCT	Innovator U.S. Smallcap Power Buffer ETF - Oct
+KOIN	Innovation Nextgen Protocol ETF
+KOKU	Xt MSCI Kokusai Equity ETF
+KOLD	Ultrashort Bloomberg Natural Gas -2X ETF
+KOMP	SPDR Kensho & New Economies Composite ETF
+KONG	Opportunities Formidable Fortress ETF
+KORP	American Century Dvfd Corp Bond ETF
+KORU	South Korea Bull 3X Direxion
+KPOP	Kpop and Korean Entertainment ETF
+KRBN	Kfa Global Carbon ETF
+KRE	S&P Regional Banking ETF SPDR
+KRUZ	Unusual Whales Republican Trades ETF
+KSA	Saudi Arabia Ishares MSCI ETF
+KSEA	KS Rockefeller Ocean Engagement ETF
+KSET	KS Global Carbon Offset Strategy ETF
+KSTR	KS Sse Star Market 50 Index ETF
+KTEC	KS Hang Seng Tech Index ETF
+KULR	Kulr Technology Group Inc
+KURE	KS MSCI All China Health Care Index ETF
+KVLE	KS Kfa Value Line Dynamic Core Equity ETF
+KWEB	KS CSI China Internet ETF
+KWT	Ishares MSCI Kuwait ETF
+KXI	Global Cons Staples Ishares ETF
+LABD	S&P Biotech Bear -3X Direxion
+LABU	S&P Biotech Bull 3X Direxion
+LALT	FT Multi-Strategy ETF
+LBAY	Leatherback Long/Short Alternative Yield ETF
+LBO	Whitewolf Publicly Listed Private Equity ETF
+LCF	Touchstone US Large Cap Focused ETF
+LCG	Sterling Capital Focus Equity ETF
+LCLG	Logan Capital Broad Innovative Growth ETF
+LCR	Leuthold Core ETF
+LCTD	Blackrock World Ex U.S. Carbon Transition ETF
+LCTU	Blackrock U.S. Carbon Transition Readiness ETF
+LCTX	Lineage Cell Therapeutics Inc
+LDUR	Pimco Low Duration ETF
+LEAD	Siren Divcon Leaders Dividend ETF
+LEMB	Emrg Mkts Local Curr Bond Ishares JPM ETF
+LEU	Centrus Energy Corp
+LEXI	Alexis Practical Tactical ETF
+LFEQ	Vaneck Long/Flat Trend ETF
+LGH	Hcm Defender 500 Index ETF
+LGL	LGL Group
+LGL.W	LGL Group Inc WT
+LGLV	SSGA US Large Cap Low Vol Index SPDR
+LGLZ	Tidal Subversive Cannabis ETF
+LGOV	FT Long Duration Opportunities ETF
+LIT	GX Lithium & Battery Tech ETF
+LKOR	Flexshares Credit Scored US Long Corp
+LMN.W	Lemonade Inc WT [Lmnd/W]
+LNG	Cheniere Energy
+LNGG	Roundhill Alerian Lng ETF
+LOCT	Innovator Premium Income 15 Buffer ETF - Oct
+LODE	Comstock Inc
+LONZ	Pimco Senior Loan Active Exchange
+LOPP	Gabelli Love Our Planet & People ETF
+LOUP	Innovator Deepwater Frontier Tech ETF
+LOWV	Ab US Low Volatility Equity ETF
+LPTV	Loop Media Inc
+LQAI	Lg Qraft Ai-Powered U.S. Large Cap Core ETF
+LQD	Invst Grade Corp Bond Ishares Iboxx $ ETF
+LQDB	Ishares BBB Rated Corporate Bond ETF
+LQDH	Int Rate Hedged Corp Bond Ishares ETF
+LQDI	Ishares Inflation Hedged Corporate Bond ETF
+LQDW	Ishares Invt Grade Corp Bond Buywrite Strategy E
+LQIG	SPDR Marketaxess Investment Grade 400 Corporate
+LRGC	Ab US Large Cap Strategic Equities ETF
+LRGF	USA Multifactor Ishares Edge MSCI ETF
+LRNZ	Truemark Technology Ai & Deep Learning ETF
+LSAF	Leadershares Alphafactor US Core Equity ETF
+LSAT	Leadershares Alphafactor Tactical Focused ETF
+LSEQ	Harbor Long-Short Equity ETF
+LSF	Laird Superfood Inc
+LSGR	Natixis Loomis Sayles Focused Growth ETF
+LSST	Natixis Loomis Sayles Short-Duration Income ETF
+LTL	Ultra Telecommunications 2X ETF
+LTPZ	15+ Year US TIPS Index Pimco ETF
+LUX	Tema Luxury ETF
+LUXX	Roundhill S&P Global Luxury ETF
+LVHI	Legg Intl Low Vol High Div ETF
+LVOL	American Century Low Volatility ETF
+MAG	MAG Silver Corp
+MAGA	Point Bridge Gop Stock Tracker ETF
+MAGG	Madison ETFS Trust Madison Aggregate Bond ETF
+MAIA	Maia Biotechnology Inc
+MAKX	Proshares S&P Kensho Smart Factories ETF
+MAMB	Monarch Ambassador Income ETF
+MAPP	Harbor Multi-Asset Explorer ETF
+MARB	Merger Arbitrage ETF FT
+MART	Allianzim U.S. Large Cap Buffer10 Mar ETF
+MARW	Allianzim U.S. Large Cap Buffer20 Mar ETF
+MARZ	Trueshares Structured Outcome [Mar] ETF
+MAYT	Aim U.S. Large Cap Buffer10 May ETF
+MAYW	Aim U.S. Large Cap Buffer20 May ETF
+MAYZ	Listed Funds Trust Trueshares Structured Outcome
+MBBB	Vaneck Moody's BBB Corp Bond ETF
+MBCC	Monarch Blue Chips Core ETF
+MBND	SPDR Nuveen Municipal Bond ETF
+MBNE	SPDR Nuveen Municipal Bond ESG ETF
+MBOX	Freedom Day Dividend ETF
+MBSD	Flexshares Disciplined Duration MBS Index Fund
+MCH	Matthews China Active ETF
+MDEV	Indxx Medical Devices ETF FT
+MDLV	Ea Series Trust Morgan Dempsey Large Cap Value E
+MDY	S&P Midcap 400 SPDR
+MDYG	S&P Midcap Growth ETF SPDR
+MDYV	S&P Midcap Value ETF SPDR
+MEAR	Short Maturity Muni Bond Ishares ETF
+MEDI	Harbor Health Care ETF
+MEM	Matthews Emerging Markets Equity Active ETF
+MEME	Listed Roundhill Meme ETF
+MEMX	Matthews Emerging Markets Ex China ETF
+METV	Roundhill Ball Metaverse ETF
+MEXX	MSCI Mexico Bull 3X Direxion
+MFDX	Pimco RAFI Multi-Factor Intl ETF
+MFEM	Pimco RAFI Multi-Factor EM ETF
+MFUL	Mindful Conservative ETF
+MFUS	Pimco RAFI Multi-Factor U.S. Equity ETF
+MGC	Vanguard Mega Cap ETF
+MGK	Vanguard Mega Cap Growth ETF
+MGLD	Marygold Company Inc
+MGMT	Ballast Small/Mid Cap ETF
+MGOV	FT Intermediate Government Opportunities ETF
+MGV	Vanguard Mega Cap Value ETF
+MHH	Mastech Holdings Inc
+MI	Nft Limited Class A Ordinary Share
+MID	American Century Mid Cap Growth Impact ETF
+MIDE	Xt S&P Midcap 400 ESG ETF
+MIDU	Mid Cap Bull 3X Direxion
+MIG	Vaneck Moody's IG Corp Bond ETF
+MIMO	Airspan Networks Holdings Inc
+MINN	Trust For Professional Managers Mairs & Power
+MINO	Pimco Municipal Income Opportunities Active ETF
+MINT	Enhanced Short-Maturity Strgy Pimco ETF
+MINV	Matthews Asia Innovators Active ETF
+MISL	FT Indxx Aerospace & Defence ETF
+MITQ	Moving Image Technologies Inc
+MJ	ETFMG Alternative Harvest ETF
+MJUS	ETFMG U.S. Alternative Harvest ETF
+MKOR	Matthews Korea Active ETF
+MLN	Vaneck Vaneck Corp Long Muni ETF
+MLPA	GX MLP ETF
+MLPB	Etracs MLP Infrastructure Index ETN
+MLPO	CS S&P MLP Index ETN
+MLPR	Etracs Quarterly Pay 1.5X Alerian MLP ETN
+MLPX	GX MLP & Energy Infrastructure ETF
+MLSS	Milestone Scientific
+MMCA	IQ Mackay California Municipal Intermediate ETF
+MMIN	IQ Mackay Shields Municipal Insured ETF
+MMIT	IQ Mackay Municipal Intermediate ETF
+MMLG	Multi-Manager Large Growth ETF FT
+MMSB	IQ Mackay Multi-Sector Income ETF
+MMSC	FT Multi-Manager Small Cap Opportunities ETF
+MMTM	S&P 1500 Momentum Tilt ETF SPDR
+MNA	IQ Merger Arbitrage ETF
+MNBD	Alps Intermediate Municipal Bond ETF
+MOAT	Vaneck Morningstar Wide Moat ETF
+MOHR	Mohr Growth ETF
+MOO	Vaneck Agribusiness ETF
+MOOD	Alpha Architect Relative Sentiment ETF
+MOON	Direxion Moonshot Innovators ETF
+MORT	Vaneck Mortgage REIT Income ETF
+MOTE	Vaneck Morningstar ESG Moat ETF
+MOTG	Vaneck Morningstar Global Wide Moat ETF
+MOTI	Vaneck Mstar International Moat ETF
+MOTO	Smartetfs Smart Transport & Tech ETF
+MPAY	Akros Monthly Payout ETF
+MPRO	Northern IV Monarch Procap ETF
+MPTI	M-Tron Industries Inc
+MPU	Mega Matrix Corp
+MRAD	Smartetfs Advertising & Marketing Technology ETF
+MRGR	Merger ETF
+MRNY	Yieldmax Mrna Option Income ETF
+MRSK	Agility Shares Managed Risk ETF
+MRT	Marti Technologies Inc
+MRT.W	Marti Technologies Inc WT
+MSFO	Yieldmax Msft Option Income ETF
+MSFY	Neos Yield Premium Strategy Microsoft [Msft] ETF
+MSMR	ETF Series Mcelhenny Sheffield Managed
+MSN	Emerson Radio Corp
+MSOS	Advisorshares Pure US Cannabis ETF
+MSOX	Advisorshares Msos 2X Daily ETF
+MSTB	Lha Market State Tactical Beta ETF
+MSTI	Madison Short Term Strategic Income ETF
+MSTQ	Lha Market State Tactical Q ETF
+MSVX	Lha Market State Alpha Seeker ETF
+MTA	Metalla Royalty and Streaming Ltd
+MTBA	Simplify MBS ETF
+MTGP	Wisdomtree Mortgage Plus Bond Fund
+MTNB	Matinas Biopharma Hl
+MTUL	Etracs 2X MSCI US Momentum Factor TR ETF
+MTUM	USA Momentum Factor Ishares Edge MSCI ETF
+MUB	Natl Muni Bond Ishares ETF
+MUNI	Interm Muni Bond Strgy Pimco ETF
+MUSI	American Century Multisector Income ETF
+MUSQ	Musq Global Music Industry ETF
+MUST	Columbia Multi-Sector Municipal Income ETF
+MVPS	Amplify Thematic All-Stars ETF
+MVRL	Etracs Monthly Pay 1.5X Mortgage REIT ETN
+MVV	Ultra Midcap400 2X ETF
+MWG	Multi Ways Holdings Limited
+MXC	Mexco Energy Corp
+MXI	Global Materials Ishares ETF
+MYO	Myomo Inc
+MYY	Short Midcap400 -1X ETF
+MZZ	Ultrashort Midcap400 -2X ETF
+NACP	Impact Shares Naacp Minority Empowerment ETF
+NAIL	Homebuild & Suppliers Bull 3X Direxion
+NAK	Northern Dynasty Minerals
+NANC	Unusual Whales Democratic Trades ETF
+NANR	S&P North American Natural SPDR
+NAPR	Innovator Growth-100 Power Buffer ETF - Apr
+NBCC	Neuberger Next Generation Connected Consumer ETF
+NBCE	Neuberger China Equity ETF
+NBCM	Neuberger Commodity Strategy ETF
+NBCT	Neuberger Carbon Transition Infrastructure ETF
+NBDS	Neuberger Disrupters ETF
+NBGR	Neuberger Global Real Estate ETF
+NBH	Neuberger Berman Intermediate Fund Inc
+NBY	Novabay Pharmaceuticals
+NCL	Northann Corp
+NDIA	GX X India Active ETF
+NDIV	Amplify Natural Resources Dividend Income ETF
+NDJI	ETF Dow Jones Risk-Managed Income ETF
+NDVG	Nuveen Dividend Growth ETF
+NEAR	Short Maturity Bond Ishares ETF
+NEN	New England Realty Associates Ltd Partnershi
+NERD	Roundhill Esports & Digital Entertainment ETF
+NETL	Netlease Corporate Real Estate ETF
+NETZ	Tcw Transform Climate ETF
+NEWP	New Pacific Metals Corp
+NFGC	New Found Gold Corp
+NFLP	Neos Strategy Netflix [Nflx] ETF
+NFLT	Virtus Newfleet Multi-Sector Bond ETF
+NFLY	Yieldmax Nflx Option Income ETF
+NFRA	Flexshares Global Broad Infr Fund
+NG	Novagold Resources Inc
+NGD	New Gold Inc
+NGE	GX MSCI Nigeria ETF
+NHC	National Healthcare Corp
+NHS	Neuberger Berman High Yield Strategies
+NHWK	Nighthawk Biosciences Inc
+NJAN	Innovator Growth-100 Power Buffer ETF - Jan
+NJUL	Innovator Growth-100 Power Buffer ETF - Jul
+NLR	Vaneck Uranium & Nuclear Energy ETF
+NML	Neuberger Berman Energy Infra and Inc Fund
+NNVC	Nanoviricides Inc
+NOBL	S&P 500 Dividend Aristocrats ETF
+NOCT	Innovator Growth-100 Power Buffer Etf- Oct
+NORW	GX FTSE Nordic Region ETF
+NOVZ	Trueshares Structured Outcome [Nov] ETF
+NRGD	Microsectors U.S. Big Oil Index -3X ETN
+NRGU	Microsectors U.S. Big Oil Index 3X ETN
+NRO	Neuberger Berman Real Estate Securities
+NRSH	Aztlan North America Nearshoring Stock ETF
+NRXS	Neuraxis Inc
+NSCS	Nuveen Small Cap Select ETF
+NSPI	ETF S&P 500 Risk-Managed Income ETF
+NST.U	Northern Star Invt Corp II [Nstb.U]
+NST.W	Northern Star Invt Corp II [Nstb/W]
+NSTB	Northern Star Investment Corp II Cl A
+NTIP	Network-1 Sec Solu
+NTKI	ETF Russell 2000 Risk-Managed Income ETF
+NTRL	Global X Funds Global X Carbon Credits Strategy
+NTSE	Wisdomtree Emerging Markets Efficient Core Fund
+NTSI	Wisdomtree Intl Efficient Core Fund
+NTSX	Wisdomtree U.S. Efficient Core Fund
+NUAG	Nushares US Aggregate Bond ETF
+NUBD	Nushares ESG U.S. Aggregate Bond ETF
+NUDM	Nushares ESG Intl Developed Markets Equity ETF
+NUDV	Nuveen ESG Dividend ETF
+NUEM	Nushares ESG Emerging Markets Equity ETF
+NUGO	Nuveen Growth Opportunities ETF
+NUGT	Gold Miners Bull 2X ETF Direxion
+NUHY	Nuveen ESG High Yield Corporate Bond ETF
+NULC	Nushares ETF Trust
+NULG	Nushares ESG Largecap Growth ETF
+NULV	Nushares ESG Largecap Value ETF
+NUMG	Nushares ESG Midcap Growth ETF
+NUMV	Nushares ESG Midcap Value ETF
+NURE	Nushares Short-Term REIT ETF
+NUSA	1-5 Year U.S. Aggregate Nushares ETF
+NUSC	Nushares ESG Smallcap ETF
+NUSI	Nationwide Risk-Managed Income ETF
+NVBT	Allianzim U.S. Large Cap Buffer10 Nov ETF
+NVBW	Allianzim U.S. Large Cap Buffer20 Nov ETF
+NVDQ	T-Rex 2X Inverse Nvidia Daily Target ETF
+NVDX	T-Rex 2X Long Nvidia Daily Target ETF
+NVDY	Yieldmax Nvda Option Income ETF
+NVIR	Horizon Kinetics Energy and Remediation ETF
+NVQ	Qraft Ai-Enhanced US Next Value ETF
+NWLG	Nuveen Winslow Largecap Growth ESG ETF
+NXTE	Axs Green Alpha ETF
+NYF	New York Muni Bond Ishares ETF
+OACP	Oneascent Core Plus Bond ETF
+OAEM	Oneascent Emerging Markets ETF
+OAIA	Teucrium Aila Long-Short Agriculture Strategy
+OAIB	Teucrium Aila Long/Short Base Metals Strategy Et
+OAIE	Optimize Ai Smart Sentiment Event-Driven
+OAIM	Oneascent International Equity ETF
+OALC	Oneascent Large Cap Core ETF
+OARK	Yieldmax Innovation Option Income ETF
+OBE	Obsidian Energy Ltd
+OBND	SPDR Loomis Sayles Opportunistic Bond ETF
+OBOR	KS MSCI One Belt One Road Index ETF
+OCEN	IQ Clean Oceans ETF
+OCIO	ETF Series Solutions ETF
+OCTD	Innovator Premium Income 10 Barrier ETF - Oct
+OCTH	Innovator Premium Income 20 Barrier ETF - Oct
+OCTJ	Innovator Premium Income 30 Barrier ETF - Oct
+OCTQ	Innovator Premium Income 40 Barrier ETF - Oct
+OCTT	Allianzim U.S. Large Cap Buffer10 Oct ETF
+OCTW	Allianzim U.S. Large Cap Buffer20 Oct ETF
+OCTZ	Trueshares Structured Outcome [Oct] ETF
+OEF	S&P 100 Ishares ETF
+OEUR	O's Europe Qlty Divd ETF
+OGCP	Empire State Realty Op LP Se
+OGEN	Oragenics Inc
+OGIG	O's Global Internet Giants ETF
+OIH	Vaneck Oil Services ETF
+OILD	Microsectors Oil & Gas Exp. & Prod -3X ETN
+OILK	Crude Oil Strategy K-1 Free ETF
+OILU	Microsectors Oil & Gas Exp. & Prod. 3X ETN
+OMFL	Oppenheimer Russell 1000 Multifactor ETF
+OMFS	Oppenheimer Russell 2000 Multifactor ETF
+OND	Proshares On-Demand ETF
+ONEO	Russell 1000 Momentum Focus ETF SPDR
+ONEV	Russell 1000 Low Vol ETF SPDR
+ONEY	Russell 1000 Yield Focus ETF SPDR
+ONLN	Online Retail ETF
+ONOF	GX Adaptive U.S. Risk Management ETF
+OOTO	Travel & Vacation Bull 2X ETF Direxion
+OPER	Clearshares Ultra-Short Maturity ETF
+OPPX	Corbett Road Tactical Opportunity ETF
+OPTT	Ocean Power Tech Inc
+ORLA	Orla Mining
+OSCV	Opus Small Cap Value Plus ETF
+OSEA	Harbor International Compounders ETF
+OUNZ	Vaneck Merk Gold Trust
+OUS.X	Ouster Inc WT [Oust/Wa]
+OUSA	O's U.S. Qlty Divd ETF
+OUSM	O's Russell Smallcap Qlty Divd ETF
+OVB	Overlay Shares Core Bond ETF
+OVF	Overlay Shares Foreign Equity ETF
+OVL	Overlay Shares Large Cap Equity ETF
+OVLH	Overlay Shares Hedged Large Cap Equity ETF
+OVM	Overlay Shares Municipal Bond ETF
+OVS	Overlay Shares Small Cap Equity ETF
+OVT	Overlay Shares Short-Term Bond ETF
+OWNS	Impact Shares Affordable Housing MBS ETF
+OZ	Belpointe Prep Llc Cl A Units
+PAAA	PGIM AAA Clo ETF
+PAB	PGIM Active Aggregate Bond ETF
+PAK	GX MSCI Pakistan ETF
+PALC	Pacer Large Cap Multi-Factor Alternator ETF
+PALL	Physical Palladium ETF
+PAMC	Pacer Lunt Midcap Multi-Factor Alternator ETF
+PAPI	Parametric Equity Premium Income ETF
+PAPL	Pineapple Financial Inc
+PAPR	Innovator U.S. Power Buffer ETF - Apr
+PAUG	Innovator U.S. Power Buffer ETF - Aug
+PAVE	GX U.S. Infrastructure Development ETF
+PAWZ	Pet Care ETF
+PBD	Global Clean Energy Invesco ETF
+PBDC	Putnam Bdc Income ETF
+PBE	Dynamic Biotechnology & Genome Invesco ETF
+PBJ	Dynamic Food & Beverage Invesco ETF
+PBL	PGIM Portfolio Ballast ETF
+PBP	S&P 500 Buywrite Invesco ETF
+PBTP	Purebetasm 0-5 Yr US TIPS Invesco ETF
+PBUS	Purebetasm MSCI USA Invesco ETF
+PBW	Wilderhill Clean Energy Invesco ETF
+PCEF	CEF Income Composite Invesco ETF
+PCG-A	Pacific Gas El 6.00
+PCG-B	Pacific Gas El 5.50
+PCG-C	Pacific Gas El 5.00
+PCG-D	Pacific Gas El 5.00
+PCG-E	Pacific Gas El 5.00
+PCG-G	Pacific Gas El 4.80
+PCG-H	Pacific Gas El 4.50
+PCG-I	Pacific Gas El 4.36
+PCGG	Polen Capital Global Growth ETF
+PCRB	Putnam ESG Core Bond ETF
+PCY	Emrg Mkts Sovereign Debt Invesco ETF
+PDEC	Innovator U.S. Power Buffer ETF - Dec
+PDN	FTSE RAFI Dev Markets Ex-U.S. Small-Mid Invesco
+PED	Pedevco Corp
+PEJ	Dynamic Leisure and Entertainment Invesco ETF
+PEMX	Putnam Emerging Markets Ex-China ETF
+PEX	Global Listed Private Equity ETF
+PEXL	Pacer US Export Leaders ETF
+PFEB	Innovator U.S. Power Buffer ETF - Feb
+PFFA	Virtus Infracap U.S. Preferred Stock ETF
+PFFD	GX U.S. Preferred ETF
+PFFL	Etracs 2X Prfd Stock Index ETN
+PFFR	Infracap REIT Preferred ETF
+PFFV	GX Variable Rate Preferred ETF
+PFIG	Fundamental Investment Grade Corp Bond Invesco
+PFIX	Simplify Interest Rate Hedge ETF
+PFLD	Aam Low Duration Preferred and Income Securities
+PFRL	PGIM Floating Rate Income ETF
+PFUT	Putnam Sustainable Future ETF
+PFXF	Vaneck Prfd Securities Ex Financials ETF
+PGAL	GX MSCI Portugal ETF
+PGF	Financial Preferred Invesco ETF
+PGHY	Global Short-Term Hi-Yld Bond Invesco ETF
+PGRO	Putnam Focused Large Cap Growth ETF
+PGX	Preferred Invesco ETF
+PHB	Fundamental Hi-Yld Corp Bond Invesco ETF
+PHDG	S&P 500 Downside Hedged Invesco ETF
+PHEQ	Parametric Hedged Equity ETF
+PHG.U	Biomx Inc [Phge.U]
+PHGE	Biomx Ltd
+PHYD	Putnam ESG High Yield ETF
+PHYL	PGIM Active High Yield Bond ETF
+PHYS	Sprott Physical Gold Trust ETV
+PICB	Intl Corp Bond Invesco ETF
+PICK	Ishares Global Select Metals & Mining Fund
+PIFI	Clearshares Piton Intermediate ETF
+PILL	Pharmaceutical & Medical Bull 3X Direxion ETF
+PIN	India Invesco ETF
+PINK	Simplify Health Care ETF
+PIT	Vaneck Commodity Strategy ETF
+PJAN	Innovator U.S. Power Buffer ETF - Jan
+PJFG	PGIM Jennison Focused Growth ETF
+PJFV	PGIM Jennison Focused Value ETF
+PJP	Dynamic Pharmaceuticals Invesco ETF
+PJUL	Innovator U.S. Power Buffer ETF - Jul
+PJUN	Innovator U.S. Power Buffer ETF - Jun
+PKB	Dynamic Building & Construction Invesco ETF
+PLAG	Planet Green Holdings Corp
+PLDR	Putnam Sustainable Leaders ETF
+PLG	Platinum Group Metals Ltd
+PLTM	Graniteshares Platinum Shares ETF
+PLX	Protalix Biotherapeutics
+PMAR	Innovator U.S. Power Buffer ETF - Mar
+PMAY	Innovator U.S. Power Buffer ETF - May
+PNOV	Innovator U.S. Power Buffer ETF - Nov
+POCT	Innovator U.S. Power Buffer ETF - Oct
+POL	Polished.com Inc.
+POWA	Invesco Bloomberg Pricing Power ETF
+PP	Tidal Meet Kevin Pricing Power ETF
+PPA	Aerospace & Defense Invesco ETF
+PPEM	Putnam ESG Emerging Markets Equity ETF
+PPI	Axs Astoria Inflation Sensitive ETF
+PPIE	Putnam ESG International Equity ETF
+PPLT	Physical Platinum ETF
+PPTY	Ppty U.S. Diversified Real Estate ETF
+PQDI	Principal Spectrum Tax-Advantaged Dividend ETF
+PRAY	Fis Biblically Responsible Risk Managed ETF
+PREF	Principal Spectrum Preferred Securities ETF
+PRF	FTSE RAFI US 1000 Invesco ETF
+PRFD	Pimco Preferred & Capital Securities Active ETF
+PRK	Park National Corp
+PRNT	3D Printing ETF
+PSCJ	Pacer Swan Sos Conservative [Jul] ETF
+PSCQ	Pacer Swan Sos Conservative [Oct] ETF
+PSCW	Pacer Swan Sos Conservative [Apr] ETF
+PSCX	Pacer Swan Sos Conservative [Dec] ETF
+PSDM	PGIM Short Duration Multi-Sector Bond ETF
+PSEP	Innovator U.S. Power Buffer ETF - Sep
+PSFD	Pacer Funds ETF
+PSFF	Pacer Swan Sos Fund of Funds ETF
+PSFJ	Pacer Swan Sos Flex [Jul] ETF
+PSFM	Pacer Swan Sos Flex [Apr] ETF
+PSFO	Pacer Swan Sos Flex [Oct] ETF
+PSI	Dynamic Semiconductors Invesco ETF
+PSIL	Advisorshares Psychedelics ETF
+PSK	SPDR ICE Preferred Securities ETF
+PSLV	Sprott Physical Silver Trust ETV
+PSMD	Pacer Swan Sos Moderate [Dec] ETF
+PSMJ	Pacer Swan Sos Moderate [Jul] ETF
+PSMO	Pacer Swan Sos Moderate [Oct] ETF
+PSMR	Pacer Swan Sos Moderate [Apr ETF
+PSP	Global Listed Private Equity Invesco ETF
+PSQ	Short QQQ -1X ETF
+PSR	Active U.S. Real Estate Invesco ETF
+PST	Ultrashort Lehman 7-10 Year Treasury -2X ETF
+PSTP	Innovator Power Buffer Step-Up Strategy ETF
+PTBD	Pacer Trendpilot US Bond ETF
+PTEU	Pacer Trendpilot European Index ETF
+PTIN	Pacer Trendpilot International ETF
+PTLC	Pacer Trendpilot 750 ETF
+PTMC	Pacer Trendpilot 450 ETF
+PTN	Palatin Technologies
+PTRB	PGIM Total Return Bond ETF
+PULS	PGIM Ultra-Short Bond ETF
+PULT	Putnam ESG Ultra Short ETF
+PUTD	CBOE Validus S&P 500 Dynamic Putwrite ETF
+PUTW	Wisdomtree CBOE S&P 500 Putwrite Strategy Fund
+PVAL	Putnam Focused Large Cap Value ETF
+PVI	Vrdo Tax-Free Weekly Invesco ETF
+PW	Power REIT
+PW-A	Power REIT 7.75% Series A Cumul
+PWB	Dynamic Large Cap Growth Invesco ETF
+PWER	Macquarie Energy Transition ETF
+PWS	Pacer Wealthshield ETF
+PWV	Dynamic Large Cap Value Invesco ETF
+PWZ	California Amt-Free Municipal Bond Invesco ETF
+PXE	Ynamic Energy Exploration & Production ETF
+PXF	FTSE RAFI Dev Markets Ex-U.S. Invesco ETF
+PXH	FTSE RAFI Emrg Markets Invesco ETF
+PXJ	Dynamic Oil & Gas Services Invesco ETF
+PYLD	Pimco Multisector Bond Active ETF
+PYPY	Yieldmax Pypl Option Income ETF
+PZA	National Amt-Free Municipal Bond Invesco ETF
+PZG	Paramount Gold and Silver
+PZT	New York Amt-Free Municipal Bond Invesco ETF
+QAI	IQ Hedge Multi-Strategy Tracker ETF
+QARP	Xt Russell 1000 US Quality Reasonable Price ETF
+QCON	American Century Convertible Securities ETF
+QDEC	FT Growth-100 Buffer ETF December
+QDEF	Flexshares Quality Div Def Fund
+QDF	Flexshares Quality Div Fund
+QDIV	GX S&P 500 Quality Dividend ETF
+QDPL	Pacer Metaurus US Large Cap Divd Multiplier 400
+QEFA	SPDR MSCI EAFE Strategic Factors ETF
+QEMM	EM Strategicfactors MSCI ETF SPDR
+QFTA	Quantum Fintech Acquisition Corp
+QGRO	American Century Stoxx U.S. Quality Growth ETF
+QGRW	Wisdomtree U.S. Quality Growth Fund
+QID	Ultrashort QQQ -2X ETF
+QINT	American Century Quality Diversified Intl ETF
+QIS	Simplify Multi-Qis Alternative ETF
+QJUN	FT CBOE Vest Growth-100 Buffer
+QLC	Flexshares US Quality Largecap ETF
+QLD	Ultra QQQ 2X ETF
+QLTA	AAA A Rated Corp Bond Ishares ETF
+QLTY	GMO U.S. Quality ETF
+QLV	Flexshares US Quality Low Volatility Index Fund
+QLVD	Flexshares Dvld Markets Ex-US Qlty Low Vol ETF
+QLVE	Flexshares EM Quality Low Vol ETF
+QMAR	FT Growth-100 Buffer ETF March
+QMOM	Quantitative Momentum ETF
+QPFF	American Century Quality Preferred ETF
+QPX	Advisorshares Q Dynamic Growth ETF
+QQH	Hcm Defender 100 Index ETF
+QRFT	Qraft Ai-Enhanced U.S. Large Cap ETF
+QSPT	FT Nasdaq-100 Buffer ETF September
+QSWN	Amplify Blackswan Tech & Treasury ETF
+QTAP	Innovator Growth Accelerated Plus ETF - Apr
+QTJA	Innovator Growth Accelerated Plus ETF - Jan
+QTJL	Innovator Growth Accelerated Plus ETF - Jul
+QTOC	Innovator Growth Accelerated Plus ETF - Oct
+QTUM	Defiance Quantum ETF
+QUAL	USA Quality Factor Ishares Edge MSCI ETF
+QULL	Etracs 2X MSCI US Quality Factor TR ETF
+QUS	USA Qlty Mix MSCI ETF SPDR
+QUVU	Hartford Quality Value ETF
+QVAL	US Quantitative Valueshares ETF
+QVML	Invesco S&P 500 Qvm Multi-Factor ETF
+QVMM	Invesco S&P Midcap 400 Qvm Multi-Factor ETF
+QVMS	Invesco S&P Smallcap 600 Qvm Multi-Factor ETF
+QVOY	Q3 All-Season Active Rotation ETF
+QWLD	World Qlty Mix MSCI ETF SPDR
+RAAX	Vaneck Inflation Allocation ETF
+RAFE	Pimco RAFI ESG U.S. ETF
+RATE	GX Interest Rate Hedge ETF
+RAVI	Flexshares Ready Access Variable Income
+RAYC	Rayliant Quantamental China Equity ETF
+RAYD	Rayliant Quantitative Developed Market Equity Et
+RAYE	Rayliant Quantamental Emerging Market Equity ETF
+RBLD	FT Alerian US Nextgen Infrastructure ETF
+RCG	Renaissance Capital Growth & Income Fund III
+RDFI	Rareview Dynamic Fixed Income ETF
+RDIV	Ultra Dividend Revenue ETF Oppenheimer
+RDOG	Alps REIT Dividend Dogs ETF
+RDVI	FT Rising Dividend ETF
+RECS	Columbia Research Enhanced Core ETF
+REET	Global REIT Ishares ETF
+REGL	S&P Midcap 400 Dividend Aristocrats ETF
+REI	Ring Energy Inc
+REK	Short Real Estate -1X ETF
+REM	Mortgage Real Estate Ishares ETF
+REMX	Vaneck Rare Earth Strategic Metals ETF
+RENW	Harbor Energy Transition Strategy ETF
+REPX	Riley Exploration Permian Inc
+RESD	Wisdomtree International ESG Fund
+RESE	Wisdomtree Emerging Markets ESG Fund
+RESI	Kelly Residential & Apartment Real Estate ETF
+RESP	Wisdomtree U.S. ESG Fund
+RETL	Retail Bull 3X Direxion
+REVS	Columbia Research Enhanced Value ETF
+REW	Ultrashort Technology -2X ETF
+REZ	Residential and Multisector Real Estate ETF
+RFCI	Riverfront Core Income Fund ETF FT
+RFDA	Riverfront US Dividend Adv ETF FT
+RFFC	Riverfront US Flex-Cap ETF FT
+RFG	S&P Midcap 400 Pure Growth Invesco ETF
+RFV	S&P Midcap 400 Pure Value Invesco ETF
+RHCB	BNY Mellon Responsible Horizons Corp Bond ETF
+RHE	Regional Health Properties
+RHE-A	Regional Health Properties 10.875% Series A
+RHRX	Roundhill Tactical Rotation ETF
+RHTX	Roundhill Tactical Outlook ETF
+RIET	Hoya Capital High Dividend Yield ETF
+RIGS	Riverfront Strategic Income Fund ETF
+RINC	Axs Real Estate Income ETF
+RINF	Inflation Expectations ETF
+RISN	Inspire Tactical Balanced ESG ETF
+RISR	Foliobeyond Rising Rates ETF
+RITA	ETF Series Etfb Green Sri Reits ETF
+RLGT	Radiant Logistics
+RLY	SSGA Multi-Asset Real Return ETF SPDR
+RMIF	Solutions Lha Risk-Managed Income ETF
+RNWZ	Eagle Global Renewable Energy Income ETF
+ROAM	Hartford Multifactor Emerging Markets ETF
+ROBO	Global Robotics and Automation ETF
+RODE	Hartford Multifactor Diversified Intl ETF
+RODM	Hartford Multifactor Dev Markets [Ex-Us] ETF
+ROKT	SPDR Kensho Final Frontiers ETF
+ROM	Ultra Technology 2X ETF
+ROMO	Strategy Shares Newfound/Resolve Robust Momentum
+ROOF	IQ US Real Estate Smallcap ETF
+RORO	Atac US Rotation ETF
+ROSC	Hartford Multifactor Small Cap ETF
+ROUS	Hartford Multifactor U.S. Equity ETF
+ROYA	Tema Global Royalties ETF
+RPAR	Rpar Risk Parity ETF
+RPG	S&P 500 Pure Growth Invesco ETF
+RPHS	Regents Park Hedged Market Strategy ETF
+RPV	S&P 500 Pure Value Invesco ETF
+RSBT	Return Stacked Bonds & Managed Futures ETF
+RSEE	Rareview Systematic Equity
+RSHO	Tema American Reshoring ETF
+RSP	S&P 500 EW Invesco ETF
+RSPC	Invesco S&P 500 EW Comm Services ETF
+RSPD	S&P 500 EW Consumer Discretionary Invesco ETF
+RSPE	Invesco ESG S&P 500 Equal Weight ETF
+RSPF	S&P 500 EW Financials Invesco ETF
+RSPG	S&P 500 EW Energy Invesco ETF
+RSPH	S&P 500 EW Health Care Invesco ETF
+RSPM	S&P 500 EW Materials Invesco ETF
+RSPN	S&P 500 EW Industrials Invesco ETF
+RSPR	S&P 500 EW Real Estate Invesco ETF
+RSPS	S&P 500 EW Consumer Staples Invesco ETF
+RSPT	S&P 500 EW Technology Invesco ETF
+RSPU	S&P 500 EW Utilities Invesco ETF
+RSST	Tidal U.S. Stocks & Managed Futures ETF
+RTAI	Rareview Tax Advantaged Income ETF
+RUFF	Alpha Dog ETF
+RULE	Adaptive Core ETF
+RVNU	Xt Municipal Infrastructure Revenue Bond ETF
+RVP	Retractable Technologies
+RVRB	Advisorshares Reverb ETF
+RWJ	Smallcap Revenue ETF Oppenheimer
+RWK	Midcap Revenue ETF Oppenheimer
+RWL	Largecap Revenue ETF Oppenheimer
+RWM	Short Russell 2000 -1X ETF
+RWO	DJ Global Real Estate ETF SPDR
+RWR	DJ REIT ETF SPDR
+RWX	DJ Intl Real Estate ETF SPDR
+RXD	Ultrashort Health Care -2X ETF
+RXI	Global Cons Disc Ishares ETF
+RXL	Ultra Health Care 2X ETF
+RYJ	Raymond James Sb-1 Equity Invesco ETF
+RYLD	GX Russell 2000 Covered Call ETF
+RYLG	GX Russell 2000 Covered Call & Growth ETF
+RYSE	CBOE 10-Year Interest Rate Hedge ETF
+RZG	S&P Smallcap 600 Pure Growth Invesco ETF
+RZV	S&P Smallcap 600 Pure Value Invesco ETF
+SAA	Ultra Smallcap600 2X ETF
+SAC-A	Sachem Capital Corp
+SACC	Sachem Capital Corp 6.875% Notes Due 2024
+SACH	Sachem Capital Corp
+SAEF	Schwab Strategic Ariel ESG ETF
+SAGP	Strategas Global Policy Opportunities ETF
+SAMT	Strategas Macro Thematic Opportunities ETF
+SANE	Subversive Mental Health ETF
+SAT.X	Satixfy Communications WT [Satx.Ws.A]
+SATO	Invesco Alerian Galaxy Crypto Economy ETF
+SATX	Satixfy Communications Ltd Ordinary Share
+SAUG	FT CBOE Vest U.S. Small Cap Moderage ETF Aug
+SBB	Short Smallcap600 -1X ETF
+SBE.W	Splash Beverage Group WT [Sbev/W]
+SBEV	Splash Beverage Group Inc
+SBIO	Alps Medical Breakthroughs ETF
+SBND	Columbia Short-Duration Bond ETF
+SCC	Ultrashort Consumer Services -2X ETF
+SCCB	Sachem Capital Corp
+SCCC	Sachem Capital Corp 7.75% Notes Due 2025
+SCCD	Sachem Capital Corp 6.00%
+SCCE	Sachem Capital Corp 6.00% Notes Due 2027
+SCCF	Sachem Capital Corp. 7.125% Notes Due 2027
+SCCG	Sachem Capital Corp. 8.00% Notes Due 2027
+SCDL	Etracs 2X US Dividend Factor TR ETN
+SCHA	Schwab U.S. Smallcap ETF
+SCHB	Schwab U.S. Broad Market ETF
+SCHC	Schwab Intl Smallcap Equity ETF
+SCHD	Schwab US Dividend Equity ETF
+SCHE	Schwab Emrg Mkts Equity ETF
+SCHF	Schwab Intl Equity ETF
+SCHG	Schwab U.S. Largecap Growth ETF
+SCHH	Schwab U.S. REIT ETF
+SCHI	Schwab 5-10 Year Corp Bond ETF
+SCHJ	Schwab 1-5 Year Corp Bond ETF
+SCHK	Schwab 1000 Index ETF
+SCHM	Schwab U.S. Mid Cap ETF
+SCHO	Schwab Short-Term U.S. Treasury ETF
+SCHP	Schwab U.S. TIPS ETF
+SCHQ	Schwab Long-Term U.S. Treasury ETF
+SCHR	Schwab Int-Term U.S. Treasury ETF
+SCHV	Schwab U.S. Largecap Value ETF
+SCHX	Schwab U.S. Largecap ETF
+SCHY	Schwab International Dividend Equity ETF
+SCHZ	Schwab US Aggregate Bond ETF
+SCJ	Japan Smallcap Ishares MSCI ETF
+SCMB	Schwab Strategic Municipal Bond ETF
+SCO	Ultrashort Bloomberg Crude Oil -2X ETF
+SCRD	Janus Sustainable Corporate Bond ETF
+SCYB	Schwab High Yield Bond ETF
+SDCI	Uscf Summerhaven Dynamic Commodity Strategy No K
+SDCP	Virtus Newfleet Short Duration Core Plus Bonus E
+SDD	Ultrashort Smallcap600 -2X ETF
+SDEM	GX MSCI Superdividend EM ETF
+SDIV	GX Superdividend ETF
+SDOG	Alps Sector Dividend Dogs ETF
+SDOW	Ultrapro Short Dow 30 -3X ETF
+SDP	Ultrashort Utilities -2X ETF
+SDPI	Superior Drilling Products Inc
+SDS	Ultrashort S&P500 -2X ETF
+SDVD	FT Rising Dividend Achievers Target ETF
+SDY	S&P Dividend SPDR
+SEA	U.S. Global Sea To Sky Cargo ETF
+SEB	Seaboard Corp
+SECT	Northern IV Main Sector Rotation ETF
+SEF	Short Financials -1X ETF
+SEIM	Sei Enhanced U.S. Large Cap Momentum Factor ETF
+SEIQ	Sei Enhanced U.S. Large Cap Quality ETF
+SEIV	Sei Exchange Traded Fds Sei Enhanced U.S. Large
+SEIX	Virtus Seix Senior Loan ETF
+SELV	Sei Enhanced Low Volatility U.S. Large Cap ETF
+SEMI	Columbia Seligman Semiconductor and Tech ETF
+SENS	Senseonics Holdings
+SEPT	Allianzim U.S. Large Cap Buffer10 Sep ETF
+SEPW	Allianzim U.S. Large Cap Buffer20 Sep ETF
+SEPZ	Listed Trueshares Structured Outcome [Sep] ETF
+SESG	Sprott ESG Gold ETF Units Beneficial Interest
+SETH	Proshares Short Ether Strategy ETF
+SFIG	Wisdomtree U.S. Short-Term Corp Bond Fund
+SFLR	Innovator Equity Managed Floor ETF
+SFY	Sofi Select 500 ETF
+SFYF	Sofi 50 ETF
+SFYX	Sofi Next 500 ETF
+SGDJ	Alps Sprott Junior Gold
+SGDM	Sprott Gold Miners ETF
+SGE	Strong Global Entertainment Cl A
+SGLC	The Rbb Fund Inc Sgi U.S. Large Cap Core ETF
+SGN	Signing Day Sports Inc
+SGOL	Physical Gold ETF
+SGOV	Ishares 0-3 Month Treasury Bond ETF
+SH	Short S&P500 -1X ETF
+SHAG	Wisdomtree Yield Enhd U.S. Short-Term Agg Bond
+SHDG	Soundwatch Hedged Equity ETF
+SHE	SSGA Gender Diversity ETF SPDR
+SHLD	GX Defense Tech ETF
+SHM	Short-Term Muni Bond ETF SPDR
+SHNY	Microsectors Gold 3X Leveraged ETN
+SHOC	Ea Series Strive U.S. Semiconductor ETF
+SHPP	Pacer Industrials and Logistics ETF
+SHRT	Gotham Short Strategies ETF
+SHUS	Syntax Stratified U.S. Total Market Hedged ETF
+SHYD	Vaneck Short High Yield Muni ETF
+SHYG	0-5 Year High Yield Corp Bond Ishares ETF
+SHYL	Xt Short-Duration High Yield Bond ETF
+SIF	Sifco Industries
+SIFI	Harbor Scientific Alpha Income ETF
+SIHY	Harbor Scientific Alpha High-Yield ETF
+SIJ	Ultrashort Industrials -2X ETF
+SIL	GX Silver Miners ETF
+SILJ	ETFMG Prime Junior Silver Miners ETF
+SILV	Silvercrest Metals Inc
+SIM	Grupo Simec S.A. DE C.V. ADR
+SIMS	SPDR Kensho Intelligent Structures ETF
+SIO	Touchstone Strategic Income Opportunities ETF
+SIVR	Physical Silver ETF
+SIXA	6 Meridian Mega Cap Equity ETF
+SIXH	6 Meridian Hedged Eqty Idx Option Strategy ETF
+SIXJ	Aim U.S. Large Cap 6 Month Buffer10 Jan/Jul ETF
+SIXL	6 Meridian Low Beta Equity Strategy ETF
+SIXO	Allianzim U.S. Large Cap 6M Buffer10 Apr/Oct
+SIXS	6 Meridian Small Cap Equity ETF
+SIZE	USA Size Factor Ishares Edge MSCI ETF
+SJB	Short High Yield -1X ETF
+SJIM	Jim Cramer Inverse Tracker ETF
+SJNK	SPDR Bloomberg Short Term High Yield Bond ETF
+SKF	Ultrashort Financials -2X ETF
+SKY.W	Sky Harbour Group Corp WT [Skyh.W]
+SKYH	Sky Harbour Group Corp
+SLI	Standard Lithium Ltd
+SLN.W	Southland Holdings Inc WT [Slnd.W]
+SLND	Southland Holdings Inc
+SLV	Silver Trust Ishares
+SLVP	Ishares Global Silver Miners Fund
+SLX	Vaneck Steel ETF
+SLYG	S&P Smallcap Growth ETF SPDR
+SLYV	S&P Smallcap Value ETF SPDR
+SMAY	FT U.S. Small Cap Moderate Buffer ETF - May
+SMB	Vaneck Short Muni ETF
+SMDD	Ultrapro Short Midcap 400 -3X ETF
+SMDV	Russell 2000 Dividend Growers ETF
+SMDY	Syntax Stratified Midcap ETF
+SMHB	Etracs 2X Small Cap HI Div ETN
+SMI	Vaneck Hip Sustainable Muni ETF
+SMIG	Aam Bahl Small/Mid Cap Income Growth ETF
+SMIN	India Smallcap Ishares MSCI ETF
+SMIZ	Zacks Trust Zacks Small/Mid Cap ETF
+SMLE	Xt S&P Smallcap 600 ESG ETF
+SMLF	USA Multifactor Smallcap Ishares Edge MSCI ETF
+SMLV	SSGA US Smallcap Low Vol Index SPDR
+SMMD	Russell 2500 Ishares ETF
+SMMU	Short-Term Muni Bond Strgy Pimco ETF
+SMMV	USA Min Vol Smallcap Ishares Edge MSCI ETF
+SMN	Ultrashort Basic Materials -2X ETF
+SMOG	Vaneck Low Carbon Energy ETF
+SMOT	Vaneck Morningstar Smid Moat ETF
+SNAV	Mohr Sector Navigator ETF
+SNMP	Evolve Transition Infrastructure LP
+SNOV	FT CBOE Vest U.S. Small Cap ETF - Nov
+SNPD	Dbx S&P ESG Dividend Aristocrats ETF
+SNPE	Xt S&P 500 ESG ETF
+SNPG	Dbx S&P 500 Growth ESG ETF
+SNPV	Dbx S&P ESG Value ETF
+SOA.W	Volato Group Inc WT [Soar.W]
+SOAR	Volato Group Inc
+SOF	Amplify Samsung SOFR ETF
+SOLR	Smartetfs Sustainable Energy II ETF
+SOVF	Sovereign's Capital Flourish Fund
+SOXL	Semiconductor Bull 3X Direxion
+SOXS	Semiconductor Bear -3X Direxion
+SOYB	Teucrium Soybean
+SPAB	SPDR Aggregate Bond Portfolio ETF
+SPAX	Robinson Alternative Yield Pre-Merger Spac ETF
+SPBO	Issuer Scd Corp Bond SPDR
+SPCZ	Rivernorth Enhanced Pre-Merger Spac ETF
+SPD	Simplify US Equity Plus Downside
+SPDG	SPDR Portfolio S&P Sector Neutral Dividend ETF
+SPDN	S&P 500 Bear -1X Direxion
+SPDV	Aam S&P 500 High Dividend Value ETF
+SPDW	SPDR World Ex-US Portfolio ETF
+SPEM	SPDR Emerging Markets Portfolio ETF
+SPEU	Stoxx Europe 50 SPDR
+SPFF	GX Superincome Preferred ETF
+SPGM	SPDR Portfolio MSCI Global Stock Market ETF
+SPGP	Invesco S&P 500 Garp ETF
+SPHB	S&P 500 High Beta Invesco ETF
+SPHD	S&P 500 High Dividend Low Vol Invesco ETF
+SPHQ	S&P 500 Quality Invesco ETF
+SPHY	SPDR Portfolio High Yield Bond ETF
+SPIB	SPDR Intermediate Term Corporate Bond Portfolio
+SPIP	TIPS Barclays ETF SPDR
+SPKX	Convexityshares 1X SPIKES Futures ETF
+SPKY	Convexityshares 1.5X SPIKES Futures ETF
+SPLB	SPDR Long Term Corporate Bond Portfolio ETF
+SPLG	SPDR Portfolio S&P 500 ETF
+SPLV	S&P 500 Low Vol Invesco ETF
+SPMB	Mortgage Backed Bond ETF SPDR
+SPMD	SPDR Mid Cap Portfolio ETF
+SPMO	S&P 500 Momentum Invesco ETF
+SPMV	S&P 500 Minimum Variance Invesco ETF
+SPPP	Sprott Physical Platinum and Palladium
+SPQ	Simplify US Equity Plus Qis ETF
+SPRE	SPDR S&P Global REIT Sharia ETF
+SPSB	SPDR Short-Term Corporate Bond Portfolio ETF
+SPSK	Tidal SP Funds Dow Jones Global Sukuk ETF
+SPSM	SPDR Small Cap Portfolio ETF
+SPTE	SP Funds S&P Global Technology ETF
+SPTI	Interm Term Treasury ETF SPDR
+SPTL	SPDR Long Term Treasury Portfolio ETF
+SPTM	SPDR Total Stock Market Portfolio ETF
+SPTS	SPDR Short-Term Treasury Portfolio ETF
+SPUC	Simplify US Equity Plus Upside ETF
+SPUS	SPDR S&P 500 Sharia Industry Exclusions ETF
+SPUU	S&P 500 Bull 2X ETF Direxion
+SPVM	Invesco S&P 500 Value With Momentum ETF
+SPVU	S&P 500 Enhanced Value Invesco ETF
+SPXB	S&P 500 Bond ETF
+SPXE	S&P 500 Ex-Energy ETF
+SPXL	S&P 500 Bull 3X Direxion
+SPXN	S&P 500 Ex-Financials ETF
+SPXS	S&P 500 Bear -3X Direxion
+SPXT	S&P 500 Ex-Technology ETF
+SPXU	Ultrapro Short S&P500 -3X ETF
+SPXV	S&P 500 Ex-Health Care ETF
+SPY	S&P 500 SPDR
+SPYC	Simplify US Equity Plus Convexity
+SPYD	SPDR S&P 500 High Dividend Portfolio ETF
+SPYG	SPDR S&P 500 Growth Portfolio ETF
+SPYI	Shp Neos S&P 500 High Income ETF
+SPYV	SPDR S&P 500 Value Portfolio ETF
+SPYX	S&P 500 Ex-Fossil Fuel ETF SPDR
+SQEW	Leadershares Equity Skew ETF
+SQY	Yieldmax Sq Option Income ETF
+SRHQ	Elevation Series Srh U.S. Quality ETF
+SRHR	Srh REIT Covered Call ETF
+SRLN	Blackstone Gso Senior Loan SPDR
+SROI	Calamos Antetokounmpo Global Sustainable ETF
+SRS	Ultrashort Real Estate -2X ETF
+SRTY	Ultrapro Short Russell 2000 -3X ETF
+SRVR	Pacer Benchmark & Infrastructure Real Estate ETF
+SSFI	Day Hagan Smart Sector Fixed Income ETF
+SSG	Ultrashort Semiconductors -2X ETF
+SSLY	Syntax Stratified Smallcap ETF
+SSO	Ultra S&P500 2X ETF
+SSPX	Janus U.S. Sustainable Equity ETF
+SSPY	Syntax Stratified Largecap ETF
+SSUS	Day Hagan Research Smart Sector ETF
+SSXU	Smart Sector International ETF
+SSY	Sunlink Health Systems
+STAX	Macquarie Tax-Free USA Short Term ETF
+STCE	Schwab Crypto Thematic ETF
+STGF	Listed Funds Merk Stagflation ETF
+STIP	0-5 Year TIPS Bond Ishares ETF
+STLG	Ishares Factors US Growth Style ETF
+STNC	Stance Equity ESG Large Cap Core ETF
+STOT	SPDR Doubleline Short-Duration TR Tactical ETF
+STPZ	1-5 Year US TIPS Index Pimoc ETF
+STRV	Ea Series Strive 500 ETF
+STRW	Strawberry Fields REIT Inc
+STXE	Strive Emerging Markets Ex-China ETF
+STXS	Stereotaxis Inc
+SUB	Short-Term Natl Muni Bond Ishares ETF
+SUPL	Proshares Supply Chain Logistics ETF
+SUPP	Tcw Transform Supply Chain ETF
+SURE	Advisorshares Doubleline Value Equity ETF
+SURI	Simplify Propel Opportunities ETF
+SUSA	USA ESG Select Ishares MSCI ETF
+SVAL	Ishares US Small Cap Value Factor ETF
+SVIX	VS TR Short VIX -1X Futures ETF
+SVM	Silvercorp Metals Inc
+SVOL	Simplify Volatility Premium ETF
+SVT	Servotronics Inc
+SVXY	Short VIX Short-Term -1X Futures ETF
+SWAN	Blackswan Growth & Treasury Core Amplify ETF
+SXQG	6 Meridian Quality Growth ETF
+SXUS	Janus International Sustainable Equity ETF
+SYII	Syntax Stratified Total Market II ETF
+SYLD	Cambria Shareholder Yield ETF
+SYNB	Putnam Biorevolution ETF
+SYUS	Syntax Stratified U.S. Total Market ETF
+SZK	Ultrashort Consumer Goods -2X ETF
+SZNE	Pacer Cfra-Stovall EW Seasonal Rotation ETF
+TACK	Capitol Fairlead Tactical Sector ETF
+TAFI	Ab Tax-Aware Short-Duration Municipal ETF
+TAGG	T. Rowe Price Qm U.S. Bond ETF
+TAGS	Teucrium Agricultural
+TAIL	Cambria Tail Risk ETF
+TAN	Solar Invesco ETF
+TAXF	American Century Diversified Muni Bond ETF
+TBF	Short 20+ Year Treasury -1X ETF
+TBG	Tbg Dividend Focus ETF
+TBJL	Innovator 20-Year Bond 9 Buffer ETF - Jul
+TBLL	Invesco Short Term Treasury ETF
+TBT	Ultrashort Lehman 20 Year Treasury -2X ETF
+TBUX	T. Rowe Price Ultra-Short-Term Bond ETF
+TBX	Short 7 10 Year Treasury -1X ETF
+TCAF	T. Rowe Capital Appreciation Equity ETF
+TCHP	T. Rowe Price Blue Chip Growth ETF
+TDTF	Iboxx 5Yr Target Dur TIPS ETF Flexshares
+TDTT	Iboxx 3Yr Target Dur TIPS ETF Flexshares
+TDV	S&P Technology Dividend Aristocrats ETF
+TDVG	T. Rowe Price Dividend Growth ETF
+TDVI	FT Technology Dividend Target ETF
+TDW.W	Tidewater Inc WT
+TECB	Ishares U.S. Tech Breakthrough Multisector ETF
+TECL	Technology Bull 3X Direxion
+TECS	Technology Bear -3X Direxion
+TELL	Tellurian Inc
+TELZ	Tellurian Inc 8.25% Senior Notes Due 2028
+TEMP	JPM Climate Change S
+TEQI	T. Rowe Price Equity Income ETF
+TFI	Muni Bond ETF SPDR
+TFJL	Innovator 20-Year Bond 5 Floor ETF - Jul
+TFLO	Treasury Floating Rate Bond Ishares ETF
+TFLR	T. Rowe Price Floating Rate ETF
+TFPN	Blueprint Chesapeake Multi-Asset Trend ETF
+TGB	Taseko Mines Ltd
+TGIF	Sofi Weekly Income ETF
+TGLR	Laffer Tengler Equity Income ETF
+TGRT	T. Rowe Growth ETF
+TGRW	T. Rowe Price Growth Stock ETF
+THCX	Spinnaker The Cannabis ETF
+THD	Thailand Ishares MSCI ETF
+THM	International Tower Hill Mines Ltd
+THNQ	Robo Global Artificial Intelligence ETF
+THTA	Tidal Sofi Enhanced Yield ETF
+THY	Agility Shares Dynamic Tactical Income ETF
+THYF	T. Rowe Price U.S. High Yield ETF
+TILL	Teucrium Agricultural Strategy No K-1 ETF
+TILT	Mstar US Mkt Factors Tilt ETF Flexshares
+TIME	Capitol Series Clockwise Capital Innovation ETF
+TINT	Proshares Smart Materials ETF
+TINY	Proshares Nanotechnology ETF
+TIP	TIPS Bond Ishares ETF
+TIPX	Barclays 1-10 Year TIPS SPDR
+TIPZ	Broad U.S. TIPS Index Pimco ETF
+TJUL	Innovator Equity Defined Protection ETF
+TLH	10-20 Year Treas Bond Ishares ETF
+TLTD	Flexshares Dev Mkt Ex-US Factor Tilt Index Fund
+TLTE	Flexshares EM Factor Tilt Index Fund
+TLTW	Ishares 20+ Year T-Bond Buywrite Strategy ETF
+TMAT	Main Thematic Innovation ETF
+TMBR	Timber Pharmaceuticals Inc
+TMDV	Russell US Dividend Growers ETF
+TMF	20+ Year Trsy Bull 3X Direxion ETF
+TMFC	Motley Fool 100 Index ETF
+TMFE	Motley Fool Capital Efficiency 100 Index ETF
+TMFG	Motley Fool Global Opportunities ETF
+TMFM	Motley Fool Midcap Growth ETF
+TMFS	Motley Fool Smallcap Growth ETF
+TMFX	Motley Fool Next Index ETF
+TMP	Tompkinstrustco
+TMQ	Trilogy Metals Inc
+TMSL	T. Rowe Small-Mid Cap ETF
+TMV	20+ Year Trsy Bear -3X Direxion ETF
+TNA	Smallcap Bull 3X Direxion
+TOK	Kokusai Ishares MSCI ETF
+TOKE	Cambria Cannabis ETF
+TOLL	Tema Monopolies and Oligopolies ETF
+TOLZ	DJ Brookfield Global Infrastructure ETF
+TOON	Kartoon Studios Inc
+TOTL	SPDR Doubleline Total Return Tactical ETF
+TOTR	T. Rowe Price Total Return ETF
+TOUS	T. Rowe International Equity ETF
+TOVX	Theriva Biologics Inc
+TPET	Trio Petroleum Corp
+TPHD	Timothy Plan High Dividend Stock ETF
+TPHE	Timothy Plan High Dividend Stock Enhanced ETF
+TPHS	Trinity Pl Hlds Inc
+TPIF	Timothy Plan International ETF
+TPLC	Timothy Plan US Large Cap Core ETF
+TPLE	Timothy Plan US Large/Mid Cap Core Enhanced ETF
+TPMN	Timothy Plan Market Neutral ETF
+TPOR	Transportation Bull 3X Direxion
+TPSC	Timothy Plan US Small Cap Core ETF
+TPYP	Tortoise North Amer Pipeline Fund
+TRFK	Pacer Data and Digital Revolution ETF
+TRFM	Aam Transformers ETF
+TRND	Pacer Trendpilot Fund of Funds ETF
+TRPL	Pacer Metaurus US Large Cap Dividend Multiplier
+TRT	Trio-Tech International
+TRTY	Cambria Trinity ETF
+TRX	Trx Gold Corp
+TSEC	Touchstone Securitized Income ETF
+TSJA	Innovator Triple Stacker ETF - Jan
+TSLH	Innovator Hedged Tsla Strategy ETF
+TSLP	Neos Strategy Tesla [Tsla] ETF
+TSLY	Yieldmax Tsla Option Income ETF
+TSME	Thrivent Small-Mid Cap ESG Etd
+TSPA	T. Rowe Price U.S. Equity Research ETF
+TTAC	Trimtabs Float Shrink ETF
+TTAI	Trimtabs Fcf International Quality ETF
+TTT	Ultrapro Short 20 Year Treasury -3X ETF
+TUA	Simplify Short-Term Treasury Futures ETF
+TUNE	Clouty Tune ETF
+TUSI	Touchstone Ultra-Short Income ETF
+TVAL	T. Rowe Value ETF
+TWIO	Spinnaker Trajan Wealth Income Opportunity ETF
+TWM	Ultrashort Russell 2000 -2X ETF
+TXS	Texas Capital Texas Equity ETF
+TYA	Simplify Risk Parity Treasury ETF
+TYD	7-10 Year Treasury Bull 3X Direxion ETF
+TYLG	GX Information Technology Covered Call & Growth
+TYO	7-10 Year Treasury Bear -3X Direxion ETF
+TZA	Smallcap Bear -3X Direxion
+UAMY	U S Antimony Corp
+UAPR	Innovator U.S. Ultra Buffer ETF - Apr
+UAUG	Innovator U.S. Ultra Buffer ETF - Aug
+UAVS	Ageagle Aerial Systems Inc
+UBOT	Robotics Artificial Intelligence 3X Direxion
+UBR	Ultra MSCI Brazil Capped 2X ETF
+UBT	Ultra 20+ Year Treasury 2X ETF
+UCC	Ultra Consumer Services 2X ETF
+UCIB	Etracs UBS CMCI TR ETN
+UCO	Ultra Bloomberg Crude Oil 2X ETF
+UCON	Tcw Unconstrained Plus Bond ETF
+UDEC	Innovator U.S. Ultra Buffer ETF - Dec
+UDI	Uscf Dividend Income Fund
+UDIV	Franklin U.S. Core Div Tilt ETF
+UDN	DB US Dollar Index Bearish -1X Fund Invesco
+UDOW	Ultrapro Dow30 3X ETF
+UEC	Uranium Energy
+UFAB	Unique Fabricating Inc
+UFEB	Innovator U.S. Ultra Buffer ETF - Feb
+UGA	US Gasoline
+UGE	Ultra Consumer Goods 2X ETF
+UGL	Ultra Gold 2X ETF
+UJAN	Innovator U.S. Ultra Buffer ETF - Jan
+UJB	Ultra High Yield 2X ETF
+UJUL	Innovator U.S. Ultra Buffer ETF - Jul
+UJUN	Innovator U.S. Ultra Buffer ETF - Jun
+ULE	Ultra Euro 2X ETF
+ULST	SSGA Ultra-Short-Term Bond SPDR
+ULTR	IQ Ultra-Short-Duration ETF
+UMAR	Innovator U.S. Ultra Buffer ETF - Mar
+UMAY	Innovator U.S. Ultra Buffer ETF - May
+UMDD	Ultrapro Midcap 400 Proshares 3X ETF
+UMI	Uscf Midstream Energy Income Fund ETF
+UNG	US Natural Gas Fund
+UNL	US 12 Month Natural Gas
+UNOV	Innovator U.S. Ultra Buffer ETF - Nov
+UOCT	Innovator U.S. Ultra Buffer ETF - Oct
+UPAR	Tidal Upar Ultra Risk Parity ETF
+UPRO	Ultrapro S&P 500 3X ETF
+UPV	Ultra FTSE Europe 2X ETF
+UPW	Ultra Utilities 2X ETF
+URA	GX Uranium ETF
+URE	Ultra Real Estate 2X ETF
+URG	Ur Energy Inc
+URNM	Sprott Uranium Miners ETF
+URTH	World Ishares MSCI ETF
+URTY	Ultrapro Russell 2000 3X ETF
+USAI	American Energy Independence ETF
+USAS	Americas Silver Corp
+USCA	Xt MSCI USA Climate Action Equity ETF
+USCI	US Commodity Index
+USD	Ultra Semiconductors 2X ETF
+USDU	Wisdomtree Bloomberg U.S. Dollar Bullish Fund
+USE	Uscf Energy Commodity Strategy Absolute Return E
+USEP	Innovator U.S. Ultra Buffer ETF - Sep
+USFR	Wisdomtree Floating Rate Treasury Fund
+USHY	Broad USD High Yield Corp Bond Ishares ETF
+USL	US 12 Month Oil
+USMF	Wisdomtree U.S. Multifactor Fund
+USML	Etracs 2X MSCI US Minimum Volatility Fund
+USMV	USA Min Vol Ishares Edge MSCI ETF
+USNZ	Xt Net Zero Pathway Paris Aligned US Equity ETF
+USO	US Oil Fund
+USPX	Franklin U.S. Equity Index ETF
+USRT	US REIT Ishares Core ETF
+USSE	Segall Bryant Select Equity ETF
+USSG	Xt MSCI USA ESG Leaders Equity ETF
+UST	Ultra 7-10 Year Treasury 2X ETF
+USVT	US Value ETF
+UTES	Virtus Reaves Utilities ETF
+UTG	Reaves Utility
+UTRN	Vesper US Large Cap Short-Term Reversal Strategy
+UTSL	Utilities Bull 3X Direxion
+UUP	DB US Dollar Index Bullish Fund Invesco
+UUU	Universal Security Instruments
+UUUU	Energy Fuels Inc
+UVIX	VS TR 2X Long VIX Futures ETF
+UVXY	Ultra VIX Short-Term 2X Futures ETF
+UWM	Ultra Russell 2000 2X ETF
+UXI	Ultra Industrials 2X ETF
+UYG	Ultra Financials 2X ETF
+UYLD	Angel Oak Ultra-Short Income ETF
+UYM	Ultra Basic Materials 2X ETF
+VABS	Virtus Newfleet Abs/Mbs ETF
+VALQ	American Century Stoxx U.S. Quality Value ETF
+VAMO	Cambria Value and Momentum ETF
+VAW	Materials ETF Vanguard
+VB	Smallcap ETF Vanguard
+VBK	Smallcap Growth ETF Vanguard
+VBND	Vident Core U.S. Bond Strategy Fund
+VBR	Smallcap Value ETF Vanguard
+VCAR	Simplify Volt Robocar Disruption and Tech ETF
+VCEB	Vanguard ESG U.S. Corporate Bond ETF
+VCLN	Virtus Duff & Phelps Clean Energy ETF
+VCR	Consumer Disc ETF Vanguard
+VCX.U	10X Cap Venture Acquisition III [Vcxb.U]
+VCX.W	10X Cap Venture Acquisition III WT [Vcxb/W]
+VCXB	10X Capital Venture Acquisition III Cl A
+VDC	Consumer Staples ETF Vanguard
+VDE	Energy ETF Vanguard
+VDNI	V-Shares US Leadership Diversity ETF
+VEA	FTSE Developed Markets Vanguard
+VEGA	Advisorshares Star Global Buy-Write ETF
+VEGI	Global Agriculture Prod Ishares MSCI ETF
+VEGN	US Vegan Climate Index
+VEMY	Virtus Stone Harbor E.M. High Yield ETF
+VERS	Proshares Metaverse ETF
+VETZ	Tidal Academy Veteran Impact ETF
+VEU	FTSE All-World Ex-US ETF Vanguard
+VFH	Financial ETF Vanguard
+VFL	Delaware Florida Insured Muni
+VFMF	U.S. Multifactor Vanguard ETF
+VFMO	U.S. Momentum Factor Vanguard ETF
+VFMV	U.S. Minimum Volatility Vanguard ETF
+VFQY	U.S. Quality Factor Vanguard ETF
+VFVA	Wellington Fund Vanguard ETF
+VGK	Europe ETF FTSE Vanguard
+VGT	Information Technology ETF Vanguard
+VGZ	Vista Gold Corp
+VHA.P	Viveon Health Acquisition Corp [Vhaq/R]
+VHA.U	Viveon Health Acquisition [Vhaq.U]
+VHAQ	Viveon Health Acquisition Corp
+VHT	Healthcare ETF Vanguard
+VICE	Advisorshares Vice ETF
+VIDI	Vident Intl Equity Fund
+VIG	Dividend Appreciation ETF Vanguard
+VINE	Fresh Vine Wine Inc
+VIOG	S&P Smallcap 600 Growth Vanguard
+VIOO	S&P Smallcap 600 Index Vanguard
+VIOV	S&P Smallcap 600 Value Vanguard
+VIRS	Pacer Biothreat Strategy ETF
+VIS	Industrials ETF Vanguard
+VIXM	Proshares VIX Mid-Term Futures ETF
+VIXY	Proshares VIX Short-Term Futures ETF
+VKI	Invesco Advantage Muni Income Trust II
+VLU	S&P 1500 Value Tilt ETF SPDR
+VLUE	USA Value Factor Ishares Edge MSCI ETF
+VMAT	V-Shares MSCI World ESG Materiality ETF
+VMOT	Alpha Architect Value Momentum Trend ETF
+VNAM	GX Funds Gx MSCI Vietnam ETF
+VNLA	Janus Short-Duration Income ETF
+VNM	Vaneck Vietnam ETF
+VNMC	Natixis Vaughan Nelson Mid Cap ETF
+VNQ	Real Estate Vanguard ETF
+VNRX	Volitionrx Ltd
+VNSE	Natixis Vaughan Nelson Select ETF
+VO	Midcap ETF Vanguard
+VOE	Midcap Value ETF Vanguard
+VOO	S&P 500 ETF Vanguard
+VOOG	S&P 500 Growth ETF Vanguard
+VOOV	S&P 500 Value ETF Vanguard
+VOT	Midcap Growth ETF Vanguard
+VOTE	Tcw Transform 500 ETF
+VOX	Telecom Services ETF Vanguard
+VPC	Virtus Private Credit Strategy ETF
+VPL	Pacific ETF FTSE Vanguard
+VPU	Utilities ETF Vanguard
+VRAI	Virtus Real Asset Income ETF
+VRP	Variable Rate Preferred Invesco ETF
+VSGX	ESG Intl Stock Vanguard ETF
+VSHY	Virtus Newfleet High Yield Bond ETF
+VSLU	Applied Finance Valuation Large Cap ETF
+VSS	FTSE All-World Ex-US Smcp Idx ETF Vanguard
+VT	Total World Stock Index ETF Vanguard
+VTAK	Catheter Precision Inc
+VTEB	Tax-Exempt Bond Vanguard
+VTES	Vanguard Short-Term Tax Exempt Bond ETF
+VTI	Total Stock Market ETF Vanguard
+VTV	Value ETF Vanguard
+VUG	Growth ETF Vanguard
+VUSB	Vanguard Ultra-Short Bond ETF
+VUSE	Vident Core US Equity
+VV	Largecap ETF Vanguard
+VWI	Voi Absolute Income Fund
+VWID	Virtus Wmc International Dividend ETF
+VWO	FTSE EM ETF Vanguard
+VXF	Extended Market Index ETF Vanguard
+VXX	Ipath.B S&P 500 VIX Short-Term Futures ETN
+VXZ	Ipath S&P 500 VIX Mid-Term Futures ETN
+VYM	High Dividend Yield Vanguard ETF
+VZLA	Vizsla Silver Corp
+WANT	Consumer Discretionary Bull 3X Direxion
+WBAT	Battery Value Chain and Innovation ETF
+WBIF	WBI Largecap Value Shares ETF
+WBIG	WBI Largecap Growth Shares ETF
+WBIL	WBI Largecap Select Shares ETF
+WBIY	WBI Largecap Yield Shares ETF
+WCEO	Affinity Hypatia Women Ceo ETF
+WDIV	S&P Global Dividend SPDR
+WDNA	Wisdomtree Biorevolution Fund
+WEAT	Teucrium Wheat
+WEBL	DJ Internet Bull 3X Direxion
+WEBS	DJ Internet Bear -3X Direxion
+WEED	Listed Roundhill Cannabis ETF
+WEIX	Dynamic Short Short-Term Volatility Futures
+WFH	Work From Home ETF Direxion
+WFHY	Wisdomtree U.S. High Yield Corporate Bond Fund
+WFIG	Wisdomtree U.S. Corporate Bond Fund
+WIP	DB Intl Govt Infl-Protected Bond SPDR
+WKLY	Sofi Weekly Dividend ETF
+WLDR	Affinity World Leaders Equity ETF
+WLTG	ETF Opp Wealthtrust Dbs Long Term Growth ETF
+WOMN	Impact Shares Ywca Women's Empowerment ETF
+WPS	Intl Devd Property Ishares ETF
+WRA.U	Williams Rowland Acquisition [Wrac.U]
+WRAC	Williams Rowland Acquisition Corp
+WRN	Western Copper Corp
+WTAI	Wisdomtree Artificial Intelligence and Innovatio
+WTID	Microsectors Energy -3X Leveraged ETN
+WTIU	Microsectors Energy 3X Leveraged ETN
+WTMF	Wisdomtree Managed Futures Strategy Fund
+WTRE	Wisdomtree Global Ex-US Real Estate Index
+WTV	Wisdomtree U.S. Quality Shareholder Yield Fund
+WUCT	Whitney U.S. Critical Technologies Index ETN
+WUGI	Esoterica Nextg Economy ETF
+WWJD	Inspire International ESG ETF
+WWR	Westwater Resources
+WYY	Widepoint Corp
+XAR	S&P Aerospace & Defense SPDR
+XAUG	FT CBOE Vest U.S. Equity Enhance ETF Aug
+XB	Boxx B-Rated USD Hi-Yi Corp Bond ETF
+XBAP	Innovator U.S. Accelerated 9 Buffer ETF - Apr
+XBB	Boxx Bb-Rated USD Hi-Yi Corp Bond ETF
+XBI	S&P Biotech SPDR
+XBJA	Innovator U.S. Accelerated 9 Buffer ETF - Jan
+XBJL	Innovator U.S. Accelerated 9 Buffer ETF - Jul
+XBOC	Innovator U.S. Accelerated 9 Buffer ETF - Oct
+XBTF	Vaneck Bitcoin Strategy ETF
+XC	WT Emerging Markets Ex-China Fund
+XCCC	Boxx CCc-Rated USD Hi-Yi Corp Bond ETF
+XCEM	Columbia EM Core Ex-China ETF
+XCLR	GX S&P 500 Collar 95-110 ETF
+XCOR	Fundx ETF
+XDAP	Innovator U.S. Accelerated ETF - Apr
+XDAT	Franklin Exponential Data ETF
+XDEC	FT U.S. Equity ETF
+XDJA	Innovator U.S. Accelerated ETF - Jan
+XDJL	Innovator U.S. Accelerated ETF - Jul
+XDOC	Innovator U.S. Accelerated ETF - Oct
+XDQQ	Innovator Growth Accelerated ETF - Qtrly
+XDSQ	Innovator U.S. Accelerated ETF - Qtrly
+XEMD	Boxx JP USD EM 1-10 Year Bond ETF
+XES	S&P Oil & Gas Eqpt & Services SPDR
+XFIV	Boxx Five Year Target Duration ETF
+XFLX	Fundx Flexible ETF
+XHB	S&P Homebuilders SPDR
+XHE	S&P Healthcare Equipment SPDR
+XHLF	Boxx Six Month Target Duration ETF
+XHS	S&P Healthcare Services SPDR
+XHYC	Boxx USD Hi-Yi Consumer Cyclicals Sector ETF
+XHYD	Boxx USD Hi-Yi Consumer Non-Cyclicals Sector ETF
+XHYE	Boxx USD Hi-Yi Energy Sector ETF
+XHYF	Boxx USD Hi-Yi Financial & REIT Sector ETF
+XHYH	Boxx USD Hi-Yi Healthcare Sector ETF
+XHYI	Boxx USD Hi-Yi Industrial Sector ETF
+XHYT	Boxx USD Hi-Yi Telecom Media Sector ETF
+XISE	FT U.S. Equity Buffer & Prem Income ETF
+XITK	Factset Innovative Technology SPDR
+XJH	Ishares ESG Screened S&P Midcap ETF
+XJR	Ishares ESG Screened S&P Smallcap ETF
+XJUL	FT U.S. Equity Enhance & Mod Buffer Jul ETF
+XJUN	FT U.S. Equity Enhance & Moderate Buffer ETF
+XLB	S&P 500 Materials Sector SPDR
+XLC	S&P 500 Communication Sector SPDR
+XLE	S&P 500 Energy Sector SPDR
+XLF	S&P 500 Financials Sector SPDR
+XLG	S&P 500 Top 50 Invesco ETF
+XLI	S&P 500 Industrial Sector SPDR
+XLK	S&P 500 Technology Sector SPDR
+XLP	S&P 500 Cons Staples Sector SPDR
+XLRE	S&P 500 Real Estate Sector SPDR
+XLSR	SSGA U.S. Sector Rotation ETF
+XLU	S&P 500 Utilities Sector SPDR
+XLV	S&P 500 Healthcare Sector SPDR
+XLY	S&P 500 Cons Disc Sector SPDR
+XMAR	FT U.S. Equity Enhance & Moderate Buffer ETF Mar
+XME	S&P Metals & Mining SPDR
+XMHQ	Invesco S&P Midcap Quality ETF
+XMLV	S&P Midcap Low Vol Invesco ETF
+XMMO	Invesco S&P Midcap Momentum ETF
+XMPT	Vaneck CEF Municipal Income ETF
+XMVM	Invesco S&P Midcap Value Momentum ETF
+XNAV	Fundx Aggressive ETF
+XNOV	FT CBOE Vest U.S. Equity ETF - Nov
+XNTK	SPDR NYSE Technology ETF
+XOCT	FT CBOE Vest U.S. Equity Enhance & Mod Buf ETF -
+XOMO	Yieldmax Xom Option Income ETF
+XONE	Boxx One Year Target Duration ETF
+XOP	S&P Oil & Gas Expl & Prod SPDR
+XPH	S&P Pharmaceuticals SPDR
+XPL	Solitario Resources Corp
+XPND	Expanded Technology ETF FT
+XPP	Ultra FTSE China 50 2X ETF
+XRLV	S&P 500 Ex-Rate Sensitive Low Vol Invesco ETF
+XRLX	Fundx Conservative ETF
+XRMI	GX S&P 500 Risk Managed Income ETF
+XRT	S&P Retail SPDR
+XSD	S&P Semiconductor SPDR
+XSEP	FT ViII U.S. Equity ETF
+XSHD	S&P Smallcap High Dividend Low Vol Invesco ETF
+XSHQ	S&P Smallcap Quality Invesco ETF
+XSLV	S&P Smallcap Low Vol Invesco ETF
+XSMO	Invesco S&P Smallcap Momentum ETF
+XSOE	Wisdomtree Emerging Markets Ex-State Owned Fund
+XSVM	Invesco S&P Smallcap Value With Momentum ETF
+XSVN	Boxx Seven Year Target Duration ETF
+XSW	S&P Software & Services ETF SPDR
+XTAP	Innovator U.S. Accelerated Plus ETF - Apr
+XTEN	Boxx Ten Year Target Duration ETF
+XTJA	Innovator U.S. Accelerated Plus ETF - Jan
+XTJL	Innovator U.S. Accelerated Plus ETF - Jul
+XTL	S&P 500 Telecom Sector SPDR
+XTN	S&P Transportation SPDR
+XTNT	Xtant Medical Holdings Inc
+XTOC	Innovator U.S. Accelerated Plus ETF - Oct
+XTR	GX S&P 500 Tail Risk ETF
+XTRE	Boxx Three Year Target Duration ETF
+XTWO	Boxx Two Year Target Duration ETF
+XTWY	Boxx Twenty Year Target Duration ETF
+XUSP	Innovator Uncapped Accelerated U.S. Equity ETF
+XVOL	Acruence Active Hedge U.S. Equity ETF
+XVV	Ishares ESG Screened S&P 500 ETF
+XWEB	S&P Internet ETF SPDR
+XYLD	GX S&P 500 Covered Call ETF
+XYLE	GX Funds Global X S&P 500 ESG Covered Call
+XYLG	GX S&P 500 Covered Call & Growth ETF
+YALL	Tidal God Bless America ETF
+YANG	FTSE China Bear -3X Direxion
+YCB-A	Cbdmd Inc [Ycbd/Pa]
+YCBD	Cbdmd Inc
+YCL	Ultra Yen 2X ETF
+YCS	Ultrashort Yen New -2X ETF
+YDEC	FT International Equity Buffer ETF Dec
+YEAR	Ab Ultra-Short Income ETF
+YINN	FTSE China Bull 3X Direxion
+YJUN	FT CBOE Vest International
+YLD	Principal Edge Active Income ETF
+YMAR	FT International Equity Buffer ETF March
+YOLO	Advisorshares Pure Cannabis ETF
+YPS	Arrow Reverse Cap 500 ETF
+YSEP	FT Intl Equity Buffer ETF September
+YUMY	Vaneck Future of Food ETF
+YXI	Short FTSE China 50 -1X ETF
+YYY	Yieldshares High Income ETF
+ZALT	Innovator U.S. 10 Buffer ETF - Qtrly
+ZDGE	Zedge Inc Cl B
+ZECP	Zacks Earnings Consistent Portfolio ETF
+ZHDG	Zega Buy and Hedge ETF
+ZIG	The Acquirers Fund ETF
+ZIVB	Short VIX Mid-Term Futures -1X Strategy ETF
+ZOM	Zomedica Pharmaceuticals Corp
+ZROZ	25+ Year Zero Cpn U.S. Trsy Idx Pimoc ETF
+ZSB	Uscf Sustainable Battery Metals Strategy Fund
+ZSC	Uscf Sustainable Commodity Strategy Fund
+ZSL	Ultrashort Silver -2X ETF
+ZTAX	X-Square Municipal Income Tax Free ETF

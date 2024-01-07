@@ -85,7 +85,7 @@ def post_job_exchange(exchange_name: str, exchange_url: str):
 @app.route('/launch/download/<product_type>', methods=['GET', 'POST'])
 def launch_task_download(product_type: str):
     exchanges = ibdataloader.load_exchanges_for_product_type(ibdataloader.ProductType(product_type.lower()))
-    for exchange_name, exchange_url in sorted(exchanges, key=itemgetter(0)):
+    for exchange_name, exchange_url in exchanges:
         # posting job for every exchange
         post_job_exchange(exchange_name, exchange_url)
 
